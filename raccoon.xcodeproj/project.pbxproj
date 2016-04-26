@@ -13,6 +13,9 @@
 		32DDC7C51CCFAFED008FC6D5 /* Insertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DDC7C11CCFAFED008FC6D5 /* Insertable.swift */; };
 		32DDC7C61CCFAFED008FC6D5 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DDC7C31CCFAFED008FC6D5 /* Operator.swift */; };
 		32DDC7C71CCFAFED008FC6D5 /* Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DDC7C41CCFAFED008FC6D5 /* Wrapper.swift */; };
+		32DDC7CA1CCFB37E008FC6D5 /* RaccoonResponseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DDC7C81CCFB37E008FC6D5 /* RaccoonResponseTest.swift */; };
+		32DDC7CB1CCFB37E008FC6D5 /* WrapperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DDC7C91CCFB37E008FC6D5 /* WrapperTest.swift */; };
+		32DDC7CD1CCFB449008FC6D5 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DDC7CC1CCFB449008FC6D5 /* Model.swift */; };
 		36F7A2A471062810B1340242 /* Pods_raccoon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 517943C058C0F581AD04636D /* Pods_raccoon.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +39,9 @@
 		32DDC7C11CCFAFED008FC6D5 /* Insertable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Insertable.swift; sourceTree = "<group>"; };
 		32DDC7C31CCFAFED008FC6D5 /* Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
 		32DDC7C41CCFAFED008FC6D5 /* Wrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wrapper.swift; sourceTree = "<group>"; };
+		32DDC7C81CCFB37E008FC6D5 /* RaccoonResponseTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaccoonResponseTest.swift; sourceTree = "<group>"; };
+		32DDC7C91CCFB37E008FC6D5 /* WrapperTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrapperTest.swift; sourceTree = "<group>"; };
+		32DDC7CC1CCFB449008FC6D5 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		517943C058C0F581AD04636D /* Pods_raccoon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_raccoon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FF2C09BA053636305DF6346 /* Pods-raccoon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-raccoon.release.xcconfig"; path = "Pods/Target Support Files/Pods-raccoon/Pods-raccoon.release.xcconfig"; sourceTree = "<group>"; };
 		897A7B9FE36FF92D1630DD3A /* Pods-raccoon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-raccoon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-raccoon/Pods-raccoon.debug.xcconfig"; sourceTree = "<group>"; };
@@ -104,6 +110,9 @@
 		32DDC78D1CCFA95A008FC6D5 /* raccoonTests */ = {
 			isa = PBXGroup;
 			children = (
+				32DDC7CC1CCFB449008FC6D5 /* Model.swift */,
+				32DDC7C81CCFB37E008FC6D5 /* RaccoonResponseTest.swift */,
+				32DDC7C91CCFB37E008FC6D5 /* WrapperTest.swift */,
 				32DDC7901CCFA95A008FC6D5 /* Info.plist */,
 			);
 			path = raccoonTests;
@@ -289,6 +298,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32DDC7CD1CCFB449008FC6D5 /* Model.swift in Sources */,
+				32DDC7CA1CCFB37E008FC6D5 /* RaccoonResponseTest.swift in Sources */,
+				32DDC7CB1CCFB37E008FC6D5 /* WrapperTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,16 +446,19 @@
 		32DDC7971CCFA95A008FC6D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = raccoonTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.manuege.raccoonTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		32DDC7981CCFA95A008FC6D5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = raccoonTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.manuege.raccoonTests;
