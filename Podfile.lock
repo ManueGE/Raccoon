@@ -1,10 +1,18 @@
 PODS:
   - Alamofire (3.3.1)
+  - BNRCoreDataStack (1.2.3)
+  - Groot (1.2):
+    - Groot/Swift (= 1.2)
+  - Groot/Swift (1.2)
 
 DEPENDENCIES:
   - Alamofire (~> 3.3)
+  - BNRCoreDataStack (~> 1.2)
+  - Groot (~> 1.2)
 
 SPEC CHECKSUMS:
   Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
+  BNRCoreDataStack: 10abcb19d2a3f397950a06e9b0915f4e695a826b
+  Groot: 86c2c820d619f18586b2d1dcfd90e908339f00bc
 
 COCOAPODS: 0.39.0
