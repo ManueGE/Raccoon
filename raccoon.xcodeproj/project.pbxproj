@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		327A279D1CD00D7300F2A921 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 327A27991CD00D7300F2A921 /* Model.xcdatamodeld */; };
+		327A279E1CD00D7300F2A921 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327A279B1CD00D7300F2A921 /* User+CoreDataProperties.swift */; };
+		327A279F1CD00D7300F2A921 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327A279C1CD00D7300F2A921 /* User.swift */; };
 		32DDC7831CCFA95A008FC6D5 /* raccoon.h in Headers */ = {isa = PBXBuildFile; fileRef = 32DDC7821CCFA95A008FC6D5 /* raccoon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		32DDC78A1CCFA95A008FC6D5 /* Raccoon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DDC77F1CCFA95A008FC6D5 /* Raccoon.framework */; };
 		32DDC7BF1CCFAFC9008FC6D5 /* Request+Raccoon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DDC7BE1CCFAFC9008FC6D5 /* Request+Raccoon.swift */; };
@@ -47,6 +50,9 @@
 /* Begin PBXFileReference section */
 		1B6AECAA8C85C66B03839794 /* Pods-RaccoonCoreDataTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaccoonCoreDataTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RaccoonCoreDataTests/Pods-RaccoonCoreDataTests.release.xcconfig"; sourceTree = "<group>"; };
 		264CCCE05E3BD8E908D9D87B /* Pods-RaccoonCoreDataTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaccoonCoreDataTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RaccoonCoreDataTests/Pods-RaccoonCoreDataTests.debug.xcconfig"; sourceTree = "<group>"; };
+		327A279A1CD00D7300F2A921 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		327A279B1CD00D7300F2A921 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		327A279C1CD00D7300F2A921 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		32DDC77F1CCFA95A008FC6D5 /* Raccoon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Raccoon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32DDC7821CCFA95A008FC6D5 /* raccoon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = raccoon.h; sourceTree = "<group>"; };
 		32DDC7841CCFA95A008FC6D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -127,6 +133,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		327A27981CD00D7300F2A921 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				327A27991CD00D7300F2A921 /* Model.xcdatamodeld */,
+				327A279B1CD00D7300F2A921 /* User+CoreDataProperties.swift */,
+				327A279C1CD00D7300F2A921 /* User.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		32DDC7751CCFA95A008FC6D5 = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +221,7 @@
 		32DDC7E01CCFB574008FC6D5 /* RaccoonCoreDataTests */ = {
 			isa = PBXGroup;
 			children = (
+				327A27981CD00D7300F2A921 /* model */,
 				32DDC7E11CCFB574008FC6D5 /* RaccoonCoreDataTests.swift */,
 				32DDC7E31CCFB574008FC6D5 /* Info.plist */,
 			);
@@ -540,7 +557,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				327A279F1CD00D7300F2A921 /* User.swift in Sources */,
 				32DDC7E21CCFB574008FC6D5 /* RaccoonCoreDataTests.swift in Sources */,
+				327A279D1CD00D7300F2A921 /* Model.xcdatamodeld in Sources */,
+				327A279E1CD00D7300F2A921 /* User+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -819,6 +839,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		327A27991CD00D7300F2A921 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				327A279A1CD00D7300F2A921 /* Model.xcdatamodel */,
+			);
+			currentVersion = 327A279A1CD00D7300F2A921 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 32DDC7761CCFA95A008FC6D5 /* Project object */;
 }

@@ -23,24 +23,22 @@ extension NSManagedObject: Insertable {
     
     public static func createOne(json: [String : AnyObject], context: NSManagedObjectContext) throws -> AnyObject? {
         
-        guard let entityDescription = try? context.entityDescriptionForClass(self),
-            let entityName = entityDescription.name else {
-                return nil
-        }
+        let entityDescription = try context.entityDescriptionForClass(self)
+        let entityName = entityDescription.name
         
-        return try objectWithEntityName(entityName,
-                                         fromJSONDictionary: json,
-                                         inContext: context)
+        return try objectWithEntityName(entityName!,
+                                        fromJSONDictionary: json,
+                                        inContext: context)
+        
+        
     }
     
     public static func createMany(array: [AnyObject], context: NSManagedObjectContext) throws -> [AnyObject]? {
         
-        guard let entityDescription = try? context.entityDescriptionForClass(self),
-            let entityName = entityDescription.name else {
-                return nil
-        }
-        
-        return try objectsWithEntityName(entityName,
+        let entityDescription = try context.entityDescriptionForClass(self)
+        let entityName = entityDescription.name
+
+        return try objectsWithEntityName(entityName!,
                                           fromJSONArray: array,
                                           inContext: context)
     }
