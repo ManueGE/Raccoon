@@ -10,6 +10,7 @@
 		32DDC7831CCFA95A008FC6D5 /* raccoon.h in Headers */ = {isa = PBXBuildFile; fileRef = 32DDC7821CCFA95A008FC6D5 /* raccoon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		32DDC78A1CCFA95A008FC6D5 /* raccoon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DDC77F1CCFA95A008FC6D5 /* raccoon.framework */; };
 		32DDC78F1CCFA95A008FC6D5 /* raccoonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DDC78E1CCFA95A008FC6D5 /* raccoonTests.swift */; };
+		32DDC7B81CCFAD49008FC6D5 /* Insertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DDC7B71CCFAD49008FC6D5 /* Insertable.swift */; };
 		36F7A2A471062810B1340242 /* Pods_raccoon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 517943C058C0F581AD04636D /* Pods_raccoon.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		32DDC7891CCFA95A008FC6D5 /* raccoonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = raccoonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		32DDC78E1CCFA95A008FC6D5 /* raccoonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = raccoonTests.swift; sourceTree = "<group>"; };
 		32DDC7901CCFA95A008FC6D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32DDC7B71CCFAD49008FC6D5 /* Insertable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Insertable.swift; sourceTree = "<group>"; };
 		517943C058C0F581AD04636D /* Pods_raccoon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_raccoon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FF2C09BA053636305DF6346 /* Pods-raccoon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-raccoon.release.xcconfig"; path = "Pods/Target Support Files/Pods-raccoon/Pods-raccoon.release.xcconfig"; sourceTree = "<group>"; };
 		897A7B9FE36FF92D1630DD3A /* Pods-raccoon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-raccoon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-raccoon/Pods-raccoon.debug.xcconfig"; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				32DDC7821CCFA95A008FC6D5 /* raccoon.h */,
+				32DDC7B71CCFAD49008FC6D5 /* Insertable.swift */,
 				32DDC7841CCFA95A008FC6D5 /* Info.plist */,
 			);
 			path = raccoon;
@@ -253,6 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32DDC7B81CCFAD49008FC6D5 /* Insertable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
