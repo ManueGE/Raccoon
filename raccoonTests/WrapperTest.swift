@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import raccoon
+@testable import Raccoon
 
 class WrapperTest: XCTestCase {
     
