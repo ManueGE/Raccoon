@@ -10,6 +10,9 @@
 		327A279D1CD00D7300F2A921 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 327A27991CD00D7300F2A921 /* Model.xcdatamodeld */; };
 		327A279E1CD00D7300F2A921 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327A279B1CD00D7300F2A921 /* User+CoreDataProperties.swift */; };
 		327A279F1CD00D7300F2A921 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327A279C1CD00D7300F2A921 /* User.swift */; };
+		3285AB6C1CD0156B00350513 /* RaccoonRealm.h in Headers */ = {isa = PBXBuildFile; fileRef = 3285AB6B1CD0156B00350513 /* RaccoonRealm.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3285AB731CD0156B00350513 /* RaccoonRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3285AB691CD0156B00350513 /* RaccoonRealm.framework */; };
+		3285AB781CD0156B00350513 /* RaccoonRealmTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3285AB771CD0156B00350513 /* RaccoonRealmTests.m */; };
 		32DDC7831CCFA95A008FC6D5 /* raccoon.h in Headers */ = {isa = PBXBuildFile; fileRef = 32DDC7821CCFA95A008FC6D5 /* raccoon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		32DDC78A1CCFA95A008FC6D5 /* Raccoon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DDC77F1CCFA95A008FC6D5 /* Raccoon.framework */; };
 		32DDC7BF1CCFAFC9008FC6D5 /* Request+Raccoon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DDC7BE1CCFAFC9008FC6D5 /* Request+Raccoon.swift */; };
@@ -31,6 +34,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3285AB741CD0156B00350513 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 32DDC7761CCFA95A008FC6D5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3285AB681CD0156B00350513;
+			remoteInfo = RaccoonRealm;
+		};
 		32DDC78B1CCFA95A008FC6D5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 32DDC7761CCFA95A008FC6D5 /* Project object */;
@@ -53,6 +63,12 @@
 		327A279A1CD00D7300F2A921 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		327A279B1CD00D7300F2A921 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		327A279C1CD00D7300F2A921 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3285AB691CD0156B00350513 /* RaccoonRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RaccoonRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3285AB6B1CD0156B00350513 /* RaccoonRealm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RaccoonRealm.h; sourceTree = "<group>"; };
+		3285AB6D1CD0156B00350513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3285AB721CD0156B00350513 /* RaccoonRealmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaccoonRealmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3285AB771CD0156B00350513 /* RaccoonRealmTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RaccoonRealmTests.m; sourceTree = "<group>"; };
+		3285AB791CD0156B00350513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32DDC77F1CCFA95A008FC6D5 /* Raccoon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Raccoon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32DDC7821CCFA95A008FC6D5 /* raccoon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = raccoon.h; sourceTree = "<group>"; };
 		32DDC7841CCFA95A008FC6D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -83,6 +99,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3285AB651CD0156B00350513 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3285AB6F1CD0156B00350513 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3285AB731CD0156B00350513 /* RaccoonRealm.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		32DDC77B1CCFA95A008FC6D5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -143,6 +174,24 @@
 			path = model;
 			sourceTree = "<group>";
 		};
+		3285AB6A1CD0156B00350513 /* RaccoonRealm */ = {
+			isa = PBXGroup;
+			children = (
+				3285AB6B1CD0156B00350513 /* RaccoonRealm.h */,
+				3285AB6D1CD0156B00350513 /* Info.plist */,
+			);
+			path = RaccoonRealm;
+			sourceTree = "<group>";
+		};
+		3285AB761CD0156B00350513 /* RaccoonRealmTests */ = {
+			isa = PBXGroup;
+			children = (
+				3285AB771CD0156B00350513 /* RaccoonRealmTests.m */,
+				3285AB791CD0156B00350513 /* Info.plist */,
+			);
+			path = RaccoonRealmTests;
+			sourceTree = "<group>";
+		};
 		32DDC7751CCFA95A008FC6D5 = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +199,8 @@
 				32DDC78D1CCFA95A008FC6D5 /* raccoonTests */,
 				32DDC7D41CCFB574008FC6D5 /* RaccoonCoreData */,
 				32DDC7E01CCFB574008FC6D5 /* RaccoonCoreDataTests */,
+				3285AB6A1CD0156B00350513 /* RaccoonRealm */,
+				3285AB761CD0156B00350513 /* RaccoonRealmTests */,
 				32DDC7801CCFA95A008FC6D5 /* Products */,
 				0B00B095F78DA95B01179020 /* Pods */,
 				CDDF6C442A285C2375364623 /* Frameworks */,
@@ -163,6 +214,8 @@
 				32DDC7891CCFA95A008FC6D5 /* raccoonTests.xctest */,
 				32DDC7D31CCFB574008FC6D5 /* RaccoonCoreData.framework */,
 				32DDC7DC1CCFB574008FC6D5 /* RaccoonCoreDataTests.xctest */,
+				3285AB691CD0156B00350513 /* RaccoonRealm.framework */,
+				3285AB721CD0156B00350513 /* RaccoonRealmTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -241,6 +294,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		3285AB661CD0156B00350513 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3285AB6C1CD0156B00350513 /* RaccoonRealm.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		32DDC77C1CCFA95A008FC6D5 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -260,6 +321,42 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		3285AB681CD0156B00350513 /* RaccoonRealm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3285AB7E1CD0156B00350513 /* Build configuration list for PBXNativeTarget "RaccoonRealm" */;
+			buildPhases = (
+				3285AB641CD0156B00350513 /* Sources */,
+				3285AB651CD0156B00350513 /* Frameworks */,
+				3285AB661CD0156B00350513 /* Headers */,
+				3285AB671CD0156B00350513 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RaccoonRealm;
+			productName = RaccoonRealm;
+			productReference = 3285AB691CD0156B00350513 /* RaccoonRealm.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		3285AB711CD0156B00350513 /* RaccoonRealmTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3285AB7F1CD0156B00350513 /* Build configuration list for PBXNativeTarget "RaccoonRealmTests" */;
+			buildPhases = (
+				3285AB6E1CD0156B00350513 /* Sources */,
+				3285AB6F1CD0156B00350513 /* Frameworks */,
+				3285AB701CD0156B00350513 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3285AB751CD0156B00350513 /* PBXTargetDependency */,
+			);
+			name = RaccoonRealmTests;
+			productName = RaccoonRealmTests;
+			productReference = 3285AB721CD0156B00350513 /* RaccoonRealmTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		32DDC77E1CCFA95A008FC6D5 /* Raccoon */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 32DDC7931CCFA95A008FC6D5 /* Build configuration list for PBXNativeTarget "Raccoon" */;
@@ -349,6 +446,12 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = manuege;
 				TargetAttributes = {
+					3285AB681CD0156B00350513 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					3285AB711CD0156B00350513 = {
+						CreatedOnToolsVersion = 7.3;
+					};
 					32DDC77E1CCFA95A008FC6D5 = {
 						CreatedOnToolsVersion = 7.3;
 					};
@@ -379,11 +482,27 @@
 				32DDC7881CCFA95A008FC6D5 /* raccoonTests */,
 				32DDC7D21CCFB574008FC6D5 /* RaccoonCoreData */,
 				32DDC7DB1CCFB574008FC6D5 /* RaccoonCoreDataTests */,
+				3285AB681CD0156B00350513 /* RaccoonRealm */,
+				3285AB711CD0156B00350513 /* RaccoonRealmTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3285AB671CD0156B00350513 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3285AB701CD0156B00350513 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		32DDC77D1CCFA95A008FC6D5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -523,6 +642,21 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3285AB641CD0156B00350513 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3285AB6E1CD0156B00350513 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3285AB781CD0156B00350513 /* RaccoonRealmTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		32DDC77A1CCFA95A008FC6D5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -567,6 +701,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		3285AB751CD0156B00350513 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3285AB681CD0156B00350513 /* RaccoonRealm */;
+			targetProxy = 3285AB741CD0156B00350513 /* PBXContainerItemProxy */;
+		};
 		32DDC78C1CCFA95A008FC6D5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 32DDC77E1CCFA95A008FC6D5 /* Raccoon */;
@@ -580,6 +719,58 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		3285AB7A1CD0156B00350513 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RaccoonRealm/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.manuege.RaccoonRealm;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		3285AB7B1CD0156B00350513 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RaccoonRealm/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.manuege.RaccoonRealm;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		3285AB7C1CD0156B00350513 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = RaccoonRealmTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.manuege.RaccoonRealmTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3285AB7D1CD0156B00350513 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = RaccoonRealmTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.manuege.RaccoonRealmTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		32DDC7911CCFA95A008FC6D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -793,6 +984,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3285AB7E1CD0156B00350513 /* Build configuration list for PBXNativeTarget "RaccoonRealm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3285AB7A1CD0156B00350513 /* Debug */,
+				3285AB7B1CD0156B00350513 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3285AB7F1CD0156B00350513 /* Build configuration list for PBXNativeTarget "RaccoonRealmTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3285AB7C1CD0156B00350513 /* Debug */,
+				3285AB7D1CD0156B00350513 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		32DDC7791CCFA95A008FC6D5 /* Build configuration list for PBXProject "raccoon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
