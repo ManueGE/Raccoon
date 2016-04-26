@@ -1,12 +1,11 @@
 platform :ios, '8.0'
 use_frameworks!
 
-target 'raccoon' do
+target 'Raccoon' do
 	pod 'Alamofire', '~> 3.3'
 end
 
-target 'raccoonTests' do
-
+target 'RaccoonTests' do
 end
 
 target 'RaccoonCoreData' do
@@ -16,6 +15,13 @@ end
 
 target 'RaccoonCoreDataTests' do
     pod 'BNRCoreDataStack', '~> 1.2'
+end
+
+target 'RaccoonRealm' do
+    pod 'RealmSwift', '~> 0.99'
+end
+
+target 'RaccoonRealmTests' do
 end
 
 post_install do |installer|

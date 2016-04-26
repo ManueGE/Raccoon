@@ -4,15 +4,23 @@ PODS:
   - Groot (1.2):
     - Groot/Swift (= 1.2)
   - Groot/Swift (1.2)
+  - Realm (0.99.1):
+    - Realm/Headers (= 0.99.1)
+  - Realm/Headers (0.99.1)
+  - RealmSwift (0.99.1):
+    - Realm (= 0.99.1)
 
 DEPENDENCIES:
   - Alamofire (~> 3.3)
   - BNRCoreDataStack (~> 1.2)
   - Groot (~> 1.2)
+  - RealmSwift (~> 0.99)
 
 SPEC CHECKSUMS:
   Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
   BNRCoreDataStack: 10abcb19d2a3f397950a06e9b0915f4e695a826b
   Groot: 86c2c820d619f18586b2d1dcfd90e908339f00bc
+  Realm: 522a0cc8e1f8755ee56d7dc16ca0fc380d045766
+  RealmSwift: 1d9c4299ef5dbf575c5da09fc706ed726327cfa0
 
 COCOAPODS: 0.39.0
