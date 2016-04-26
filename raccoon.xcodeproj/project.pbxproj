@@ -1,2407 +1,1133 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>0B00B095F78DA95B01179020</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>897A7B9FE36FF92D1630DD3A</string>
-				<string>5FF2C09BA053636305DF6346</string>
-				<string>FFFE8FD5F4C7585D2FB5DBC6</string>
-				<string>70E4D7B78A1447C08672BC2B</string>
-				<string>264CCCE05E3BD8E908D9D87B</string>
-				<string>1B6AECAA8C85C66B03839794</string>
-				<string>D524EF133A6AFE89A0F61C68</string>
-				<string>241D19E7C080231AB3EEA12A</string>
-				<string>AFEDE8A3DA4E2155B99F17D9</string>
-				<string>A49E2B9FF24F9FDDE78FEDFC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0DB73A7E91226F19049B2899</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-RaccoonRealm/Pods-RaccoonRealm-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>14EA6C829D9FFB211D5AE87F</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>1B6AECAA8C85C66B03839794</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-RaccoonCoreDataTests.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-RaccoonCoreDataTests/Pods-RaccoonCoreDataTests.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>241D19E7C080231AB3EEA12A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-RaccoonRealm.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-RaccoonRealm/Pods-RaccoonRealm.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>264CCCE05E3BD8E908D9D87B</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-RaccoonCoreDataTests.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-RaccoonCoreDataTests/Pods-RaccoonCoreDataTests.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>327A27981CD00D7300F2A921</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>327A27991CD00D7300F2A921</string>
-				<string>327A279B1CD00D7300F2A921</string>
-				<string>327A279C1CD00D7300F2A921</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>model</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>327A27991CD00D7300F2A921</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>327A279A1CD00D7300F2A921</string>
-			</array>
-			<key>currentVersion</key>
-			<string>327A279A1CD00D7300F2A921</string>
-			<key>isa</key>
-			<string>XCVersionGroup</string>
-			<key>path</key>
-			<string>Model.xcdatamodeld</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-			<key>versionGroupType</key>
-			<string>wrapper.xcdatamodel</string>
-		</dict>
-		<key>327A279A1CD00D7300F2A921</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.xcdatamodel</string>
-			<key>path</key>
-			<string>Model.xcdatamodel</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>327A279B1CD00D7300F2A921</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>User+CoreDataProperties.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>327A279C1CD00D7300F2A921</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>User.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>327A279D1CD00D7300F2A921</key>
-		<dict>
-			<key>fileRef</key>
-			<string>327A27991CD00D7300F2A921</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>327A279E1CD00D7300F2A921</key>
-		<dict>
-			<key>fileRef</key>
-			<string>327A279B1CD00D7300F2A921</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>327A279F1CD00D7300F2A921</key>
-		<dict>
-			<key>fileRef</key>
-			<string>327A279C1CD00D7300F2A921</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>3285AB641CD0156B00350513</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>3285AB651CD0156B00350513</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>4B92D56886FCAA22D4ECC7E7</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>3285AB661CD0156B00350513</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>3285AB6C1CD0156B00350513</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>3285AB671CD0156B00350513</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>3285AB681CD0156B00350513</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>3285AB7E1CD0156B00350513</string>
-			<key>buildPhases</key>
-			<array>
-				<string>BD4B02877CF882BDBD7312B5</string>
-				<string>3285AB641CD0156B00350513</string>
-				<string>3285AB651CD0156B00350513</string>
-				<string>3285AB661CD0156B00350513</string>
-				<string>3285AB671CD0156B00350513</string>
-				<string>0DB73A7E91226F19049B2899</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>RaccoonRealm</string>
-			<key>productName</key>
-			<string>RaccoonRealm</string>
-			<key>productReference</key>
-			<string>3285AB691CD0156B00350513</string>
-			<key>productType</key>
-			<string>com.apple.product-type.framework</string>
-		</dict>
-		<key>3285AB691CD0156B00350513</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>RaccoonRealm.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>3285AB6A1CD0156B00350513</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>3285AB6B1CD0156B00350513</string>
-				<string>3285AB6D1CD0156B00350513</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>RaccoonRealm</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3285AB6B1CD0156B00350513</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>RaccoonRealm.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3285AB6C1CD0156B00350513</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3285AB6B1CD0156B00350513</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>3285AB6D1CD0156B00350513</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3285AB6E1CD0156B00350513</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>3285AB781CD0156B00350513</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>3285AB6F1CD0156B00350513</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>3285AB731CD0156B00350513</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>3285AB701CD0156B00350513</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>3285AB711CD0156B00350513</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>3285AB7F1CD0156B00350513</string>
-			<key>buildPhases</key>
-			<array>
-				<string>3285AB6E1CD0156B00350513</string>
-				<string>3285AB6F1CD0156B00350513</string>
-				<string>3285AB701CD0156B00350513</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>3285AB751CD0156B00350513</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>RaccoonRealmTests</string>
-			<key>productName</key>
-			<string>RaccoonRealmTests</string>
-			<key>productReference</key>
-			<string>3285AB721CD0156B00350513</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.unit-test</string>
-		</dict>
-		<key>3285AB721CD0156B00350513</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>RaccoonRealmTests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>3285AB731CD0156B00350513</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3285AB691CD0156B00350513</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>3285AB741CD0156B00350513</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>32DDC7761CCFA95A008FC6D5</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>3285AB681CD0156B00350513</string>
-			<key>remoteInfo</key>
-			<string>RaccoonRealm</string>
-		</dict>
-		<key>3285AB751CD0156B00350513</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>3285AB681CD0156B00350513</string>
-			<key>targetProxy</key>
-			<string>3285AB741CD0156B00350513</string>
-		</dict>
-		<key>3285AB761CD0156B00350513</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>3285AB771CD0156B00350513</string>
-				<string>3285AB791CD0156B00350513</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>RaccoonRealmTests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3285AB771CD0156B00350513</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>RaccoonRealmTests.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3285AB781CD0156B00350513</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3285AB771CD0156B00350513</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>3285AB791CD0156B00350513</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3285AB7A1CD0156B00350513</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>D524EF133A6AFE89A0F61C68</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>INFOPLIST_FILE</key>
-				<string>RaccoonRealm/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.manuege.RaccoonRealm</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>3285AB7B1CD0156B00350513</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>241D19E7C080231AB3EEA12A</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>INFOPLIST_FILE</key>
-				<string>RaccoonRealm/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.manuege.RaccoonRealm</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>3285AB7C1CD0156B00350513</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>INFOPLIST_FILE</key>
-				<string>RaccoonRealmTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.manuege.RaccoonRealmTests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>3285AB7D1CD0156B00350513</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>INFOPLIST_FILE</key>
-				<string>RaccoonRealmTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.manuege.RaccoonRealmTests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>3285AB7E1CD0156B00350513</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>3285AB7A1CD0156B00350513</string>
-				<string>3285AB7B1CD0156B00350513</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>3285AB7F1CD0156B00350513</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>3285AB7C1CD0156B00350513</string>
-				<string>3285AB7D1CD0156B00350513</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>3285AB811CD019FE00350513</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>3285ABA21CD01A3100350513</string>
-				<string>3285ABA61CD01A3C00350513</string>
-				<string>3285ABA31CD01A3100350513</string>
-				<string>3285ABA41CD01A3100350513</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>3285AB821CD019FE00350513</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>FC4719DF68799D1C9C831662</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>3285AB831CD019FE00350513</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>3285AB891CD019FE00350513</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>3285AB841CD019FE00350513</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>3285AB851CD019FE00350513</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>3285AB971CD019FE00350513</string>
-			<key>buildPhases</key>
-			<array>
-				<string>14EA6C829D9FFB211D5AE87F</string>
-				<string>3285AB811CD019FE00350513</string>
-				<string>3285AB821CD019FE00350513</string>
-				<string>3285AB831CD019FE00350513</string>
-				<string>3285AB841CD019FE00350513</string>
-				<string>C78A61921FA4BCF938EB0F28</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Raccoon</string>
-			<key>productName</key>
-			<string>Raccoon</string>
-			<key>productReference</key>
-			<string>3285AB861CD019FE00350513</string>
-			<key>productType</key>
-			<string>com.apple.product-type.framework</string>
-		</dict>
-		<key>3285AB861CD019FE00350513</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Raccoon.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>3285AB871CD019FE00350513</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>3285AB881CD019FE00350513</string>
-				<string>3285AB9D1CD01A3100350513</string>
-				<string>3285ABA51CD01A3C00350513</string>
-				<string>3285AB8A1CD019FE00350513</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Raccoon</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3285AB881CD019FE00350513</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Raccoon.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3285AB891CD019FE00350513</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3285AB881CD019FE00350513</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>3285AB8A1CD019FE00350513</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3285AB8B1CD019FE00350513</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>3285ABAC1CD01A5700350513</string>
-				<string>3285ABAB1CD01A5700350513</string>
-				<string>3285ABAA1CD01A5700350513</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>3285AB8C1CD019FE00350513</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>3285AB901CD019FE00350513</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>3285AB8D1CD019FE00350513</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>3285AB8E1CD019FE00350513</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>3285AB9A1CD019FE00350513</string>
-			<key>buildPhases</key>
-			<array>
-				<string>3285AB8B1CD019FE00350513</string>
-				<string>3285AB8C1CD019FE00350513</string>
-				<string>3285AB8D1CD019FE00350513</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>3285AB921CD019FE00350513</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>RaccoonTests</string>
-			<key>productName</key>
-			<string>RaccoonTests</string>
-			<key>productReference</key>
-			<string>3285AB8F1CD019FE00350513</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.unit-test</string>
-		</dict>
-		<key>3285AB8F1CD019FE00350513</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>RaccoonTests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>3285AB901CD019FE00350513</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3285AB861CD019FE00350513</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>3285AB911CD019FE00350513</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>32DDC7761CCFA95A008FC6D5</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>3285AB851CD019FE00350513</string>
-			<key>remoteInfo</key>
-			<string>Raccoon</string>
-		</dict>
-		<key>3285AB921CD019FE00350513</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>3285AB851CD019FE00350513</string>
-			<key>targetProxy</key>
-			<string>3285AB911CD019FE00350513</string>
-		</dict>
-		<key>3285AB931CD019FE00350513</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>3285ABA71CD01A5700350513</string>
-				<string>3285ABA81CD01A5700350513</string>
-				<string>3285ABA91CD01A5700350513</string>
-				<string>3285AB961CD019FE00350513</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>RaccoonTests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3285AB961CD019FE00350513</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3285AB971CD019FE00350513</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>3285AB981CD019FE00350513</string>
-				<string>3285AB991CD019FE00350513</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>3285AB981CD019FE00350513</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>AFEDE8A3DA4E2155B99F17D9</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Raccoon/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.manuege.Raccoon</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>3285AB991CD019FE00350513</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>A49E2B9FF24F9FDDE78FEDFC</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Raccoon/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.manuege.Raccoon</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>3285AB9A1CD019FE00350513</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>3285AB9B1CD019FE00350513</string>
-				<string>3285AB9C1CD019FE00350513</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>3285AB9B1CD019FE00350513</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>INFOPLIST_FILE</key>
-				<string>RaccoonTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.manuege.RaccoonTests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-Onone</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>3285AB9C1CD019FE00350513</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>INFOPLIST_FILE</key>
-				<string>RaccoonTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.manuege.RaccoonTests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>3285AB9D1CD01A3100350513</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>3285AB9E1CD01A3100350513</string>
-				<string>3285AB9F1CD01A3100350513</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>insertable</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3285AB9E1CD01A3100350513</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>Insertable.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3285AB9F1CD01A3100350513</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>3285ABA01CD01A3100350513</string>
-				<string>3285ABA11CD01A3100350513</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>wrapper</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3285ABA01CD01A3100350513</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>Operator.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3285ABA11CD01A3100350513</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>Wrapper.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3285ABA21CD01A3100350513</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3285AB9E1CD01A3100350513</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>3285ABA31CD01A3100350513</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3285ABA01CD01A3100350513</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>3285ABA41CD01A3100350513</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3285ABA11CD01A3100350513</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>3285ABA51CD01A3C00350513</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>Request+Raccoon.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3285ABA61CD01A3C00350513</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3285ABA51CD01A3C00350513</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>3285ABA71CD01A5700350513</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>Model.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3285ABA81CD01A5700350513</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>RaccoonResponseTest.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3285ABA91CD01A5700350513</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>WrapperTest.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3285ABAA1CD01A5700350513</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3285ABA71CD01A5700350513</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>3285ABAB1CD01A5700350513</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3285ABA81CD01A5700350513</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>3285ABAC1CD01A5700350513</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3285ABA91CD01A5700350513</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>32DDC7751CCFA95A008FC6D5</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>3285AB871CD019FE00350513</string>
-				<string>3285AB931CD019FE00350513</string>
-				<string>32DDC7D41CCFB574008FC6D5</string>
-				<string>32DDC7E01CCFB574008FC6D5</string>
-				<string>3285AB6A1CD0156B00350513</string>
-				<string>3285AB761CD0156B00350513</string>
-				<string>32DDC7801CCFA95A008FC6D5</string>
-				<string>0B00B095F78DA95B01179020</string>
-				<string>CDDF6C442A285C2375364623</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>32DDC7761CCFA95A008FC6D5</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastSwiftUpdateCheck</key>
-				<string>0730</string>
-				<key>LastUpgradeCheck</key>
-				<string>0730</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>manuege</string>
-				<key>TargetAttributes</key>
-				<dict>
-					<key>3285AB681CD0156B00350513</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.3</string>
-					</dict>
-					<key>3285AB711CD0156B00350513</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.3</string>
-					</dict>
-					<key>3285AB851CD019FE00350513</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.3</string>
-					</dict>
-					<key>3285AB8E1CD019FE00350513</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.3</string>
-					</dict>
-					<key>32DDC7D21CCFB574008FC6D5</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.3</string>
-					</dict>
-					<key>32DDC7DB1CCFB574008FC6D5</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.3</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>32DDC7791CCFA95A008FC6D5</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-			</array>
-			<key>mainGroup</key>
-			<string>32DDC7751CCFA95A008FC6D5</string>
-			<key>productRefGroup</key>
-			<string>32DDC7801CCFA95A008FC6D5</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>3285AB851CD019FE00350513</string>
-				<string>3285AB8E1CD019FE00350513</string>
-				<string>32DDC7D21CCFB574008FC6D5</string>
-				<string>32DDC7DB1CCFB574008FC6D5</string>
-				<string>3285AB681CD0156B00350513</string>
-				<string>3285AB711CD0156B00350513</string>
-			</array>
-		</dict>
-		<key>32DDC7791CCFA95A008FC6D5</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>32DDC7911CCFA95A008FC6D5</string>
-				<string>32DDC7921CCFA95A008FC6D5</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>32DDC7801CCFA95A008FC6D5</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>32DDC7D31CCFB574008FC6D5</string>
-				<string>32DDC7DC1CCFB574008FC6D5</string>
-				<string>3285AB691CD0156B00350513</string>
-				<string>3285AB721CD0156B00350513</string>
-				<string>3285AB861CD019FE00350513</string>
-				<string>3285AB8F1CD019FE00350513</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>32DDC7911CCFA95A008FC6D5</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ANALYZER_NONNULL</key>
-				<string>YES</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>CURRENT_PROJECT_VERSION</key>
-				<string>1</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>ENABLE_TESTABILITY</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>9.3</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-Onone</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VERSIONING_SYSTEM</key>
-				<string>apple-generic</string>
-				<key>VERSION_INFO_PREFIX</key>
-				<string></string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>32DDC7921CCFA95A008FC6D5</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ANALYZER_NONNULL</key>
-				<string>YES</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>CURRENT_PROJECT_VERSION</key>
-				<string>1</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf-with-dsym</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>9.3</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-				<key>VERSIONING_SYSTEM</key>
-				<string>apple-generic</string>
-				<key>VERSION_INFO_PREFIX</key>
-				<string></string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>32DDC7CE1CCFB574008FC6D5</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>32DDC7EE1CCFB876008FC6D5</string>
-				<string>32DDC7EC1CCFB5D0008FC6D5</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>32DDC7CF1CCFB574008FC6D5</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>975AD30A1C5B21181CE6F70C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>32DDC7D01CCFB574008FC6D5</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>32DDC7D61CCFB574008FC6D5</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>32DDC7D11CCFB574008FC6D5</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>32DDC7D21CCFB574008FC6D5</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>32DDC7E81CCFB574008FC6D5</string>
-			<key>buildPhases</key>
-			<array>
-				<string>664684D8A9926A62ABD74C8E</string>
-				<string>32DDC7CE1CCFB574008FC6D5</string>
-				<string>32DDC7CF1CCFB574008FC6D5</string>
-				<string>32DDC7D01CCFB574008FC6D5</string>
-				<string>32DDC7D11CCFB574008FC6D5</string>
-				<string>6B99F622D1BDB9D8C40E867F</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>RaccoonCoreData</string>
-			<key>productName</key>
-			<string>RaccoonCoreData</string>
-			<key>productReference</key>
-			<string>32DDC7D31CCFB574008FC6D5</string>
-			<key>productType</key>
-			<string>com.apple.product-type.framework</string>
-		</dict>
-		<key>32DDC7D31CCFB574008FC6D5</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>RaccoonCoreData.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>32DDC7D41CCFB574008FC6D5</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>32DDC7D51CCFB574008FC6D5</string>
-				<string>32DDC7EB1CCFB5D0008FC6D5</string>
-				<string>32DDC7ED1CCFB876008FC6D5</string>
-				<string>32DDC7D71CCFB574008FC6D5</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>RaccoonCoreData</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>32DDC7D51CCFB574008FC6D5</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>RaccoonCoreData.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>32DDC7D61CCFB574008FC6D5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>32DDC7D51CCFB574008FC6D5</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>32DDC7D71CCFB574008FC6D5</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>32DDC7D81CCFB574008FC6D5</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>327A279F1CD00D7300F2A921</string>
-				<string>32DDC7E21CCFB574008FC6D5</string>
-				<string>327A279D1CD00D7300F2A921</string>
-				<string>327A279E1CD00D7300F2A921</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>32DDC7D91CCFB574008FC6D5</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>32DDC7DD1CCFB574008FC6D5</string>
-				<string>F76479C30CF44BABB0DBAFA2</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>32DDC7DA1CCFB574008FC6D5</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>32DDC7DB1CCFB574008FC6D5</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>32DDC7E91CCFB574008FC6D5</string>
-			<key>buildPhases</key>
-			<array>
-				<string>5070E0E48DD746825A20B1EA</string>
-				<string>32DDC7D81CCFB574008FC6D5</string>
-				<string>32DDC7D91CCFB574008FC6D5</string>
-				<string>32DDC7DA1CCFB574008FC6D5</string>
-				<string>5A0EE1A3137F6BFB423B841F</string>
-				<string>5A10610C088E9500D6B9FB87</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>32DDC7DF1CCFB574008FC6D5</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>RaccoonCoreDataTests</string>
-			<key>productName</key>
-			<string>RaccoonCoreDataTests</string>
-			<key>productReference</key>
-			<string>32DDC7DC1CCFB574008FC6D5</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.unit-test</string>
-		</dict>
-		<key>32DDC7DC1CCFB574008FC6D5</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>RaccoonCoreDataTests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>32DDC7DD1CCFB574008FC6D5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>32DDC7D31CCFB574008FC6D5</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>32DDC7DE1CCFB574008FC6D5</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>32DDC7761CCFA95A008FC6D5</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>32DDC7D21CCFB574008FC6D5</string>
-			<key>remoteInfo</key>
-			<string>RaccoonCoreData</string>
-		</dict>
-		<key>32DDC7DF1CCFB574008FC6D5</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>32DDC7D21CCFB574008FC6D5</string>
-			<key>targetProxy</key>
-			<string>32DDC7DE1CCFB574008FC6D5</string>
-		</dict>
-		<key>32DDC7E01CCFB574008FC6D5</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>327A27981CD00D7300F2A921</string>
-				<string>32DDC7E11CCFB574008FC6D5</string>
-				<string>32DDC7E31CCFB574008FC6D5</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>RaccoonCoreDataTests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>32DDC7E11CCFB574008FC6D5</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>RaccoonCoreDataTests.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>32DDC7E21CCFB574008FC6D5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>32DDC7E11CCFB574008FC6D5</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>32DDC7E31CCFB574008FC6D5</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>32DDC7E41CCFB574008FC6D5</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>FFFE8FD5F4C7585D2FB5DBC6</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>INFOPLIST_FILE</key>
-				<string>RaccoonCoreData/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.manuege.RaccoonCoreData</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-Onone</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>32DDC7E51CCFB574008FC6D5</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>70E4D7B78A1447C08672BC2B</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>INFOPLIST_FILE</key>
-				<string>RaccoonCoreData/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.manuege.RaccoonCoreData</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>32DDC7E61CCFB574008FC6D5</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>264CCCE05E3BD8E908D9D87B</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>INFOPLIST_FILE</key>
-				<string>RaccoonCoreDataTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.manuege.RaccoonCoreDataTests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>32DDC7E71CCFB574008FC6D5</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>1B6AECAA8C85C66B03839794</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>INFOPLIST_FILE</key>
-				<string>RaccoonCoreDataTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.manuege.RaccoonCoreDataTests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>32DDC7E81CCFB574008FC6D5</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>32DDC7E41CCFB574008FC6D5</string>
-				<string>32DDC7E51CCFB574008FC6D5</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>32DDC7E91CCFB574008FC6D5</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>32DDC7E61CCFB574008FC6D5</string>
-				<string>32DDC7E71CCFB574008FC6D5</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>32DDC7EB1CCFB5D0008FC6D5</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>Insertable+CoreData.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>32DDC7EC1CCFB5D0008FC6D5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>32DDC7EB1CCFB5D0008FC6D5</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>32DDC7ED1CCFB876008FC6D5</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>NSManagedObjectContext+RaccoonCoreData.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>32DDC7EE1CCFB876008FC6D5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>32DDC7ED1CCFB876008FC6D5</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>4B92D56886FCAA22D4ECC7E7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D67336C92085C683EB63524A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5070E0E48DD746825A20B1EA</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>517943C058C0F581AD04636D</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods_raccoon.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>56CDAB49497FDFB3F1DE8D2B</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods_RaccoonCoreData.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>5A0EE1A3137F6BFB423B841F</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Embed Pods Frameworks</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-RaccoonCoreDataTests/Pods-RaccoonCoreDataTests-frameworks.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>5A10610C088E9500D6B9FB87</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-RaccoonCoreDataTests/Pods-RaccoonCoreDataTests-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>5FF2C09BA053636305DF6346</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-raccoon.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-raccoon/Pods-raccoon.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>664684D8A9926A62ABD74C8E</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>6B99F622D1BDB9D8C40E867F</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-RaccoonCoreData/Pods-RaccoonCoreData-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>70E4D7B78A1447C08672BC2B</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-RaccoonCoreData.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-RaccoonCoreData/Pods-RaccoonCoreData.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>897A7B9FE36FF92D1630DD3A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-raccoon.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-raccoon/Pods-raccoon.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>90AFAB7ECA001FC8CB657FBF</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods_Raccoon.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>975AD30A1C5B21181CE6F70C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>56CDAB49497FDFB3F1DE8D2B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A49E2B9FF24F9FDDE78FEDFC</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-Raccoon.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-Raccoon/Pods-Raccoon.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AFEDE8A3DA4E2155B99F17D9</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-Raccoon.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-Raccoon/Pods-Raccoon.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BD4B02877CF882BDBD7312B5</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>C78A61921FA4BCF938EB0F28</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-Raccoon/Pods-Raccoon-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>C94EE7372A2BF285BBAE2514</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods_RaccoonCoreDataTests.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>CDDF6C442A285C2375364623</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>517943C058C0F581AD04636D</string>
-				<string>56CDAB49497FDFB3F1DE8D2B</string>
-				<string>C94EE7372A2BF285BBAE2514</string>
-				<string>90AFAB7ECA001FC8CB657FBF</string>
-				<string>D67336C92085C683EB63524A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D524EF133A6AFE89A0F61C68</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-RaccoonRealm.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-RaccoonRealm/Pods-RaccoonRealm.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D67336C92085C683EB63524A</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods_RaccoonRealm.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>F76479C30CF44BABB0DBAFA2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C94EE7372A2BF285BBAE2514</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>FC4719DF68799D1C9C831662</key>
-		<dict>
-			<key>fileRef</key>
-			<string>90AFAB7ECA001FC8CB657FBF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>FFFE8FD5F4C7585D2FB5DBC6</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-RaccoonCoreData.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-RaccoonCoreData/Pods-RaccoonCoreData.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>32DDC7761CCFA95A008FC6D5</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		327A279D1CD00D7300F2A921 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 327A27991CD00D7300F2A921 /* Model.xcdatamodeld */; };
+		327A279E1CD00D7300F2A921 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327A279B1CD00D7300F2A921 /* User+CoreDataProperties.swift */; };
+		327A279F1CD00D7300F2A921 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327A279C1CD00D7300F2A921 /* User.swift */; };
+		3285AB6C1CD0156B00350513 /* RaccoonRealm.h in Headers */ = {isa = PBXBuildFile; fileRef = 3285AB6B1CD0156B00350513 /* RaccoonRealm.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3285AB731CD0156B00350513 /* RaccoonRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3285AB691CD0156B00350513 /* RaccoonRealm.framework */; };
+		3285AB891CD019FE00350513 /* Raccoon.h in Headers */ = {isa = PBXBuildFile; fileRef = 3285AB881CD019FE00350513 /* Raccoon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3285AB901CD019FE00350513 /* Raccoon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3285AB861CD019FE00350513 /* Raccoon.framework */; };
+		3285ABA21CD01A3100350513 /* Insertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3285AB9E1CD01A3100350513 /* Insertable.swift */; };
+		3285ABA31CD01A3100350513 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3285ABA01CD01A3100350513 /* Operator.swift */; };
+		3285ABA41CD01A3100350513 /* Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3285ABA11CD01A3100350513 /* Wrapper.swift */; };
+		3285ABA61CD01A3C00350513 /* Request+Raccoon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3285ABA51CD01A3C00350513 /* Request+Raccoon.swift */; };
+		3285ABAA1CD01A5700350513 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3285ABA71CD01A5700350513 /* Model.swift */; };
+		3285ABAB1CD01A5700350513 /* RaccoonResponseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3285ABA81CD01A5700350513 /* RaccoonResponseTest.swift */; };
+		3285ABAC1CD01A5700350513 /* WrapperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3285ABA91CD01A5700350513 /* WrapperTest.swift */; };
+		3285ABAF1CD01B5500350513 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3285ABAE1CD01B5500350513 /* Model.swift */; };
+		3285ABB81CD01B9100350513 /* Insertable+Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3285ABB61CD01B9100350513 /* Insertable+Realm.swift */; };
+		3285ABB91CD01B9100350513 /* RealmSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3285ABB71CD01B9100350513 /* RealmSerializable.swift */; };
+		3285ABBB1CD01C2300350513 /* RealmSerializableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3285ABBA1CD01C2300350513 /* RealmSerializableTests.swift */; };
+		3285ABBC1CD01C3F00350513 /* Raccoon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3285AB861CD019FE00350513 /* Raccoon.framework */; };
+		3285ABBD1CD01C4300350513 /* Raccoon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3285AB861CD019FE00350513 /* Raccoon.framework */; };
+		32DDC7D61CCFB574008FC6D5 /* RaccoonCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = 32DDC7D51CCFB574008FC6D5 /* RaccoonCoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		32DDC7DD1CCFB574008FC6D5 /* RaccoonCoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DDC7D31CCFB574008FC6D5 /* RaccoonCoreData.framework */; };
+		32DDC7E21CCFB574008FC6D5 /* RaccoonCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DDC7E11CCFB574008FC6D5 /* RaccoonCoreDataTests.swift */; };
+		32DDC7EC1CCFB5D0008FC6D5 /* Insertable+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DDC7EB1CCFB5D0008FC6D5 /* Insertable+CoreData.swift */; };
+		32DDC7EE1CCFB876008FC6D5 /* NSManagedObjectContext+RaccoonCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DDC7ED1CCFB876008FC6D5 /* NSManagedObjectContext+RaccoonCoreData.swift */; };
+		4B92D56886FCAA22D4ECC7E7 /* Pods_RaccoonRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D67336C92085C683EB63524A /* Pods_RaccoonRealm.framework */; };
+		975AD30A1C5B21181CE6F70C /* Pods_RaccoonCoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56CDAB49497FDFB3F1DE8D2B /* Pods_RaccoonCoreData.framework */; };
+		F76479C30CF44BABB0DBAFA2 /* Pods_RaccoonCoreDataTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C94EE7372A2BF285BBAE2514 /* Pods_RaccoonCoreDataTests.framework */; };
+		FC4719DF68799D1C9C831662 /* Pods_Raccoon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90AFAB7ECA001FC8CB657FBF /* Pods_Raccoon.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3285AB741CD0156B00350513 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 32DDC7761CCFA95A008FC6D5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3285AB681CD0156B00350513;
+			remoteInfo = RaccoonRealm;
+		};
+		3285AB911CD019FE00350513 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 32DDC7761CCFA95A008FC6D5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3285AB851CD019FE00350513;
+			remoteInfo = Raccoon;
+		};
+		32DDC7DE1CCFB574008FC6D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 32DDC7761CCFA95A008FC6D5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 32DDC7D21CCFB574008FC6D5;
+			remoteInfo = RaccoonCoreData;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1B6AECAA8C85C66B03839794 /* Pods-RaccoonCoreDataTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaccoonCoreDataTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RaccoonCoreDataTests/Pods-RaccoonCoreDataTests.release.xcconfig"; sourceTree = "<group>"; };
+		241D19E7C080231AB3EEA12A /* Pods-RaccoonRealm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaccoonRealm.release.xcconfig"; path = "Pods/Target Support Files/Pods-RaccoonRealm/Pods-RaccoonRealm.release.xcconfig"; sourceTree = "<group>"; };
+		264CCCE05E3BD8E908D9D87B /* Pods-RaccoonCoreDataTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaccoonCoreDataTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RaccoonCoreDataTests/Pods-RaccoonCoreDataTests.debug.xcconfig"; sourceTree = "<group>"; };
+		327A279A1CD00D7300F2A921 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		327A279B1CD00D7300F2A921 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		327A279C1CD00D7300F2A921 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3285AB691CD0156B00350513 /* RaccoonRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RaccoonRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3285AB6B1CD0156B00350513 /* RaccoonRealm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RaccoonRealm.h; sourceTree = "<group>"; };
+		3285AB6D1CD0156B00350513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3285AB721CD0156B00350513 /* RaccoonRealmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaccoonRealmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3285AB791CD0156B00350513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3285AB861CD019FE00350513 /* Raccoon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Raccoon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3285AB881CD019FE00350513 /* Raccoon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Raccoon.h; sourceTree = "<group>"; };
+		3285AB8A1CD019FE00350513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3285AB8F1CD019FE00350513 /* RaccoonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaccoonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3285AB961CD019FE00350513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3285AB9E1CD01A3100350513 /* Insertable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Insertable.swift; sourceTree = "<group>"; };
+		3285ABA01CD01A3100350513 /* Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
+		3285ABA11CD01A3100350513 /* Wrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wrapper.swift; sourceTree = "<group>"; };
+		3285ABA51CD01A3C00350513 /* Request+Raccoon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Request+Raccoon.swift"; sourceTree = "<group>"; };
+		3285ABA71CD01A5700350513 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		3285ABA81CD01A5700350513 /* RaccoonResponseTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaccoonResponseTest.swift; sourceTree = "<group>"; };
+		3285ABA91CD01A5700350513 /* WrapperTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrapperTest.swift; sourceTree = "<group>"; };
+		3285ABAE1CD01B5500350513 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		3285ABB61CD01B9100350513 /* Insertable+Realm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Insertable+Realm.swift"; sourceTree = "<group>"; };
+		3285ABB71CD01B9100350513 /* RealmSerializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmSerializable.swift; sourceTree = "<group>"; };
+		3285ABBA1CD01C2300350513 /* RealmSerializableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmSerializableTests.swift; sourceTree = "<group>"; };
+		32DDC7D31CCFB574008FC6D5 /* RaccoonCoreData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RaccoonCoreData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		32DDC7D51CCFB574008FC6D5 /* RaccoonCoreData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RaccoonCoreData.h; sourceTree = "<group>"; };
+		32DDC7D71CCFB574008FC6D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32DDC7DC1CCFB574008FC6D5 /* RaccoonCoreDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaccoonCoreDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		32DDC7E11CCFB574008FC6D5 /* RaccoonCoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaccoonCoreDataTests.swift; sourceTree = "<group>"; };
+		32DDC7E31CCFB574008FC6D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32DDC7EB1CCFB5D0008FC6D5 /* Insertable+CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Insertable+CoreData.swift"; sourceTree = "<group>"; };
+		32DDC7ED1CCFB876008FC6D5 /* NSManagedObjectContext+RaccoonCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+RaccoonCoreData.swift"; sourceTree = "<group>"; };
+		517943C058C0F581AD04636D /* Pods_raccoon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_raccoon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56CDAB49497FDFB3F1DE8D2B /* Pods_RaccoonCoreData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RaccoonCoreData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FF2C09BA053636305DF6346 /* Pods-raccoon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-raccoon.release.xcconfig"; path = "Pods/Target Support Files/Pods-raccoon/Pods-raccoon.release.xcconfig"; sourceTree = "<group>"; };
+		70E4D7B78A1447C08672BC2B /* Pods-RaccoonCoreData.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaccoonCoreData.release.xcconfig"; path = "Pods/Target Support Files/Pods-RaccoonCoreData/Pods-RaccoonCoreData.release.xcconfig"; sourceTree = "<group>"; };
+		897A7B9FE36FF92D1630DD3A /* Pods-raccoon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-raccoon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-raccoon/Pods-raccoon.debug.xcconfig"; sourceTree = "<group>"; };
+		90AFAB7ECA001FC8CB657FBF /* Pods_Raccoon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Raccoon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A49E2B9FF24F9FDDE78FEDFC /* Pods-Raccoon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Raccoon.release.xcconfig"; path = "Pods/Target Support Files/Pods-Raccoon/Pods-Raccoon.release.xcconfig"; sourceTree = "<group>"; };
+		AFEDE8A3DA4E2155B99F17D9 /* Pods-Raccoon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Raccoon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Raccoon/Pods-Raccoon.debug.xcconfig"; sourceTree = "<group>"; };
+		C94EE7372A2BF285BBAE2514 /* Pods_RaccoonCoreDataTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RaccoonCoreDataTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D524EF133A6AFE89A0F61C68 /* Pods-RaccoonRealm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaccoonRealm.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RaccoonRealm/Pods-RaccoonRealm.debug.xcconfig"; sourceTree = "<group>"; };
+		D67336C92085C683EB63524A /* Pods_RaccoonRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RaccoonRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFFE8FD5F4C7585D2FB5DBC6 /* Pods-RaccoonCoreData.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaccoonCoreData.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RaccoonCoreData/Pods-RaccoonCoreData.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3285AB651CD0156B00350513 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3285ABBD1CD01C4300350513 /* Raccoon.framework in Frameworks */,
+				4B92D56886FCAA22D4ECC7E7 /* Pods_RaccoonRealm.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3285AB6F1CD0156B00350513 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3285AB731CD0156B00350513 /* RaccoonRealm.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3285AB821CD019FE00350513 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC4719DF68799D1C9C831662 /* Pods_Raccoon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3285AB8C1CD019FE00350513 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3285AB901CD019FE00350513 /* Raccoon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32DDC7CF1CCFB574008FC6D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3285ABBC1CD01C3F00350513 /* Raccoon.framework in Frameworks */,
+				975AD30A1C5B21181CE6F70C /* Pods_RaccoonCoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32DDC7D91CCFB574008FC6D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32DDC7DD1CCFB574008FC6D5 /* RaccoonCoreData.framework in Frameworks */,
+				F76479C30CF44BABB0DBAFA2 /* Pods_RaccoonCoreDataTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0B00B095F78DA95B01179020 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				897A7B9FE36FF92D1630DD3A /* Pods-raccoon.debug.xcconfig */,
+				5FF2C09BA053636305DF6346 /* Pods-raccoon.release.xcconfig */,
+				FFFE8FD5F4C7585D2FB5DBC6 /* Pods-RaccoonCoreData.debug.xcconfig */,
+				70E4D7B78A1447C08672BC2B /* Pods-RaccoonCoreData.release.xcconfig */,
+				264CCCE05E3BD8E908D9D87B /* Pods-RaccoonCoreDataTests.debug.xcconfig */,
+				1B6AECAA8C85C66B03839794 /* Pods-RaccoonCoreDataTests.release.xcconfig */,
+				D524EF133A6AFE89A0F61C68 /* Pods-RaccoonRealm.debug.xcconfig */,
+				241D19E7C080231AB3EEA12A /* Pods-RaccoonRealm.release.xcconfig */,
+				AFEDE8A3DA4E2155B99F17D9 /* Pods-Raccoon.debug.xcconfig */,
+				A49E2B9FF24F9FDDE78FEDFC /* Pods-Raccoon.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		327A27981CD00D7300F2A921 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				327A27991CD00D7300F2A921 /* Model.xcdatamodeld */,
+				327A279B1CD00D7300F2A921 /* User+CoreDataProperties.swift */,
+				327A279C1CD00D7300F2A921 /* User.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		3285AB6A1CD0156B00350513 /* RaccoonRealm */ = {
+			isa = PBXGroup;
+			children = (
+				3285AB6B1CD0156B00350513 /* RaccoonRealm.h */,
+				3285ABB61CD01B9100350513 /* Insertable+Realm.swift */,
+				3285ABB71CD01B9100350513 /* RealmSerializable.swift */,
+				3285AB6D1CD0156B00350513 /* Info.plist */,
+			);
+			path = RaccoonRealm;
+			sourceTree = "<group>";
+		};
+		3285AB761CD0156B00350513 /* RaccoonRealmTests */ = {
+			isa = PBXGroup;
+			children = (
+				3285AB791CD0156B00350513 /* Info.plist */,
+				3285ABBA1CD01C2300350513 /* RealmSerializableTests.swift */,
+				3285ABAD1CD01B5500350513 /* model */,
+			);
+			path = RaccoonRealmTests;
+			sourceTree = "<group>";
+		};
+		3285AB871CD019FE00350513 /* Raccoon */ = {
+			isa = PBXGroup;
+			children = (
+				3285AB881CD019FE00350513 /* Raccoon.h */,
+				3285AB9D1CD01A3100350513 /* insertable */,
+				3285ABA51CD01A3C00350513 /* Request+Raccoon.swift */,
+				3285AB8A1CD019FE00350513 /* Info.plist */,
+			);
+			path = Raccoon;
+			sourceTree = "<group>";
+		};
+		3285AB931CD019FE00350513 /* RaccoonTests */ = {
+			isa = PBXGroup;
+			children = (
+				3285ABA71CD01A5700350513 /* Model.swift */,
+				3285ABA81CD01A5700350513 /* RaccoonResponseTest.swift */,
+				3285ABA91CD01A5700350513 /* WrapperTest.swift */,
+				3285AB961CD019FE00350513 /* Info.plist */,
+			);
+			path = RaccoonTests;
+			sourceTree = "<group>";
+		};
+		3285AB9D1CD01A3100350513 /* insertable */ = {
+			isa = PBXGroup;
+			children = (
+				3285AB9E1CD01A3100350513 /* Insertable.swift */,
+				3285AB9F1CD01A3100350513 /* wrapper */,
+			);
+			path = insertable;
+			sourceTree = "<group>";
+		};
+		3285AB9F1CD01A3100350513 /* wrapper */ = {
+			isa = PBXGroup;
+			children = (
+				3285ABA01CD01A3100350513 /* Operator.swift */,
+				3285ABA11CD01A3100350513 /* Wrapper.swift */,
+			);
+			path = wrapper;
+			sourceTree = "<group>";
+		};
+		3285ABAD1CD01B5500350513 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				3285ABAE1CD01B5500350513 /* Model.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		32DDC7751CCFA95A008FC6D5 = {
+			isa = PBXGroup;
+			children = (
+				3285AB871CD019FE00350513 /* Raccoon */,
+				3285AB931CD019FE00350513 /* RaccoonTests */,
+				32DDC7D41CCFB574008FC6D5 /* RaccoonCoreData */,
+				32DDC7E01CCFB574008FC6D5 /* RaccoonCoreDataTests */,
+				3285AB6A1CD0156B00350513 /* RaccoonRealm */,
+				3285AB761CD0156B00350513 /* RaccoonRealmTests */,
+				32DDC7801CCFA95A008FC6D5 /* Products */,
+				0B00B095F78DA95B01179020 /* Pods */,
+				CDDF6C442A285C2375364623 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		32DDC7801CCFA95A008FC6D5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				32DDC7D31CCFB574008FC6D5 /* RaccoonCoreData.framework */,
+				32DDC7DC1CCFB574008FC6D5 /* RaccoonCoreDataTests.xctest */,
+				3285AB691CD0156B00350513 /* RaccoonRealm.framework */,
+				3285AB721CD0156B00350513 /* RaccoonRealmTests.xctest */,
+				3285AB861CD019FE00350513 /* Raccoon.framework */,
+				3285AB8F1CD019FE00350513 /* RaccoonTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		32DDC7D41CCFB574008FC6D5 /* RaccoonCoreData */ = {
+			isa = PBXGroup;
+			children = (
+				32DDC7D51CCFB574008FC6D5 /* RaccoonCoreData.h */,
+				32DDC7EB1CCFB5D0008FC6D5 /* Insertable+CoreData.swift */,
+				32DDC7ED1CCFB876008FC6D5 /* NSManagedObjectContext+RaccoonCoreData.swift */,
+				32DDC7D71CCFB574008FC6D5 /* Info.plist */,
+			);
+			path = RaccoonCoreData;
+			sourceTree = "<group>";
+		};
+		32DDC7E01CCFB574008FC6D5 /* RaccoonCoreDataTests */ = {
+			isa = PBXGroup;
+			children = (
+				327A27981CD00D7300F2A921 /* model */,
+				32DDC7E11CCFB574008FC6D5 /* RaccoonCoreDataTests.swift */,
+				32DDC7E31CCFB574008FC6D5 /* Info.plist */,
+			);
+			path = RaccoonCoreDataTests;
+			sourceTree = "<group>";
+		};
+		CDDF6C442A285C2375364623 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				517943C058C0F581AD04636D /* Pods_raccoon.framework */,
+				56CDAB49497FDFB3F1DE8D2B /* Pods_RaccoonCoreData.framework */,
+				C94EE7372A2BF285BBAE2514 /* Pods_RaccoonCoreDataTests.framework */,
+				90AFAB7ECA001FC8CB657FBF /* Pods_Raccoon.framework */,
+				D67336C92085C683EB63524A /* Pods_RaccoonRealm.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		3285AB661CD0156B00350513 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3285AB6C1CD0156B00350513 /* RaccoonRealm.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3285AB831CD019FE00350513 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3285AB891CD019FE00350513 /* Raccoon.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32DDC7D01CCFB574008FC6D5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32DDC7D61CCFB574008FC6D5 /* RaccoonCoreData.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		3285AB681CD0156B00350513 /* RaccoonRealm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3285AB7E1CD0156B00350513 /* Build configuration list for PBXNativeTarget "RaccoonRealm" */;
+			buildPhases = (
+				BD4B02877CF882BDBD7312B5 /* Check Pods Manifest.lock */,
+				3285AB641CD0156B00350513 /* Sources */,
+				3285AB651CD0156B00350513 /* Frameworks */,
+				3285AB661CD0156B00350513 /* Headers */,
+				3285AB671CD0156B00350513 /* Resources */,
+				0DB73A7E91226F19049B2899 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RaccoonRealm;
+			productName = RaccoonRealm;
+			productReference = 3285AB691CD0156B00350513 /* RaccoonRealm.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		3285AB711CD0156B00350513 /* RaccoonRealmTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3285AB7F1CD0156B00350513 /* Build configuration list for PBXNativeTarget "RaccoonRealmTests" */;
+			buildPhases = (
+				3285AB6E1CD0156B00350513 /* Sources */,
+				3285AB6F1CD0156B00350513 /* Frameworks */,
+				3285AB701CD0156B00350513 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3285AB751CD0156B00350513 /* PBXTargetDependency */,
+			);
+			name = RaccoonRealmTests;
+			productName = RaccoonRealmTests;
+			productReference = 3285AB721CD0156B00350513 /* RaccoonRealmTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3285AB851CD019FE00350513 /* Raccoon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3285AB971CD019FE00350513 /* Build configuration list for PBXNativeTarget "Raccoon" */;
+			buildPhases = (
+				14EA6C829D9FFB211D5AE87F /* Check Pods Manifest.lock */,
+				3285AB811CD019FE00350513 /* Sources */,
+				3285AB821CD019FE00350513 /* Frameworks */,
+				3285AB831CD019FE00350513 /* Headers */,
+				3285AB841CD019FE00350513 /* Resources */,
+				C78A61921FA4BCF938EB0F28 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Raccoon;
+			productName = Raccoon;
+			productReference = 3285AB861CD019FE00350513 /* Raccoon.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		3285AB8E1CD019FE00350513 /* RaccoonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3285AB9A1CD019FE00350513 /* Build configuration list for PBXNativeTarget "RaccoonTests" */;
+			buildPhases = (
+				3285AB8B1CD019FE00350513 /* Sources */,
+				3285AB8C1CD019FE00350513 /* Frameworks */,
+				3285AB8D1CD019FE00350513 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3285AB921CD019FE00350513 /* PBXTargetDependency */,
+			);
+			name = RaccoonTests;
+			productName = RaccoonTests;
+			productReference = 3285AB8F1CD019FE00350513 /* RaccoonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		32DDC7D21CCFB574008FC6D5 /* RaccoonCoreData */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32DDC7E81CCFB574008FC6D5 /* Build configuration list for PBXNativeTarget "RaccoonCoreData" */;
+			buildPhases = (
+				664684D8A9926A62ABD74C8E /* Check Pods Manifest.lock */,
+				32DDC7CE1CCFB574008FC6D5 /* Sources */,
+				32DDC7CF1CCFB574008FC6D5 /* Frameworks */,
+				32DDC7D01CCFB574008FC6D5 /* Headers */,
+				32DDC7D11CCFB574008FC6D5 /* Resources */,
+				6B99F622D1BDB9D8C40E867F /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RaccoonCoreData;
+			productName = RaccoonCoreData;
+			productReference = 32DDC7D31CCFB574008FC6D5 /* RaccoonCoreData.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		32DDC7DB1CCFB574008FC6D5 /* RaccoonCoreDataTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32DDC7E91CCFB574008FC6D5 /* Build configuration list for PBXNativeTarget "RaccoonCoreDataTests" */;
+			buildPhases = (
+				5070E0E48DD746825A20B1EA /* Check Pods Manifest.lock */,
+				32DDC7D81CCFB574008FC6D5 /* Sources */,
+				32DDC7D91CCFB574008FC6D5 /* Frameworks */,
+				32DDC7DA1CCFB574008FC6D5 /* Resources */,
+				5A0EE1A3137F6BFB423B841F /* Embed Pods Frameworks */,
+				5A10610C088E9500D6B9FB87 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				32DDC7DF1CCFB574008FC6D5 /* PBXTargetDependency */,
+			);
+			name = RaccoonCoreDataTests;
+			productName = RaccoonCoreDataTests;
+			productReference = 32DDC7DC1CCFB574008FC6D5 /* RaccoonCoreDataTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		32DDC7761CCFA95A008FC6D5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = manuege;
+				TargetAttributes = {
+					3285AB681CD0156B00350513 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					3285AB711CD0156B00350513 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					3285AB851CD019FE00350513 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					3285AB8E1CD019FE00350513 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					32DDC7D21CCFB574008FC6D5 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					32DDC7DB1CCFB574008FC6D5 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = 32DDC7791CCFA95A008FC6D5 /* Build configuration list for PBXProject "raccoon" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 32DDC7751CCFA95A008FC6D5;
+			productRefGroup = 32DDC7801CCFA95A008FC6D5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3285AB851CD019FE00350513 /* Raccoon */,
+				3285AB8E1CD019FE00350513 /* RaccoonTests */,
+				32DDC7D21CCFB574008FC6D5 /* RaccoonCoreData */,
+				32DDC7DB1CCFB574008FC6D5 /* RaccoonCoreDataTests */,
+				3285AB681CD0156B00350513 /* RaccoonRealm */,
+				3285AB711CD0156B00350513 /* RaccoonRealmTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3285AB671CD0156B00350513 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3285AB701CD0156B00350513 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3285AB841CD019FE00350513 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3285AB8D1CD019FE00350513 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32DDC7D11CCFB574008FC6D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32DDC7DA1CCFB574008FC6D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0DB73A7E91226F19049B2899 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RaccoonRealm/Pods-RaccoonRealm-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		14EA6C829D9FFB211D5AE87F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5070E0E48DD746825A20B1EA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5A0EE1A3137F6BFB423B841F /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RaccoonCoreDataTests/Pods-RaccoonCoreDataTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5A10610C088E9500D6B9FB87 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RaccoonCoreDataTests/Pods-RaccoonCoreDataTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		664684D8A9926A62ABD74C8E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6B99F622D1BDB9D8C40E867F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RaccoonCoreData/Pods-RaccoonCoreData-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD4B02877CF882BDBD7312B5 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C78A61921FA4BCF938EB0F28 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Raccoon/Pods-Raccoon-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3285AB641CD0156B00350513 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3285ABB81CD01B9100350513 /* Insertable+Realm.swift in Sources */,
+				3285ABB91CD01B9100350513 /* RealmSerializable.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3285AB6E1CD0156B00350513 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3285ABBB1CD01C2300350513 /* RealmSerializableTests.swift in Sources */,
+				3285ABAF1CD01B5500350513 /* Model.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3285AB811CD019FE00350513 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3285ABA21CD01A3100350513 /* Insertable.swift in Sources */,
+				3285ABA61CD01A3C00350513 /* Request+Raccoon.swift in Sources */,
+				3285ABA31CD01A3100350513 /* Operator.swift in Sources */,
+				3285ABA41CD01A3100350513 /* Wrapper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3285AB8B1CD019FE00350513 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3285ABAC1CD01A5700350513 /* WrapperTest.swift in Sources */,
+				3285ABAB1CD01A5700350513 /* RaccoonResponseTest.swift in Sources */,
+				3285ABAA1CD01A5700350513 /* Model.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32DDC7CE1CCFB574008FC6D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32DDC7EE1CCFB876008FC6D5 /* NSManagedObjectContext+RaccoonCoreData.swift in Sources */,
+				32DDC7EC1CCFB5D0008FC6D5 /* Insertable+CoreData.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32DDC7D81CCFB574008FC6D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				327A279F1CD00D7300F2A921 /* User.swift in Sources */,
+				32DDC7E21CCFB574008FC6D5 /* RaccoonCoreDataTests.swift in Sources */,
+				327A279D1CD00D7300F2A921 /* Model.xcdatamodeld in Sources */,
+				327A279E1CD00D7300F2A921 /* User+CoreDataProperties.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3285AB751CD0156B00350513 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3285AB681CD0156B00350513 /* RaccoonRealm */;
+			targetProxy = 3285AB741CD0156B00350513 /* PBXContainerItemProxy */;
+		};
+		3285AB921CD019FE00350513 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3285AB851CD019FE00350513 /* Raccoon */;
+			targetProxy = 3285AB911CD019FE00350513 /* PBXContainerItemProxy */;
+		};
+		32DDC7DF1CCFB574008FC6D5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 32DDC7D21CCFB574008FC6D5 /* RaccoonCoreData */;
+			targetProxy = 32DDC7DE1CCFB574008FC6D5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3285AB7A1CD0156B00350513 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D524EF133A6AFE89A0F61C68 /* Pods-RaccoonRealm.debug.xcconfig */;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RaccoonRealm/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.manuege.RaccoonRealm;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		3285AB7B1CD0156B00350513 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 241D19E7C080231AB3EEA12A /* Pods-RaccoonRealm.release.xcconfig */;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RaccoonRealm/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.manuege.RaccoonRealm;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		3285AB7C1CD0156B00350513 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = RaccoonRealmTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.manuege.RaccoonRealmTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3285AB7D1CD0156B00350513 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = RaccoonRealmTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.manuege.RaccoonRealmTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		3285AB981CD019FE00350513 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFEDE8A3DA4E2155B99F17D9 /* Pods-Raccoon.debug.xcconfig */;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Raccoon/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.manuege.Raccoon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		3285AB991CD019FE00350513 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A49E2B9FF24F9FDDE78FEDFC /* Pods-Raccoon.release.xcconfig */;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Raccoon/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.manuege.Raccoon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		3285AB9B1CD019FE00350513 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = RaccoonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.manuege.RaccoonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3285AB9C1CD019FE00350513 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = RaccoonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.manuege.RaccoonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		32DDC7911CCFA95A008FC6D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		32DDC7921CCFA95A008FC6D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		32DDC7E41CCFB574008FC6D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFFE8FD5F4C7585D2FB5DBC6 /* Pods-RaccoonCoreData.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RaccoonCoreData/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.manuege.RaccoonCoreData;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		32DDC7E51CCFB574008FC6D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70E4D7B78A1447C08672BC2B /* Pods-RaccoonCoreData.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RaccoonCoreData/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.manuege.RaccoonCoreData;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		32DDC7E61CCFB574008FC6D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 264CCCE05E3BD8E908D9D87B /* Pods-RaccoonCoreDataTests.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = RaccoonCoreDataTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.manuege.RaccoonCoreDataTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		32DDC7E71CCFB574008FC6D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B6AECAA8C85C66B03839794 /* Pods-RaccoonCoreDataTests.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = RaccoonCoreDataTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.manuege.RaccoonCoreDataTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3285AB7E1CD0156B00350513 /* Build configuration list for PBXNativeTarget "RaccoonRealm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3285AB7A1CD0156B00350513 /* Debug */,
+				3285AB7B1CD0156B00350513 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3285AB7F1CD0156B00350513 /* Build configuration list for PBXNativeTarget "RaccoonRealmTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3285AB7C1CD0156B00350513 /* Debug */,
+				3285AB7D1CD0156B00350513 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3285AB971CD019FE00350513 /* Build configuration list for PBXNativeTarget "Raccoon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3285AB981CD019FE00350513 /* Debug */,
+				3285AB991CD019FE00350513 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3285AB9A1CD019FE00350513 /* Build configuration list for PBXNativeTarget "RaccoonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3285AB9B1CD019FE00350513 /* Debug */,
+				3285AB9C1CD019FE00350513 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		32DDC7791CCFA95A008FC6D5 /* Build configuration list for PBXProject "raccoon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32DDC7911CCFA95A008FC6D5 /* Debug */,
+				32DDC7921CCFA95A008FC6D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		32DDC7E81CCFB574008FC6D5 /* Build configuration list for PBXNativeTarget "RaccoonCoreData" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32DDC7E41CCFB574008FC6D5 /* Debug */,
+				32DDC7E51CCFB574008FC6D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		32DDC7E91CCFB574008FC6D5 /* Build configuration list for PBXNativeTarget "RaccoonCoreDataTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32DDC7E61CCFB574008FC6D5 /* Debug */,
+				32DDC7E71CCFB574008FC6D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		327A27991CD00D7300F2A921 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				327A279A1CD00D7300F2A921 /* Model.xcdatamodel */,
+			);
+			currentVersion = 327A279A1CD00D7300F2A921 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 32DDC7761CCFA95A008FC6D5 /* Project object */;
+}
