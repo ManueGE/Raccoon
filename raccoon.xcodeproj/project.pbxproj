@@ -10,33 +10,49 @@
 		327A279D1CD00D7300F2A921 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 327A27991CD00D7300F2A921 /* Model.xcdatamodeld */; };
 		327A279E1CD00D7300F2A921 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327A279B1CD00D7300F2A921 /* User+CoreDataProperties.swift */; };
 		327A279F1CD00D7300F2A921 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327A279C1CD00D7300F2A921 /* User.swift */; };
-		32DDC7831CCFA95A008FC6D5 /* raccoon.h in Headers */ = {isa = PBXBuildFile; fileRef = 32DDC7821CCFA95A008FC6D5 /* raccoon.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		32DDC78A1CCFA95A008FC6D5 /* Raccoon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DDC77F1CCFA95A008FC6D5 /* Raccoon.framework */; };
-		32DDC7BF1CCFAFC9008FC6D5 /* Request+Raccoon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DDC7BE1CCFAFC9008FC6D5 /* Request+Raccoon.swift */; };
-		32DDC7C51CCFAFED008FC6D5 /* Insertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DDC7C11CCFAFED008FC6D5 /* Insertable.swift */; };
-		32DDC7C61CCFAFED008FC6D5 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DDC7C31CCFAFED008FC6D5 /* Operator.swift */; };
-		32DDC7C71CCFAFED008FC6D5 /* Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DDC7C41CCFAFED008FC6D5 /* Wrapper.swift */; };
-		32DDC7CA1CCFB37E008FC6D5 /* RaccoonResponseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DDC7C81CCFB37E008FC6D5 /* RaccoonResponseTest.swift */; };
-		32DDC7CB1CCFB37E008FC6D5 /* WrapperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DDC7C91CCFB37E008FC6D5 /* WrapperTest.swift */; };
-		32DDC7CD1CCFB449008FC6D5 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DDC7CC1CCFB449008FC6D5 /* Model.swift */; };
+		3285AB6C1CD0156B00350513 /* RaccoonRealm.h in Headers */ = {isa = PBXBuildFile; fileRef = 3285AB6B1CD0156B00350513 /* RaccoonRealm.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3285AB731CD0156B00350513 /* RaccoonRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3285AB691CD0156B00350513 /* RaccoonRealm.framework */; };
+		3285AB891CD019FE00350513 /* Raccoon.h in Headers */ = {isa = PBXBuildFile; fileRef = 3285AB881CD019FE00350513 /* Raccoon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3285AB901CD019FE00350513 /* Raccoon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3285AB861CD019FE00350513 /* Raccoon.framework */; };
+		3285ABA21CD01A3100350513 /* Insertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3285AB9E1CD01A3100350513 /* Insertable.swift */; };
+		3285ABA31CD01A3100350513 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3285ABA01CD01A3100350513 /* Operator.swift */; };
+		3285ABA41CD01A3100350513 /* Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3285ABA11CD01A3100350513 /* Wrapper.swift */; };
+		3285ABA61CD01A3C00350513 /* Request+Raccoon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3285ABA51CD01A3C00350513 /* Request+Raccoon.swift */; };
+		3285ABAA1CD01A5700350513 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3285ABA71CD01A5700350513 /* Model.swift */; };
+		3285ABAB1CD01A5700350513 /* RaccoonResponseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3285ABA81CD01A5700350513 /* RaccoonResponseTest.swift */; };
+		3285ABAC1CD01A5700350513 /* WrapperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3285ABA91CD01A5700350513 /* WrapperTest.swift */; };
+		3285ABAF1CD01B5500350513 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3285ABAE1CD01B5500350513 /* Model.swift */; };
+		3285ABB81CD01B9100350513 /* Insertable+Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3285ABB61CD01B9100350513 /* Insertable+Realm.swift */; };
+		3285ABB91CD01B9100350513 /* RealmSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3285ABB71CD01B9100350513 /* RealmSerializable.swift */; };
+		3285ABBB1CD01C2300350513 /* RealmSerializableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3285ABBA1CD01C2300350513 /* RealmSerializableTests.swift */; };
+		3285ABBC1CD01C3F00350513 /* Raccoon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3285AB861CD019FE00350513 /* Raccoon.framework */; };
+		3285ABBD1CD01C4300350513 /* Raccoon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3285AB861CD019FE00350513 /* Raccoon.framework */; };
+		32AE41301CD0BB0B00BFA982 /* RaccoonRealmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AE412F1CD0BB0B00BFA982 /* RaccoonRealmTests.swift */; };
 		32DDC7D61CCFB574008FC6D5 /* RaccoonCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = 32DDC7D51CCFB574008FC6D5 /* RaccoonCoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		32DDC7DD1CCFB574008FC6D5 /* RaccoonCoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DDC7D31CCFB574008FC6D5 /* RaccoonCoreData.framework */; };
 		32DDC7E21CCFB574008FC6D5 /* RaccoonCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DDC7E11CCFB574008FC6D5 /* RaccoonCoreDataTests.swift */; };
-		32DDC7EA1CCFB595008FC6D5 /* Raccoon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DDC77F1CCFA95A008FC6D5 /* Raccoon.framework */; };
 		32DDC7EC1CCFB5D0008FC6D5 /* Insertable+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DDC7EB1CCFB5D0008FC6D5 /* Insertable+CoreData.swift */; };
 		32DDC7EE1CCFB876008FC6D5 /* NSManagedObjectContext+RaccoonCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DDC7ED1CCFB876008FC6D5 /* NSManagedObjectContext+RaccoonCoreData.swift */; };
-		36F7A2A471062810B1340242 /* Pods_raccoon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 517943C058C0F581AD04636D /* Pods_raccoon.framework */; };
+		4B92D56886FCAA22D4ECC7E7 /* Pods_RaccoonRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D67336C92085C683EB63524A /* Pods_RaccoonRealm.framework */; };
 		975AD30A1C5B21181CE6F70C /* Pods_RaccoonCoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56CDAB49497FDFB3F1DE8D2B /* Pods_RaccoonCoreData.framework */; };
 		F76479C30CF44BABB0DBAFA2 /* Pods_RaccoonCoreDataTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C94EE7372A2BF285BBAE2514 /* Pods_RaccoonCoreDataTests.framework */; };
+		FC4719DF68799D1C9C831662 /* Pods_Raccoon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90AFAB7ECA001FC8CB657FBF /* Pods_Raccoon.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		32DDC78B1CCFA95A008FC6D5 /* PBXContainerItemProxy */ = {
+		3285AB741CD0156B00350513 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 32DDC7761CCFA95A008FC6D5 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 32DDC77E1CCFA95A008FC6D5;
-			remoteInfo = raccoon;
+			remoteGlobalIDString = 3285AB681CD0156B00350513;
+			remoteInfo = RaccoonRealm;
+		};
+		3285AB911CD019FE00350513 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 32DDC7761CCFA95A008FC6D5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3285AB851CD019FE00350513;
+			remoteInfo = Raccoon;
 		};
 		32DDC7DE1CCFB574008FC6D5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -49,22 +65,33 @@
 
 /* Begin PBXFileReference section */
 		1B6AECAA8C85C66B03839794 /* Pods-RaccoonCoreDataTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaccoonCoreDataTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RaccoonCoreDataTests/Pods-RaccoonCoreDataTests.release.xcconfig"; sourceTree = "<group>"; };
+		241D19E7C080231AB3EEA12A /* Pods-RaccoonRealm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaccoonRealm.release.xcconfig"; path = "Pods/Target Support Files/Pods-RaccoonRealm/Pods-RaccoonRealm.release.xcconfig"; sourceTree = "<group>"; };
 		264CCCE05E3BD8E908D9D87B /* Pods-RaccoonCoreDataTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaccoonCoreDataTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RaccoonCoreDataTests/Pods-RaccoonCoreDataTests.debug.xcconfig"; sourceTree = "<group>"; };
 		327A279A1CD00D7300F2A921 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		327A279B1CD00D7300F2A921 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		327A279C1CD00D7300F2A921 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		32DDC77F1CCFA95A008FC6D5 /* Raccoon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Raccoon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		32DDC7821CCFA95A008FC6D5 /* raccoon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = raccoon.h; sourceTree = "<group>"; };
-		32DDC7841CCFA95A008FC6D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		32DDC7891CCFA95A008FC6D5 /* raccoonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = raccoonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		32DDC7901CCFA95A008FC6D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		32DDC7BE1CCFAFC9008FC6D5 /* Request+Raccoon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Request+Raccoon.swift"; sourceTree = "<group>"; };
-		32DDC7C11CCFAFED008FC6D5 /* Insertable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Insertable.swift; sourceTree = "<group>"; };
-		32DDC7C31CCFAFED008FC6D5 /* Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
-		32DDC7C41CCFAFED008FC6D5 /* Wrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wrapper.swift; sourceTree = "<group>"; };
-		32DDC7C81CCFB37E008FC6D5 /* RaccoonResponseTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaccoonResponseTest.swift; sourceTree = "<group>"; };
-		32DDC7C91CCFB37E008FC6D5 /* WrapperTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrapperTest.swift; sourceTree = "<group>"; };
-		32DDC7CC1CCFB449008FC6D5 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		3285AB691CD0156B00350513 /* RaccoonRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RaccoonRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3285AB6B1CD0156B00350513 /* RaccoonRealm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RaccoonRealm.h; sourceTree = "<group>"; };
+		3285AB6D1CD0156B00350513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3285AB721CD0156B00350513 /* RaccoonRealmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaccoonRealmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3285AB791CD0156B00350513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3285AB861CD019FE00350513 /* Raccoon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Raccoon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3285AB881CD019FE00350513 /* Raccoon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Raccoon.h; sourceTree = "<group>"; };
+		3285AB8A1CD019FE00350513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3285AB8F1CD019FE00350513 /* RaccoonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaccoonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3285AB961CD019FE00350513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3285AB9E1CD01A3100350513 /* Insertable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Insertable.swift; sourceTree = "<group>"; };
+		3285ABA01CD01A3100350513 /* Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
+		3285ABA11CD01A3100350513 /* Wrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wrapper.swift; sourceTree = "<group>"; };
+		3285ABA51CD01A3C00350513 /* Request+Raccoon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Request+Raccoon.swift"; sourceTree = "<group>"; };
+		3285ABA71CD01A5700350513 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		3285ABA81CD01A5700350513 /* RaccoonResponseTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaccoonResponseTest.swift; sourceTree = "<group>"; };
+		3285ABA91CD01A5700350513 /* WrapperTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrapperTest.swift; sourceTree = "<group>"; };
+		3285ABAE1CD01B5500350513 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		3285ABB61CD01B9100350513 /* Insertable+Realm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Insertable+Realm.swift"; sourceTree = "<group>"; };
+		3285ABB71CD01B9100350513 /* RealmSerializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmSerializable.swift; sourceTree = "<group>"; };
+		3285ABBA1CD01C2300350513 /* RealmSerializableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmSerializableTests.swift; sourceTree = "<group>"; };
+		32AE412F1CD0BB0B00BFA982 /* RaccoonRealmTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaccoonRealmTests.swift; sourceTree = "<group>"; };
 		32DDC7D31CCFB574008FC6D5 /* RaccoonCoreData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RaccoonCoreData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32DDC7D51CCFB574008FC6D5 /* RaccoonCoreData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RaccoonCoreData.h; sourceTree = "<group>"; };
 		32DDC7D71CCFB574008FC6D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,24 +105,46 @@
 		5FF2C09BA053636305DF6346 /* Pods-raccoon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-raccoon.release.xcconfig"; path = "Pods/Target Support Files/Pods-raccoon/Pods-raccoon.release.xcconfig"; sourceTree = "<group>"; };
 		70E4D7B78A1447C08672BC2B /* Pods-RaccoonCoreData.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaccoonCoreData.release.xcconfig"; path = "Pods/Target Support Files/Pods-RaccoonCoreData/Pods-RaccoonCoreData.release.xcconfig"; sourceTree = "<group>"; };
 		897A7B9FE36FF92D1630DD3A /* Pods-raccoon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-raccoon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-raccoon/Pods-raccoon.debug.xcconfig"; sourceTree = "<group>"; };
+		90AFAB7ECA001FC8CB657FBF /* Pods_Raccoon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Raccoon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A49E2B9FF24F9FDDE78FEDFC /* Pods-Raccoon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Raccoon.release.xcconfig"; path = "Pods/Target Support Files/Pods-Raccoon/Pods-Raccoon.release.xcconfig"; sourceTree = "<group>"; };
+		AFEDE8A3DA4E2155B99F17D9 /* Pods-Raccoon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Raccoon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Raccoon/Pods-Raccoon.debug.xcconfig"; sourceTree = "<group>"; };
 		C94EE7372A2BF285BBAE2514 /* Pods_RaccoonCoreDataTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RaccoonCoreDataTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D524EF133A6AFE89A0F61C68 /* Pods-RaccoonRealm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaccoonRealm.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RaccoonRealm/Pods-RaccoonRealm.debug.xcconfig"; sourceTree = "<group>"; };
+		D67336C92085C683EB63524A /* Pods_RaccoonRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RaccoonRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFFE8FD5F4C7585D2FB5DBC6 /* Pods-RaccoonCoreData.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaccoonCoreData.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RaccoonCoreData/Pods-RaccoonCoreData.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		32DDC77B1CCFA95A008FC6D5 /* Frameworks */ = {
+		3285AB651CD0156B00350513 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36F7A2A471062810B1340242 /* Pods_raccoon.framework in Frameworks */,
+				3285ABBD1CD01C4300350513 /* Raccoon.framework in Frameworks */,
+				4B92D56886FCAA22D4ECC7E7 /* Pods_RaccoonRealm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		32DDC7861CCFA95A008FC6D5 /* Frameworks */ = {
+		3285AB6F1CD0156B00350513 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32DDC78A1CCFA95A008FC6D5 /* Raccoon.framework in Frameworks */,
+				3285AB731CD0156B00350513 /* RaccoonRealm.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3285AB821CD019FE00350513 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC4719DF68799D1C9C831662 /* Pods_Raccoon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3285AB8C1CD019FE00350513 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3285AB901CD019FE00350513 /* Raccoon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,7 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32DDC7EA1CCFB595008FC6D5 /* Raccoon.framework in Frameworks */,
+				3285ABBC1CD01C3F00350513 /* Raccoon.framework in Frameworks */,
 				975AD30A1C5B21181CE6F70C /* Pods_RaccoonCoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -129,6 +178,10 @@
 				70E4D7B78A1447C08672BC2B /* Pods-RaccoonCoreData.release.xcconfig */,
 				264CCCE05E3BD8E908D9D87B /* Pods-RaccoonCoreDataTests.debug.xcconfig */,
 				1B6AECAA8C85C66B03839794 /* Pods-RaccoonCoreDataTests.release.xcconfig */,
+				D524EF133A6AFE89A0F61C68 /* Pods-RaccoonRealm.debug.xcconfig */,
+				241D19E7C080231AB3EEA12A /* Pods-RaccoonRealm.release.xcconfig */,
+				AFEDE8A3DA4E2155B99F17D9 /* Pods-Raccoon.debug.xcconfig */,
+				A49E2B9FF24F9FDDE78FEDFC /* Pods-Raccoon.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -143,13 +196,85 @@
 			path = model;
 			sourceTree = "<group>";
 		};
+		3285AB6A1CD0156B00350513 /* RaccoonRealm */ = {
+			isa = PBXGroup;
+			children = (
+				3285AB6B1CD0156B00350513 /* RaccoonRealm.h */,
+				3285ABB61CD01B9100350513 /* Insertable+Realm.swift */,
+				3285ABB71CD01B9100350513 /* RealmSerializable.swift */,
+				3285AB6D1CD0156B00350513 /* Info.plist */,
+			);
+			path = RaccoonRealm;
+			sourceTree = "<group>";
+		};
+		3285AB761CD0156B00350513 /* RaccoonRealmTests */ = {
+			isa = PBXGroup;
+			children = (
+				3285AB791CD0156B00350513 /* Info.plist */,
+				3285ABBA1CD01C2300350513 /* RealmSerializableTests.swift */,
+				32AE412F1CD0BB0B00BFA982 /* RaccoonRealmTests.swift */,
+				3285ABAD1CD01B5500350513 /* model */,
+			);
+			path = RaccoonRealmTests;
+			sourceTree = "<group>";
+		};
+		3285AB871CD019FE00350513 /* Raccoon */ = {
+			isa = PBXGroup;
+			children = (
+				3285AB881CD019FE00350513 /* Raccoon.h */,
+				3285AB9D1CD01A3100350513 /* insertable */,
+				3285ABA51CD01A3C00350513 /* Request+Raccoon.swift */,
+				3285AB8A1CD019FE00350513 /* Info.plist */,
+			);
+			path = Raccoon;
+			sourceTree = "<group>";
+		};
+		3285AB931CD019FE00350513 /* RaccoonTests */ = {
+			isa = PBXGroup;
+			children = (
+				3285ABA71CD01A5700350513 /* Model.swift */,
+				3285ABA81CD01A5700350513 /* RaccoonResponseTest.swift */,
+				3285ABA91CD01A5700350513 /* WrapperTest.swift */,
+				3285AB961CD019FE00350513 /* Info.plist */,
+			);
+			path = RaccoonTests;
+			sourceTree = "<group>";
+		};
+		3285AB9D1CD01A3100350513 /* insertable */ = {
+			isa = PBXGroup;
+			children = (
+				3285AB9E1CD01A3100350513 /* Insertable.swift */,
+				3285AB9F1CD01A3100350513 /* wrapper */,
+			);
+			path = insertable;
+			sourceTree = "<group>";
+		};
+		3285AB9F1CD01A3100350513 /* wrapper */ = {
+			isa = PBXGroup;
+			children = (
+				3285ABA01CD01A3100350513 /* Operator.swift */,
+				3285ABA11CD01A3100350513 /* Wrapper.swift */,
+			);
+			path = wrapper;
+			sourceTree = "<group>";
+		};
+		3285ABAD1CD01B5500350513 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				3285ABAE1CD01B5500350513 /* Model.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		32DDC7751CCFA95A008FC6D5 = {
 			isa = PBXGroup;
 			children = (
-				32DDC7811CCFA95A008FC6D5 /* raccoon */,
-				32DDC78D1CCFA95A008FC6D5 /* raccoonTests */,
+				3285AB871CD019FE00350513 /* Raccoon */,
+				3285AB931CD019FE00350513 /* RaccoonTests */,
 				32DDC7D41CCFB574008FC6D5 /* RaccoonCoreData */,
 				32DDC7E01CCFB574008FC6D5 /* RaccoonCoreDataTests */,
+				3285AB6A1CD0156B00350513 /* RaccoonRealm */,
+				3285AB761CD0156B00350513 /* RaccoonRealmTests */,
 				32DDC7801CCFA95A008FC6D5 /* Products */,
 				0B00B095F78DA95B01179020 /* Pods */,
 				CDDF6C442A285C2375364623 /* Frameworks */,
@@ -159,52 +284,14 @@
 		32DDC7801CCFA95A008FC6D5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				32DDC77F1CCFA95A008FC6D5 /* Raccoon.framework */,
-				32DDC7891CCFA95A008FC6D5 /* raccoonTests.xctest */,
 				32DDC7D31CCFB574008FC6D5 /* RaccoonCoreData.framework */,
 				32DDC7DC1CCFB574008FC6D5 /* RaccoonCoreDataTests.xctest */,
+				3285AB691CD0156B00350513 /* RaccoonRealm.framework */,
+				3285AB721CD0156B00350513 /* RaccoonRealmTests.xctest */,
+				3285AB861CD019FE00350513 /* Raccoon.framework */,
+				3285AB8F1CD019FE00350513 /* RaccoonTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		32DDC7811CCFA95A008FC6D5 /* raccoon */ = {
-			isa = PBXGroup;
-			children = (
-				32DDC7821CCFA95A008FC6D5 /* raccoon.h */,
-				32DDC7BE1CCFAFC9008FC6D5 /* Request+Raccoon.swift */,
-				32DDC7C01CCFAFED008FC6D5 /* insertable */,
-				32DDC7841CCFA95A008FC6D5 /* Info.plist */,
-			);
-			path = raccoon;
-			sourceTree = "<group>";
-		};
-		32DDC78D1CCFA95A008FC6D5 /* raccoonTests */ = {
-			isa = PBXGroup;
-			children = (
-				32DDC7CC1CCFB449008FC6D5 /* Model.swift */,
-				32DDC7C81CCFB37E008FC6D5 /* RaccoonResponseTest.swift */,
-				32DDC7C91CCFB37E008FC6D5 /* WrapperTest.swift */,
-				32DDC7901CCFA95A008FC6D5 /* Info.plist */,
-			);
-			path = raccoonTests;
-			sourceTree = "<group>";
-		};
-		32DDC7C01CCFAFED008FC6D5 /* insertable */ = {
-			isa = PBXGroup;
-			children = (
-				32DDC7C11CCFAFED008FC6D5 /* Insertable.swift */,
-				32DDC7C21CCFAFED008FC6D5 /* wrapper */,
-			);
-			path = insertable;
-			sourceTree = "<group>";
-		};
-		32DDC7C21CCFAFED008FC6D5 /* wrapper */ = {
-			isa = PBXGroup;
-			children = (
-				32DDC7C31CCFAFED008FC6D5 /* Operator.swift */,
-				32DDC7C41CCFAFED008FC6D5 /* Wrapper.swift */,
-			);
-			path = wrapper;
 			sourceTree = "<group>";
 		};
 		32DDC7D41CCFB574008FC6D5 /* RaccoonCoreData */ = {
@@ -234,6 +321,8 @@
 				517943C058C0F581AD04636D /* Pods_raccoon.framework */,
 				56CDAB49497FDFB3F1DE8D2B /* Pods_RaccoonCoreData.framework */,
 				C94EE7372A2BF285BBAE2514 /* Pods_RaccoonCoreDataTests.framework */,
+				90AFAB7ECA001FC8CB657FBF /* Pods_Raccoon.framework */,
+				D67336C92085C683EB63524A /* Pods_RaccoonRealm.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -241,11 +330,19 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		32DDC77C1CCFA95A008FC6D5 /* Headers */ = {
+		3285AB661CD0156B00350513 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32DDC7831CCFA95A008FC6D5 /* raccoon.h in Headers */,
+				3285AB6C1CD0156B00350513 /* RaccoonRealm.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3285AB831CD019FE00350513 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3285AB891CD019FE00350513 /* Raccoon.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,42 +357,80 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		32DDC77E1CCFA95A008FC6D5 /* Raccoon */ = {
+		3285AB681CD0156B00350513 /* RaccoonRealm */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 32DDC7931CCFA95A008FC6D5 /* Build configuration list for PBXNativeTarget "Raccoon" */;
+			buildConfigurationList = 3285AB7E1CD0156B00350513 /* Build configuration list for PBXNativeTarget "RaccoonRealm" */;
 			buildPhases = (
-				A3C6EB867E368FBBDE8164EA /* Check Pods Manifest.lock */,
-				32DDC77A1CCFA95A008FC6D5 /* Sources */,
-				32DDC77B1CCFA95A008FC6D5 /* Frameworks */,
-				32DDC77C1CCFA95A008FC6D5 /* Headers */,
-				32DDC77D1CCFA95A008FC6D5 /* Resources */,
-				C7AB0C5044DA77AF07AFC9DC /* Copy Pods Resources */,
+				BD4B02877CF882BDBD7312B5 /* Check Pods Manifest.lock */,
+				3285AB641CD0156B00350513 /* Sources */,
+				3285AB651CD0156B00350513 /* Frameworks */,
+				3285AB661CD0156B00350513 /* Headers */,
+				3285AB671CD0156B00350513 /* Resources */,
+				0DB73A7E91226F19049B2899 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RaccoonRealm;
+			productName = RaccoonRealm;
+			productReference = 3285AB691CD0156B00350513 /* RaccoonRealm.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		3285AB711CD0156B00350513 /* RaccoonRealmTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3285AB7F1CD0156B00350513 /* Build configuration list for PBXNativeTarget "RaccoonRealmTests" */;
+			buildPhases = (
+				3285AB6E1CD0156B00350513 /* Sources */,
+				3285AB6F1CD0156B00350513 /* Frameworks */,
+				3285AB701CD0156B00350513 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3285AB751CD0156B00350513 /* PBXTargetDependency */,
+			);
+			name = RaccoonRealmTests;
+			productName = RaccoonRealmTests;
+			productReference = 3285AB721CD0156B00350513 /* RaccoonRealmTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3285AB851CD019FE00350513 /* Raccoon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3285AB971CD019FE00350513 /* Build configuration list for PBXNativeTarget "Raccoon" */;
+			buildPhases = (
+				14EA6C829D9FFB211D5AE87F /* Check Pods Manifest.lock */,
+				3285AB811CD019FE00350513 /* Sources */,
+				3285AB821CD019FE00350513 /* Frameworks */,
+				3285AB831CD019FE00350513 /* Headers */,
+				3285AB841CD019FE00350513 /* Resources */,
+				C78A61921FA4BCF938EB0F28 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Raccoon;
-			productName = raccoon;
-			productReference = 32DDC77F1CCFA95A008FC6D5 /* Raccoon.framework */;
+			productName = Raccoon;
+			productReference = 3285AB861CD019FE00350513 /* Raccoon.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		32DDC7881CCFA95A008FC6D5 /* raccoonTests */ = {
+		3285AB8E1CD019FE00350513 /* RaccoonTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 32DDC7961CCFA95A008FC6D5 /* Build configuration list for PBXNativeTarget "raccoonTests" */;
+			buildConfigurationList = 3285AB9A1CD019FE00350513 /* Build configuration list for PBXNativeTarget "RaccoonTests" */;
 			buildPhases = (
-				32DDC7851CCFA95A008FC6D5 /* Sources */,
-				32DDC7861CCFA95A008FC6D5 /* Frameworks */,
-				32DDC7871CCFA95A008FC6D5 /* Resources */,
+				3285AB8B1CD019FE00350513 /* Sources */,
+				3285AB8C1CD019FE00350513 /* Frameworks */,
+				3285AB8D1CD019FE00350513 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				32DDC78C1CCFA95A008FC6D5 /* PBXTargetDependency */,
+				3285AB921CD019FE00350513 /* PBXTargetDependency */,
 			);
-			name = raccoonTests;
-			productName = raccoonTests;
-			productReference = 32DDC7891CCFA95A008FC6D5 /* raccoonTests.xctest */;
+			name = RaccoonTests;
+			productName = RaccoonTests;
+			productReference = 3285AB8F1CD019FE00350513 /* RaccoonTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		32DDC7D21CCFB574008FC6D5 /* RaccoonCoreData */ = {
@@ -349,10 +484,16 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = manuege;
 				TargetAttributes = {
-					32DDC77E1CCFA95A008FC6D5 = {
+					3285AB681CD0156B00350513 = {
 						CreatedOnToolsVersion = 7.3;
 					};
-					32DDC7881CCFA95A008FC6D5 = {
+					3285AB711CD0156B00350513 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					3285AB851CD019FE00350513 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					3285AB8E1CD019FE00350513 = {
 						CreatedOnToolsVersion = 7.3;
 					};
 					32DDC7D21CCFB574008FC6D5 = {
@@ -375,23 +516,39 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				32DDC77E1CCFA95A008FC6D5 /* Raccoon */,
-				32DDC7881CCFA95A008FC6D5 /* raccoonTests */,
+				3285AB851CD019FE00350513 /* Raccoon */,
+				3285AB8E1CD019FE00350513 /* RaccoonTests */,
 				32DDC7D21CCFB574008FC6D5 /* RaccoonCoreData */,
 				32DDC7DB1CCFB574008FC6D5 /* RaccoonCoreDataTests */,
+				3285AB681CD0156B00350513 /* RaccoonRealm */,
+				3285AB711CD0156B00350513 /* RaccoonRealmTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		32DDC77D1CCFA95A008FC6D5 /* Resources */ = {
+		3285AB671CD0156B00350513 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		32DDC7871CCFA95A008FC6D5 /* Resources */ = {
+		3285AB701CD0156B00350513 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3285AB841CD019FE00350513 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3285AB8D1CD019FE00350513 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -415,6 +572,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0DB73A7E91226F19049B2899 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RaccoonRealm/Pods-RaccoonRealm-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		14EA6C829D9FFB211D5AE87F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		5070E0E48DD746825A20B1EA /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -490,7 +677,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RaccoonCoreData/Pods-RaccoonCoreData-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A3C6EB867E368FBBDE8164EA /* Check Pods Manifest.lock */ = {
+		BD4B02877CF882BDBD7312B5 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -505,7 +692,7 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		C7AB0C5044DA77AF07AFC9DC /* Copy Pods Resources */ = {
+		C78A61921FA4BCF938EB0F28 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -517,30 +704,49 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-raccoon/Pods-raccoon-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Raccoon/Pods-Raccoon-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		32DDC77A1CCFA95A008FC6D5 /* Sources */ = {
+		3285AB641CD0156B00350513 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32DDC7C51CCFAFED008FC6D5 /* Insertable.swift in Sources */,
-				32DDC7C71CCFAFED008FC6D5 /* Wrapper.swift in Sources */,
-				32DDC7C61CCFAFED008FC6D5 /* Operator.swift in Sources */,
-				32DDC7BF1CCFAFC9008FC6D5 /* Request+Raccoon.swift in Sources */,
+				3285ABB81CD01B9100350513 /* Insertable+Realm.swift in Sources */,
+				3285ABB91CD01B9100350513 /* RealmSerializable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		32DDC7851CCFA95A008FC6D5 /* Sources */ = {
+		3285AB6E1CD0156B00350513 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32DDC7CD1CCFB449008FC6D5 /* Model.swift in Sources */,
-				32DDC7CA1CCFB37E008FC6D5 /* RaccoonResponseTest.swift in Sources */,
-				32DDC7CB1CCFB37E008FC6D5 /* WrapperTest.swift in Sources */,
+				3285ABBB1CD01C2300350513 /* RealmSerializableTests.swift in Sources */,
+				3285ABAF1CD01B5500350513 /* Model.swift in Sources */,
+				32AE41301CD0BB0B00BFA982 /* RaccoonRealmTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3285AB811CD019FE00350513 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3285ABA21CD01A3100350513 /* Insertable.swift in Sources */,
+				3285ABA61CD01A3C00350513 /* Request+Raccoon.swift in Sources */,
+				3285ABA31CD01A3100350513 /* Operator.swift in Sources */,
+				3285ABA41CD01A3100350513 /* Wrapper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3285AB8B1CD019FE00350513 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3285ABAC1CD01A5700350513 /* WrapperTest.swift in Sources */,
+				3285ABAB1CD01A5700350513 /* RaccoonResponseTest.swift in Sources */,
+				3285ABAA1CD01A5700350513 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,10 +773,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		32DDC78C1CCFA95A008FC6D5 /* PBXTargetDependency */ = {
+		3285AB751CD0156B00350513 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 32DDC77E1CCFA95A008FC6D5 /* Raccoon */;
-			targetProxy = 32DDC78B1CCFA95A008FC6D5 /* PBXContainerItemProxy */;
+			target = 3285AB681CD0156B00350513 /* RaccoonRealm */;
+			targetProxy = 3285AB741CD0156B00350513 /* PBXContainerItemProxy */;
+		};
+		3285AB921CD019FE00350513 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3285AB851CD019FE00350513 /* Raccoon */;
+			targetProxy = 3285AB911CD019FE00350513 /* PBXContainerItemProxy */;
 		};
 		32DDC7DF1CCFB574008FC6D5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -580,6 +791,117 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		3285AB7A1CD0156B00350513 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D524EF133A6AFE89A0F61C68 /* Pods-RaccoonRealm.debug.xcconfig */;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RaccoonRealm/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.manuege.RaccoonRealm;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		3285AB7B1CD0156B00350513 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 241D19E7C080231AB3EEA12A /* Pods-RaccoonRealm.release.xcconfig */;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RaccoonRealm/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.manuege.RaccoonRealm;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		3285AB7C1CD0156B00350513 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = RaccoonRealmTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.manuege.RaccoonRealmTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3285AB7D1CD0156B00350513 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = RaccoonRealmTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.manuege.RaccoonRealmTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		3285AB981CD019FE00350513 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFEDE8A3DA4E2155B99F17D9 /* Pods-Raccoon.debug.xcconfig */;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Raccoon/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.manuege.Raccoon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		3285AB991CD019FE00350513 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A49E2B9FF24F9FDDE78FEDFC /* Pods-Raccoon.release.xcconfig */;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Raccoon/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.manuege.Raccoon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		3285AB9B1CD019FE00350513 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = RaccoonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.manuege.RaccoonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3285AB9C1CD019FE00350513 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = RaccoonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.manuege.RaccoonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		32DDC7911CCFA95A008FC6D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -671,66 +993,6 @@
 			};
 			name = Release;
 		};
-		32DDC7941CCFA95A008FC6D5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 897A7B9FE36FF92D1630DD3A /* Pods-raccoon.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = raccoon/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.manuege.raccoon;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Debug;
-		};
-		32DDC7951CCFA95A008FC6D5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5FF2C09BA053636305DF6346 /* Pods-raccoon.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = raccoon/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.manuege.raccoon;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		32DDC7971CCFA95A008FC6D5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = raccoonTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.manuege.raccoonTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Debug;
-		};
-		32DDC7981CCFA95A008FC6D5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = raccoonTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.manuege.raccoonTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		32DDC7E41CCFB574008FC6D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FFFE8FD5F4C7585D2FB5DBC6 /* Pods-RaccoonCoreData.debug.xcconfig */;
@@ -793,29 +1055,47 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3285AB7E1CD0156B00350513 /* Build configuration list for PBXNativeTarget "RaccoonRealm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3285AB7A1CD0156B00350513 /* Debug */,
+				3285AB7B1CD0156B00350513 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3285AB7F1CD0156B00350513 /* Build configuration list for PBXNativeTarget "RaccoonRealmTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3285AB7C1CD0156B00350513 /* Debug */,
+				3285AB7D1CD0156B00350513 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3285AB971CD019FE00350513 /* Build configuration list for PBXNativeTarget "Raccoon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3285AB981CD019FE00350513 /* Debug */,
+				3285AB991CD019FE00350513 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3285AB9A1CD019FE00350513 /* Build configuration list for PBXNativeTarget "RaccoonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3285AB9B1CD019FE00350513 /* Debug */,
+				3285AB9C1CD019FE00350513 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		32DDC7791CCFA95A008FC6D5 /* Build configuration list for PBXProject "raccoon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				32DDC7911CCFA95A008FC6D5 /* Debug */,
 				32DDC7921CCFA95A008FC6D5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		32DDC7931CCFA95A008FC6D5 /* Build configuration list for PBXNativeTarget "Raccoon" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				32DDC7941CCFA95A008FC6D5 /* Debug */,
-				32DDC7951CCFA95A008FC6D5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		32DDC7961CCFA95A008FC6D5 /* Build configuration list for PBXNativeTarget "raccoonTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				32DDC7971CCFA95A008FC6D5 /* Debug */,
-				32DDC7981CCFA95A008FC6D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
