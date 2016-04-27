@@ -30,11 +30,10 @@ struct KeyPathTransformer<JSONType, PropertyType>: KeyPathConvertible {
     }
     
     func value(inJSON json: [String : AnyObject]) -> AnyObject? {
-        guard let rawValue = keyPath.value(inJSON: json) as? JSONType else {
+        guard let rawValue = keyPath.value(inJSON: json) else {
             return nil
         }
-        
-        return transformer(rawValue) as? AnyObject
+        return transformer(rawValue as! JSONType) as? AnyObject
     }
 }
 

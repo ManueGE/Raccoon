@@ -38,10 +38,7 @@ extension RealmSerializable where Self: Object, Self: Insertable {
         
         try context.write({
             for object in array {
-                guard let json = object as? [String: AnyObject] else {
-                    continue
-                }
-                
+                let json = object as! [String: AnyObject]
                 let value = self.create(inRealm: context, json: json)
                 response.append(value)
             }

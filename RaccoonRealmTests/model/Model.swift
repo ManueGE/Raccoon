@@ -50,3 +50,16 @@ class User: Object, RealmInsertable {
         ]
     }
 }
+
+class Role: Object, RealmInsertable {
+    dynamic var id: Int = 0
+    dynamic var name: String = ""
+    
+    override static func indexedProperties() -> [String] {
+        return ["id"]
+    }
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+}

@@ -12,16 +12,23 @@ import RealmSwift
 
 class RealmProjectTests: XCTestCase {
     
+    let realm = try! Realm()
+    
     override func setUp() {
         super.setUp()
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        try! realm.write {
+            realm.deleteAll()
+        }
+        
         super.tearDown()
     }
     
-    func testInsertSerializable() {
+    func testInsertSerializableWithModifiedKeyPaths() {
+        
+        // Given
         let dictionary = [
             "id": 1,
             "Nombre": "Manue",
@@ -29,15 +36,52 @@ class RealmProjectTests: XCTestCase {
             "birthday": "1983-11-18"
         ]
         
-        let realm = try! Realm()
-        
+        // When
         try! realm.write() {
             let user = realm.create(User.self, json: dictionary, update: true)
+            
+            // Then
             XCTAssertEqual(user.id, 1, "property does not match")
             XCTAssertEqual(user.name, "Manue", "property does not match")
             XCTAssertEqual(user.country, "Spain", "property does not match")
             XCTAssertNotNil(user.birthday, "property does not match")
             XCTAssertEqual(user.birthday, DateConverter.date(fromString: "1983-11-18"), "property does not match")
         }
+    }
+    
+    func testInsertSerializableWithDefaultKeyPaths() {
+        
+        // Given
+        let dictionary = [
+            "id": 1,
+            "name": "Manue"
+        ]
+        
+        // When
+        try! realm.write() {
+            let user = realm.create(Role.self, json: dictionary, update: true)
+            
+            // Then
+            XCTAssertEqual(user.id, 1, "property does not match")
+            XCTAssertEqual(user.name, "Manue", "property does not match")
+        }
+    }
+    
+    func testSerializableWithMissingProperty() {
+        // Given
+        let dictionary = [
+            "id": 1,
+            "Nombre": "Manue",
+            "address": ["country": "Spain"]
+        ]
+        
+        // When
+        try! realm.write() {
+            let user = realm.create(User.self, json: dictionary, update: true)
+            
+            // Then
+            XCTAssertNil(user.birthday, "property should be nil")
+        }
+
     }
 }
