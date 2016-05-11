@@ -44,8 +44,8 @@ class WrapperTest: XCTestCase {
         XCTAssertEqual(object.pagination?.total, 100, "property does not match")
         
         XCTAssertEqual(object.paginations?.count, 2, "property does not match")
-        XCTAssertNil(object.paginations!.first!.offset, "object can not be nil")
-        XCTAssertEqual(object.paginations!.first!.total, 0, "property does not match")
+        XCTAssertNil(object.paginations?.first?.offset, "object can not be nil")
+        XCTAssertEqual(object.paginations?.first?.total, 0, "property does not match")
         
     }
     

@@ -29,7 +29,7 @@ class Pagination: Wrapper {
     
     var limit: Int = 0
     var offset: Int? = 0
-    var total: Int = 0
+    var total: Int! = 0
     
     required init() {}
     

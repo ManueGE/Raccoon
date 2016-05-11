@@ -16,7 +16,7 @@ public protocol Insertable: NSObjectProtocol {
     /**
      Some objects needs some addtional info to be inserted. This property tell the library the type of this context. If not aditional info is needed, set ti to `NoContext`
      */
-    associatedtype ContextType: Any
+    associatedtype ContextType: InsertContext
     
     /**
      Method called when object needs to be inserted as a single object. 
@@ -46,7 +46,7 @@ public protocol InsertContext {
 }
 
 /**
- The default implementation for an `InsertContext` item. It just returns nil
+ The default implementation for an `InsertContext` item. It just returns self
  */
 public extension InsertContext {
     func context<T where T: Insertable>(forType _: T.Type) -> InsertContext {
@@ -60,7 +60,4 @@ public extension InsertContext {
 public struct NoContext {}
 
 extension NoContext: InsertContext {
-    public func context<T where T : Insertable>(forType _: T.Type) -> InsertContext {
-        return self
-    }
 }
