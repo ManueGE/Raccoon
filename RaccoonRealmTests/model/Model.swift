@@ -27,7 +27,7 @@ struct DateConverter {
     }
 }
 
-class User: Object, RealmInsertable {
+class User: Object, RealmSerializable, Insertable {
     dynamic var id: Int = 0
     dynamic var name: String = ""
     dynamic var country: String = ""
@@ -51,7 +51,7 @@ class User: Object, RealmInsertable {
     }
 }
 
-class Role: Object, RealmInsertable {
+class Role: Object, RealmSerializable, Insertable {
     dynamic var id: Int = 0
     dynamic var name: String = ""
     

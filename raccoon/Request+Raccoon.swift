@@ -15,7 +15,7 @@ let InvalidContextTypeErrorCode = -2
 
 extension Alamofire.Request {
     
-    private static func grootBaseSerializer<ReturnType>() -> ResponseSerializer<ReturnType, NSError> {
+    private static func raccoonBaseSerializer<ReturnType>() -> ResponseSerializer<ReturnType, NSError> {
         
         return ResponseSerializer { request, response, data, error in
             
@@ -44,7 +44,7 @@ extension Alamofire.Request {
         
         return ResponseSerializer { request, response, data, error in
             // Transform to json
-            let baseSerializer = grootBaseSerializer() as ResponseSerializer<[String: AnyObject], NSError>
+            let baseSerializer = raccoonBaseSerializer() as ResponseSerializer<[String: AnyObject], NSError>
             let baseResponse = baseSerializer.serializeResponse(request, response, data, error)
             
             // Check if error in previous step
@@ -84,7 +84,7 @@ extension Alamofire.Request {
         return ResponseSerializer { request, response, data, error in
             
             // Transform to json
-            let baseSerializer = grootBaseSerializer() as ResponseSerializer<[AnyObject], NSError>
+            let baseSerializer = raccoonBaseSerializer() as ResponseSerializer<[AnyObject], NSError>
             let baseResponse = baseSerializer.serializeResponse(request, response, data, error)
             
             // Check if error in previous step
@@ -124,7 +124,7 @@ extension Alamofire.Request {
         
         return ResponseSerializer { request, response, data, error in
             // Transform to json
-            let baseSerializer = grootBaseSerializer() as ResponseSerializer<[String: AnyObject], NSError>
+            let baseSerializer = raccoonBaseSerializer() as ResponseSerializer<[String: AnyObject], NSError>
             let baseResponse = baseSerializer.serializeResponse(request, response, data, error)
             
             guard error == nil else {

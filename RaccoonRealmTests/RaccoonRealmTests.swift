@@ -10,6 +10,7 @@ import XCTest
 @testable import RaccoonRealm
 import Raccoon
 import RealmSwift
+import Alamofire
 
 class RaccoonRealmTests: XCTestCase {
     
@@ -55,48 +56,24 @@ class RaccoonRealmTests: XCTestCase {
         XCTAssertEqual(users.count, 2, "count does not match")
     }
     
-    // MARK: Fail test
-    /*
-    func testFailCreateOne() {
+    func testObjectSerializer() {
         // Given
-        let json = ["id": 1, "name": "manueGE"]
+        let serializer: ResponseSerializer<User, NSError> = Request.raccoonResponseSerializer(realm)
         
-        // When / Then
-        do {
-            let _ = try FakeUser.createOne(json, context: realm) as? FakeUser
-            XCTFail("shouldn't arrive here")
-        }
-        catch let e as MGECoreDataKitContextError {
-            XCTAssertEqual(e, MGECoreDataKitContextError.EntityNotFound)
-        }
-        catch {
-            XCTFail("wrong error")
-        }
+        let json = ["id": 1, "Nombre": "one"]
+        let data = try! NSJSONSerialization.dataWithJSONObject(json, options: [])
         
+        // When
+        let result = serializer.serializeResponse(nil, nil, data, nil)
+        
+        // Then
+        XCTAssertTrue(result.isSuccess, "result is success should be true")
+        XCTAssertNotNil(result.value, "result value should not be nil")
+        XCTAssertNil(result.error, "result error should be nil")
+        
+        XCTAssertEqual(result.value?.id, 1, "property does not match")
+        XCTAssertEqual(result.value?.name, "one", "property does not match")
     }
 
-    
-    // MARK: Fail test
-    func testFailCreateMany() {
-        // Given
-        let json = [
-            ["id": 1, "name": "manueGE"],
-            ["id": 2, "name": "batman"]
-        ]
-        
-        // When / Then
-        do {
-            let _ = try FakeUser.createMany(json, context: stack.mainQueueContext) as? [FakeUser]
-            XCTFail("shouldn't arrive here")
-        }
-        catch let e as MGECoreDataKitContextError {
-            XCTAssertEqual(e, MGECoreDataKitContextError.EntityNotFound)
-        }
-        catch {
-            XCTFail("wrong error")
-        }
-        
-    }
-  */
     
 }
