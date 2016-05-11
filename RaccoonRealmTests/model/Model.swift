@@ -27,7 +27,7 @@ struct DateConverter {
     }
 }
 
-class User: Object, RealmSerializable, Insertable {
+class User: Object {
     dynamic var id: Int = 0
     dynamic var name: String = ""
     dynamic var country: String = ""
@@ -41,7 +41,7 @@ class User: Object, RealmSerializable, Insertable {
         return "id"
     }
     
-    static var keyPathsByProperties: [String: KeyPathConvertible]? {
+    @objc override class var keyPathsByProperties: [String: KeyPathConvertible]? {
         return [
             "id": "id",
             "name": "Nombre",
@@ -51,7 +51,7 @@ class User: Object, RealmSerializable, Insertable {
     }
 }
 
-class Role: Object, RealmSerializable, Insertable {
+class Role: Object {
     dynamic var id: Int = 0
     dynamic var name: String = ""
     

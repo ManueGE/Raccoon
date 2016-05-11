@@ -13,13 +13,13 @@ import Raccoon
 
 extension Realm: InsertContext {}
 
-extension RealmSerializable where Self: Object {
+extension Object: Insertable {
     
-    internal typealias ContextType = Realm
+    public typealias ContextType = Realm
     
-    internal static func create(inRealm realm: Realm, json: [String: AnyObject], update: Bool = true) -> Self {
-        let convertedJSON = self.convertJSON(json)
-        return realm.dynamicCreate(self.className(), value: convertedJSON, update: update) as! Self
+    internal static func create(inRealm realm: Realm, json: [String: AnyObject], update: Bool = true) -> AnyObject {
+        let convertedJSON = convertJSON(json)
+        return realm.dynamicCreate(self.className(), value: convertedJSON, update: update)
     }
     
     public static func createOne(json: [String : AnyObject], context: Realm) throws -> AnyObject? {

@@ -10,17 +10,17 @@ import Foundation
 import RealmSwift
 
 // MARK: KeyPath
-public protocol KeyPathConvertible {
+@objc public protocol KeyPathConvertible: AnyObject {
     func value(inJSON json: [String: AnyObject]) -> AnyObject?;
 }
 
-extension String: KeyPathConvertible {
+extension NSString: KeyPathConvertible {
     public func value(inJSON json: [String : AnyObject]) -> AnyObject? {
-        return (json as NSDictionary).valueForKeyPath(self)
+        return (json as NSDictionary).valueForKeyPath(self as String)
     }
 }
 
-struct KeyPathTransformer<JSONType, PropertyType>: KeyPathConvertible {
+class KeyPathTransformer<JSONType, PropertyType>: KeyPathConvertible {
     let keyPath: String
     let transformer: (JSONType -> PropertyType?)
     
@@ -29,7 +29,7 @@ struct KeyPathTransformer<JSONType, PropertyType>: KeyPathConvertible {
         self.transformer = transformer
     }
     
-    func value(inJSON json: [String : AnyObject]) -> AnyObject? {
+    @objc func value(inJSON json: [String : AnyObject]) -> AnyObject? {
         guard let rawValue = keyPath.value(inJSON: json) else {
             return nil
         }
@@ -39,19 +39,15 @@ struct KeyPathTransformer<JSONType, PropertyType>: KeyPathConvertible {
 
 // MARK: Realm
 extension Realm {
-    func create<T: Object where T: RealmSerializable>(_: T.Type, json: [String: AnyObject], update: Bool = false) -> T {
+    func create<T: Object>(_: T.Type, json: [String: AnyObject], update: Bool = false) -> T {
         let convertedJSON = T.convertJSON(json)
         return create(T.self, value: convertedJSON, update: update)
     }
 }
 
 // MARK: Realm serializable
-public protocol RealmSerializable: NSObjectProtocol {
-    static var keyPathsByProperties: [String: KeyPathConvertible]? { get }
-}
-
-extension RealmSerializable {
-    public static var keyPathsByProperties: [String: KeyPathConvertible]? {
+public extension Object {
+    @objc class var keyPathsByProperties: [String: KeyPathConvertible]? {
         return nil
     }
     
