@@ -41,7 +41,7 @@ class User: Object {
         return "id"
     }
     
-    @objc override class var keyPathsByProperties: [String: KeyPathConvertible]? {
+    override class var keyPathsByProperties: [String: KeyPathConvertible]? {
         return [
             "id": "id",
             "name": "Nombre",

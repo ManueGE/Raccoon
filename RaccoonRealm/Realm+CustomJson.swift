@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 // MARK: KeyPath
-@objc public protocol KeyPathConvertible: AnyObject {
+@objc public protocol KeyPathConvertible {
     func value(inJSON json: [String: AnyObject]) -> AnyObject?;
 }
 
@@ -20,7 +20,7 @@ extension NSString: KeyPathConvertible {
     }
 }
 
-class KeyPathTransformer<JSONType, PropertyType>: KeyPathConvertible {
+class KeyPathTransformer<JSONType, PropertyType>: NSObject, KeyPathConvertible {
     let keyPath: String
     let transformer: (JSONType -> PropertyType?)
     
@@ -29,7 +29,7 @@ class KeyPathTransformer<JSONType, PropertyType>: KeyPathConvertible {
         self.transformer = transformer
     }
     
-    @objc func value(inJSON json: [String : AnyObject]) -> AnyObject? {
+    func value(inJSON json: [String : AnyObject]) -> AnyObject? {
         guard let rawValue = keyPath.value(inJSON: json) else {
             return nil
         }
@@ -45,9 +45,9 @@ extension Realm {
     }
 }
 
-// MARK: Realm serializable
+// MARK: Realm object
 public extension Object {
-    @objc class var keyPathsByProperties: [String: KeyPathConvertible]? {
+    class var keyPathsByProperties: [String: KeyPathConvertible]? {
         return nil
     }
     
