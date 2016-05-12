@@ -6,6 +6,7 @@ target 'Raccoon' do
 end
 
 target 'RaccoonTests' do
+    pod 'Alamofire', '~> 3.4'
 end
 
 target 'RaccoonCoreData' do
@@ -13,14 +14,19 @@ target 'RaccoonCoreData' do
 end
 
 target 'RaccoonCoreDataTests' do
+    pod 'Alamofire', '~> 3.4'
+    pod 'Groot', '~> 1.2'
     pod 'BNRCoreDataStack', '~> 1.2'
 end
+
 
 target 'RaccoonRealm' do
     pod 'RealmSwift', '~> 0.102'
 end
 
 target 'RaccoonRealmTests' do
+    pod 'RealmSwift', '~> 0.102'
+    pod 'Alamofire', '~> 3.4'
 end
 
 target 'RaccoonClient' do
@@ -28,11 +34,6 @@ target 'RaccoonClient' do
 end
 
 target 'RaccoonClientTests' do
+    pod 'PromiseKit', '~> 3.1'
     pod 'OHHTTPStubs/Swift', '~> 5.0'
 end
-
-post_install do |installer|
-    `find Pods -regex 'Pods/Groot.*\\.h' -print0 | xargs -0 sed -i '' 's/\\(<\\)Groot\\/\\(.*\\)\\(>\\)/\\"\\2\\"/'`
-end
-
-
