@@ -32,7 +32,7 @@ class User: Object {
     dynamic var name: String = ""
     dynamic var country: String = ""
     dynamic var birthday: NSDate! = nil
-    dynamic var created: NSDate? = nil
+    dynamic var created: NSDate? = NSDate()
     
     override static func indexedProperties() -> [String] {
         return ["id"]
@@ -47,7 +47,8 @@ class User: Object {
             "id": "id",
             "name": "Nombre",
             "birthday": KeyPathTransformer(keyPath: "birthday", transformer:DateConverter.date),
-            "country": "address.country"
+            "country": "address.country",
+            "created": KeyPathTransformer(keyPath: "created", transformer:DateConverter.date)
         ]
     }
 }

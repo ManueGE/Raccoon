@@ -35,7 +35,7 @@ public class KeyPathTransformer<JSONType, PropertyType>: NSObject, KeyPathConver
         }
         
         if rawValue is NSNull {
-            return nil
+            return NSNull()
         }
         
         return transformer(rawValue as! JSONType) as? AnyObject

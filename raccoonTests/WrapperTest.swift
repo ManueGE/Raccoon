@@ -115,6 +115,20 @@ class MainWrapper: Wrapper {
     }
 }
 
+class RootWrapper: Wrapper {
+    
+    typealias ConextType = NoContext
+    
+    var insertable: MyInsertable!
+    
+    required init() {}
+    
+    func map(map: Map) {
+        insertable <- map[.Root]
+    }
+    
+}
+
 class WrapperTest: XCTestCase {
     
     override func setUp() {
@@ -230,61 +244,15 @@ class WrapperTest: XCTestCase {
         XCTAssertEqual(object.notOverridenInteger, 20, "property does not match")
         XCTAssertEqual(object.optNotOverridenInteger, 30, "property does not match")
     }
-    
-    /*
-    func testWrapperResponse() {
-        
-        let json = [
-            "string": "this is a string",
-            "date": "1983-11-18",
-            "pagination": ["limit": 10, "offset": 20, "total": 100],
-            
-            "paginations": [
-                ["limit": 20, "offset": NSNull()],
-                ["limit": 15, "offset": 20, "total": 100]
-            ]
-        ]
-        
-        let object = Response(dictionary: json, context: NoContext())!
-        
-        XCTAssertNotNil(object, "object can not be nil")
-        XCTAssertEqual(object.string, "this is a string", "property does not match")
-        XCTAssertEqual(object.date, DateConverter.date(fromString: "1983-11-18"), "property does not match")
-        
-        XCTAssertEqual(object.pagination?.limit, 10, "property does not match")
-        XCTAssertEqual(object.pagination?.offset, 20, "property does not match")
-        XCTAssertEqual(object.pagination?.total, 100, "property does not match")
-        
-        XCTAssertEqual(object.paginations?.count, 2, "property does not match")
-        XCTAssertNil(object.paginations?.first?.offset, "object can not be nil")
-        XCTAssertEqual(object.paginations?.first?.total, 0, "property does not match")
-        
-    }
-    */
-    /*
-    func testGenericWrapperResponse() {
-        
-        let json = [
-            "limit": 10,
-            "offset": 20,
-            "total": 100,
-            
-            "data": [
-                ["id": 1, "name": "one"],
-                ["id": 2, "name": "two"]
-            ]
-        ]
-        
-        let object = PaginatedResponse<Table>(dictionary: json, context: stack.mainQueueContext)!
-        
-        XCTAssertEqual(object.pagination.limit, 10, "property does not match")
-        XCTAssertEqual(object.pagination.offset, 20, "property does not match")
-        XCTAssertEqual(object.pagination.total, 100, "property does not match")
- 
-        XCTAssertEqual(object.data?.count, 2, "property does not match")
-        XCTAssertEqual(object.data!.first!.identifier, 1, "object can not be nil")
-        
-    }
- */
 
+    
+    func testRootSerialization()  {
+        let json = ["integer": 1, "string": "one"]
+        let object = RootWrapper(dictionary: json)!
+        
+        // Insertables
+        XCTAssertNotNil(object.insertable, "can not be nil")
+        XCTAssertEqual(object.insertable!.integer, 1, "property does not match")
+        XCTAssertEqual(object.insertable!.string, "one", "property does not match")
+    }
 }

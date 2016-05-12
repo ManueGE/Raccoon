@@ -34,7 +34,6 @@ class RealmProjectTests: XCTestCase {
             "Nombre": "Manue",
             "address": ["country": "Spain"],
             "birthday": "1983-11-18",
-            "created": NSNull()
         ]
         
         // When
@@ -47,7 +46,6 @@ class RealmProjectTests: XCTestCase {
             XCTAssertEqual(user.country, "Spain", "property does not match")
             XCTAssertNotNil(user.birthday, "property does not match")
             XCTAssertEqual(user.birthday, DateConverter.date(fromString: "1983-11-18"), "property does not match")
-            XCTAssertNil(user.created, "property should be nil")
         }
     }
     
@@ -84,6 +82,27 @@ class RealmProjectTests: XCTestCase {
             // Then
             XCTAssertNil(user.birthday, "property should be nil")
         }
-
+    }
+    
+    func testSerializableWithNullProperty() {
+        // Given
+        let dictionary = [
+            "id": 1,
+            "created": NSNull()
+        ]
+        
+        // When
+        try! realm.write() {
+            let previousUser = realm.create(User.self, value: ["id": 1])
+            previousUser.name = "manu"
+            previousUser.created = NSDate()
+            
+            let user = realm.create(User.self, json: dictionary, update: true)
+            
+            // Then
+            XCTAssertEqual(user, previousUser, "property does not match")
+            XCTAssertEqual(user.name, "manu", "property does not match")
+            XCTAssertNil(user.created, "property should be nil")
+        }
     }
 }

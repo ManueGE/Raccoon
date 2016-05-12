@@ -113,10 +113,7 @@ public struct MapValue {
             fatalError("context must be set to a \(T.ContextType.self) to convert into \(T.self)")
         }
         
-        guard let value = originalValue as? [String: AnyObject] else {
-            return nil
-        }
-        
+        let value = originalValue as! [String: AnyObject]
         return try? T.createOne(value, context: context) as! T
     }
     
@@ -130,10 +127,7 @@ public struct MapValue {
             fatalError("context must be set to a \(T.ContextType.self) to convert into \(T.self) array")
         }
         
-        guard let array = originalValue as? [[String: AnyObject]] else {
-            return nil
-        }
-        
+        let array = originalValue as! [[String: AnyObject]]
         return try? T.createMany(array, context: context) as! [T]
     }
     
@@ -142,11 +136,7 @@ public struct MapValue {
      - returns: The serialized object, nil if there is any error
      */
     internal func serialize<T: Wrapper>() -> T? {
-        
-        guard let value = originalValue as? [String: AnyObject] else {
-            return nil
-        }
-        
+        let value = originalValue as! [String: AnyObject]
         return T(dictionary: value, context: context)
     }
     
@@ -156,9 +146,7 @@ public struct MapValue {
      */
     internal func serialize<T: Wrapper>() -> [T]? {
         
-        guard let array = originalValue as? [[String: AnyObject]] else {
-            return nil
-        }
+        let array = originalValue as! [[String: AnyObject]]
         
         let convertedArray = array.map({ T(dictionary: $0, context: context)! })
         return convertedArray
