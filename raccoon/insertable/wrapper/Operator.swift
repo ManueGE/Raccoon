@@ -110,10 +110,7 @@ func <- <T, R>(inout left: T, right: (mapValue: MapValue?, transformer: R -> T))
         return
     }
     
-    guard let originalValue = mapValue.originalValue as? R else {
-        return
-    }
-    
+    let originalValue = mapValue.originalValue as! R
     let transformedValue = right.transformer(originalValue)
     left = transformedValue as T
 }
