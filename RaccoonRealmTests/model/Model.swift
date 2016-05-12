@@ -27,11 +27,12 @@ struct DateConverter {
     }
 }
 
-class User: Object, RealmInsertable {
+class User: Object {
     dynamic var id: Int = 0
     dynamic var name: String = ""
     dynamic var country: String = ""
-    dynamic var birthday: NSDate? = nil
+    dynamic var birthday: NSDate! = nil
+    dynamic var created: NSDate? = NSDate()
     
     override static func indexedProperties() -> [String] {
         return ["id"]
@@ -41,17 +42,18 @@ class User: Object, RealmInsertable {
         return "id"
     }
     
-    static var keyPathsByProperties: [String: KeyPathConvertible]? {
+    override class var keyPathsByProperties: [String: KeyPathConvertible]? {
         return [
             "id": "id",
             "name": "Nombre",
             "birthday": KeyPathTransformer(keyPath: "birthday", transformer:DateConverter.date),
-            "country": "address.country"
+            "country": "address.country",
+            "created": KeyPathTransformer(keyPath: "created", transformer:DateConverter.date)
         ]
     }
 }
 
-class Role: Object, RealmInsertable {
+class Role: Object {
     dynamic var id: Int = 0
     dynamic var name: String = ""
     

@@ -22,7 +22,7 @@ class RaccoonCoreDataTests: XCTestCase {
     
     override func tearDown() {
         try! User.removeAllInContext(stack.mainQueueContext)
-        super.tearDown()
+        super.tearDown() 
     }
     
     // MARK: Success test

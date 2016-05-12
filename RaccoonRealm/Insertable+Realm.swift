@@ -9,37 +9,35 @@
 import RealmSwift
 import Raccoon
 
-typealias RealmInsertable = protocol<RealmSerializable, Insertable>
+// typealias RealmInsertable = protocol<RealmSerializable, Insertable>
 
-extension Realm: InsertContext {
-}
+extension Realm: InsertContext {}
 
-extension RealmSerializable where Self: Object, Self: Insertable {
+extension Object: Insertable {
     
-    internal typealias ContextType = Realm
+    public typealias ContextType = Realm
     
-    private static func create(inRealm realm: Realm, json: [String: AnyObject], update: Bool = false) -> Self {
-        let convertedJSON = self.convertJSON(json)
-        return realm.dynamicCreate(self.className(), value: convertedJSON, update: update) as! Self
+    private static func create(inRealm realm: Realm, json: [String: AnyObject], update: Bool = true) -> AnyObject {
+        let convertedJSON = convertJSON(json)
+        return realm.dynamicCreate(self.className(), value: convertedJSON, update: update)
     }
     
     public static func createOne(json: [String : AnyObject], context: Realm) throws -> AnyObject? {
         var value: AnyObject? = nil
         try context.write {
-            value = self.create(inRealm: context, json: json)
+            value = create(inRealm: context, json: json)
         }
         
         return value
     }
     
     public static func createMany(array: [AnyObject], context: Realm) throws -> [AnyObject]? {
-        
         var response: [AnyObject] = []
         
         try context.write({
             for object in array {
                 let json = object as! [String: AnyObject]
-                let value = self.create(inRealm: context, json: json)
+                let value = create(inRealm: context, json: json)
                 response.append(value)
             }
         })

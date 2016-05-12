@@ -15,7 +15,7 @@ let InvalidContextTypeErrorCode = -2
 
 extension Alamofire.Request {
     
-    private static func grootBaseSerializer<ReturnType>() -> ResponseSerializer<ReturnType, NSError> {
+    private static func raccoonBaseSerializer<ReturnType>() -> ResponseSerializer<ReturnType, NSError> {
         
         return ResponseSerializer { request, response, data, error in
             
@@ -40,11 +40,11 @@ extension Alamofire.Request {
     }
     
     // MARK: Element
-    public static func raccoonResponseSerializer<T: Insertable> (context: InsertContext) -> ResponseSerializer <T, NSError> {
+    public static func raccoonResponseSerializer<T: Insertable> (context: InsertContext = NoContext()) -> ResponseSerializer <T, NSError> {
         
         return ResponseSerializer { request, response, data, error in
             // Transform to json
-            let baseSerializer = grootBaseSerializer() as ResponseSerializer<[String: AnyObject], NSError>
+            let baseSerializer = raccoonBaseSerializer() as ResponseSerializer<[String: AnyObject], NSError>
             let baseResponse = baseSerializer.serializeResponse(request, response, data, error)
             
             // Check if error in previous step
@@ -71,7 +71,7 @@ extension Alamofire.Request {
         }
     }
     
-    public func raccoonResponse<T: Insertable>(context: InsertContext,
+    public func raccoonResponse<T: Insertable>(context: InsertContext = NoContext(),
         completionHandler: (Response<T, NSError>) -> Void) -> Self {
             
             let serializer = Request.raccoonResponseSerializer(context) as ResponseSerializer <T, NSError>
@@ -79,12 +79,12 @@ extension Alamofire.Request {
     }
     
     // MARK: Array
-    public static func raccoonResponseSerializer<T: Insertable> (context: InsertContext) -> ResponseSerializer <[T], NSError> {
+    public static func raccoonResponseSerializer<T: Insertable> (context: InsertContext = NoContext()) -> ResponseSerializer <[T], NSError> {
         
         return ResponseSerializer { request, response, data, error in
             
             // Transform to json
-            let baseSerializer = grootBaseSerializer() as ResponseSerializer<[AnyObject], NSError>
+            let baseSerializer = raccoonBaseSerializer() as ResponseSerializer<[AnyObject], NSError>
             let baseResponse = baseSerializer.serializeResponse(request, response, data, error)
             
             // Check if error in previous step
@@ -112,7 +112,7 @@ extension Alamofire.Request {
     }
 
     
-    public func raccoonResponse<T: Insertable>(context: InsertContext,
+    public func raccoonResponse<T: Insertable>(context: InsertContext = NoContext(),
         completionHandler: (Response<[T], NSError>) -> Void) -> Self {
             
             let serializer = Request.raccoonResponseSerializer(context) as ResponseSerializer<[T], NSError>
@@ -120,11 +120,11 @@ extension Alamofire.Request {
     }
     
     // MARK: Wrapper
-    public static func raccoonResponseSerializer<T: Wrapper> (context: InsertContext) -> ResponseSerializer <T, NSError> {
+    public static func raccoonResponseSerializer<T: Wrapper> (context: InsertContext = NoContext()) -> ResponseSerializer <T, NSError> {
         
         return ResponseSerializer { request, response, data, error in
             // Transform to json
-            let baseSerializer = grootBaseSerializer() as ResponseSerializer<[String: AnyObject], NSError>
+            let baseSerializer = raccoonBaseSerializer() as ResponseSerializer<[String: AnyObject], NSError>
             let baseResponse = baseSerializer.serializeResponse(request, response, data, error)
             
             guard error == nil else {
@@ -140,7 +140,7 @@ extension Alamofire.Request {
         }
     }
     
-    public func raccoonResponse<T: Wrapper>(context: InsertContext,
+    public func raccoonResponse<T: Wrapper>(context: InsertContext = NoContext(),
         completionHandler: (Response<T, NSError>) -> Void) -> Self {
             
             let serializer = Request.raccoonResponseSerializer(context) as ResponseSerializer<T, NSError>

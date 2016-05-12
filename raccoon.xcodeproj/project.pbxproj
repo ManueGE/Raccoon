@@ -23,7 +23,7 @@
 		3285ABAC1CD01A5700350513 /* WrapperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3285ABA91CD01A5700350513 /* WrapperTest.swift */; };
 		3285ABAF1CD01B5500350513 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3285ABAE1CD01B5500350513 /* Model.swift */; };
 		3285ABB81CD01B9100350513 /* Insertable+Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3285ABB61CD01B9100350513 /* Insertable+Realm.swift */; };
-		3285ABB91CD01B9100350513 /* RealmSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3285ABB71CD01B9100350513 /* RealmSerializable.swift */; };
+		3285ABB91CD01B9100350513 /* Realm+CustomJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3285ABB71CD01B9100350513 /* Realm+CustomJson.swift */; };
 		3285ABBB1CD01C2300350513 /* RealmSerializableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3285ABBA1CD01C2300350513 /* RealmSerializableTests.swift */; };
 		3285ABBC1CD01C3F00350513 /* Raccoon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3285AB861CD019FE00350513 /* Raccoon.framework */; };
 		3285ABBD1CD01C4300350513 /* Raccoon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3285AB861CD019FE00350513 /* Raccoon.framework */; };
@@ -89,7 +89,7 @@
 		3285ABA91CD01A5700350513 /* WrapperTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrapperTest.swift; sourceTree = "<group>"; };
 		3285ABAE1CD01B5500350513 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		3285ABB61CD01B9100350513 /* Insertable+Realm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Insertable+Realm.swift"; sourceTree = "<group>"; };
-		3285ABB71CD01B9100350513 /* RealmSerializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmSerializable.swift; sourceTree = "<group>"; };
+		3285ABB71CD01B9100350513 /* Realm+CustomJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Realm+CustomJson.swift"; sourceTree = "<group>"; };
 		3285ABBA1CD01C2300350513 /* RealmSerializableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmSerializableTests.swift; sourceTree = "<group>"; };
 		32AE412F1CD0BB0B00BFA982 /* RaccoonRealmTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaccoonRealmTests.swift; sourceTree = "<group>"; };
 		32DDC7D31CCFB574008FC6D5 /* RaccoonCoreData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RaccoonCoreData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -201,7 +201,7 @@
 			children = (
 				3285AB6B1CD0156B00350513 /* RaccoonRealm.h */,
 				3285ABB61CD01B9100350513 /* Insertable+Realm.swift */,
-				3285ABB71CD01B9100350513 /* RealmSerializable.swift */,
+				3285ABB71CD01B9100350513 /* Realm+CustomJson.swift */,
 				3285AB6D1CD0156B00350513 /* Info.plist */,
 			);
 			path = RaccoonRealm;
@@ -233,8 +233,8 @@
 			isa = PBXGroup;
 			children = (
 				3285ABA71CD01A5700350513 /* Model.swift */,
-				3285ABA81CD01A5700350513 /* RaccoonResponseTest.swift */,
 				3285ABA91CD01A5700350513 /* WrapperTest.swift */,
+				3285ABA81CD01A5700350513 /* RaccoonResponseTest.swift */,
 				3285AB961CD019FE00350513 /* Info.plist */,
 			);
 			path = RaccoonTests;
@@ -715,7 +715,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3285ABB81CD01B9100350513 /* Insertable+Realm.swift in Sources */,
-				3285ABB91CD01B9100350513 /* RealmSerializable.swift in Sources */,
+				3285ABB91CD01B9100350513 /* Realm+CustomJson.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

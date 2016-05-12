@@ -25,24 +25,50 @@ class DateConverter {
     }
 }
 
+class Transformer {
+    
+    static func EnsureOptionalInteger(value: Any) -> Int? {
+        switch value {
+        case let string as String:
+            return Int(string)
+        case let int as Int:
+            return int
+        default:
+            return nil
+        }
+    }
+    
+    static func EnsureInteger(value: Any) -> Int {
+        switch value {
+        case let string as String:
+            return Int(string)!
+        case let int as Int:
+            return int
+        default:
+            return 0
+        }
+    }
+    
+}
+
 class Pagination: Wrapper {
     
     var limit: Int = 0
     var offset: Int? = 0
-    var total: Int = 0
+    var total: Int! = 0
     
     required init() {}
     
     func map(map: Map) {
-        limit <- map["limit"]
-        offset <- map["offset"]
+        limit <- (map["limit"], Transformer.EnsureInteger)
+        offset <- (map["offset"], Transformer.EnsureOptionalInteger)
         total <- map["total"]
     }
 }
 
 class Response: Wrapper {
     var string: String!
-    var date: NSDate = NSDate()
+    var date: NSDate?
     var pagination: Pagination?
     var paginations: [Pagination]?
     
