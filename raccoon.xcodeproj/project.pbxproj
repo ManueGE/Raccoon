@@ -233,8 +233,8 @@
 			isa = PBXGroup;
 			children = (
 				3285ABA71CD01A5700350513 /* Model.swift */,
-				3285ABA81CD01A5700350513 /* RaccoonResponseTest.swift */,
 				3285ABA91CD01A5700350513 /* WrapperTest.swift */,
+				3285ABA81CD01A5700350513 /* RaccoonResponseTest.swift */,
 				3285AB961CD019FE00350513 /* Info.plist */,
 			);
 			path = RaccoonTests;
