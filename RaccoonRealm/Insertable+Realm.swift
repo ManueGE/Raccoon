@@ -17,7 +17,7 @@ extension Object: Insertable {
     
     public typealias ContextType = Realm
     
-    internal static func create(inRealm realm: Realm, json: [String: AnyObject], update: Bool = true) -> AnyObject {
+    private static func create(inRealm realm: Realm, json: [String: AnyObject], update: Bool = true) -> AnyObject {
         let convertedJSON = convertJSON(json)
         return realm.dynamicCreate(self.className(), value: convertedJSON, update: update)
     }

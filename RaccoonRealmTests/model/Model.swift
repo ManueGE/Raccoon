@@ -31,7 +31,8 @@ class User: Object {
     dynamic var id: Int = 0
     dynamic var name: String = ""
     dynamic var country: String = ""
-    dynamic var birthday: NSDate? = nil
+    dynamic var birthday: NSDate! = nil
+    dynamic var created: NSDate? = nil
     
     override static func indexedProperties() -> [String] {
         return ["id"]

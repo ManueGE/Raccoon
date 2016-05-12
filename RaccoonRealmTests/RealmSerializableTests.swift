@@ -33,7 +33,8 @@ class RealmProjectTests: XCTestCase {
             "id": 1,
             "Nombre": "Manue",
             "address": ["country": "Spain"],
-            "birthday": "1983-11-18"
+            "birthday": "1983-11-18",
+            "created": NSNull()
         ]
         
         // When
@@ -46,6 +47,7 @@ class RealmProjectTests: XCTestCase {
             XCTAssertEqual(user.country, "Spain", "property does not match")
             XCTAssertNotNil(user.birthday, "property does not match")
             XCTAssertEqual(user.birthday, DateConverter.date(fromString: "1983-11-18"), "property does not match")
+            XCTAssertNil(user.created, "property should be nil")
         }
     }
     

@@ -20,7 +20,7 @@ extension NSString: KeyPathConvertible {
     }
 }
 
-class KeyPathTransformer<JSONType, PropertyType>: NSObject, KeyPathConvertible {
+public class KeyPathTransformer<JSONType, PropertyType>: NSObject, KeyPathConvertible {
     let keyPath: String
     let transformer: (JSONType -> PropertyType?)
     
@@ -29,17 +29,22 @@ class KeyPathTransformer<JSONType, PropertyType>: NSObject, KeyPathConvertible {
         self.transformer = transformer
     }
     
-    func value(inJSON json: [String : AnyObject]) -> AnyObject? {
+    public func value(inJSON json: [String : AnyObject]) -> AnyObject? {
         guard let rawValue = keyPath.value(inJSON: json) else {
             return nil
         }
+        
+        if rawValue is NSNull {
+            return nil
+        }
+        
         return transformer(rawValue as! JSONType) as? AnyObject
     }
 }
 
 // MARK: Realm
-extension Realm {
-    func create<T: Object>(_: T.Type, json: [String: AnyObject], update: Bool = false) -> T {
+public extension Realm {
+    public func create<T: Object>(_: T.Type, json: [String: AnyObject], update: Bool = false) -> T {
         let convertedJSON = T.convertJSON(json)
         return create(T.self, value: convertedJSON, update: update)
     }
@@ -51,7 +56,7 @@ public extension Object {
         return nil
     }
     
-    static func convertJSON(json: [String: AnyObject]) -> [String: AnyObject] {
+    internal static func convertJSON(json: [String: AnyObject]) -> [String: AnyObject] {
         
         guard let keyPathsByProperties = keyPathsByProperties else {
             return json
