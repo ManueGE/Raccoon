@@ -105,107 +105,38 @@ func <- <T>(inout left: T, right: MapValue?) {
     }
 }
 
-func <- <T>(inout left: T?, right: MapValue?) {
+func <- <T: NilLiteralConvertible>(inout left: T, right: MapValue?) {
     if let mapValue = right {
         left = mapValue.originalValue as? T
     }
 }
-
-func <- <T>(inout left: T!, right: MapValue?) {
-    if let mapValue = right {
-        left = mapValue.originalValue as? T
-    }
-}
-
 
 // MARK: Generic operator with converter
-// R? -> T?
-func <- <T, R>(inout left: T, right: (mapValue: MapValue?, transformer: R? -> T?)) {
-    if let mapValue = right.mapValue {
-        let transformedValue = right.transformer(mapValue.originalValue as? R)!
-        left = transformedValue as T
-    }
-}
-
-func <- <T, R>(inout left: T?, right: (mapValue: MapValue?, transformer: R? -> T?)) {
-    if let mapValue = right.mapValue {
-        let transformedValue = right.transformer(mapValue.originalValue as? R)
-        left = transformedValue
-    }
-}
-
-func <- <T, R>(inout left: T!, right: (mapValue: MapValue?, transformer: R? -> T?)) {
-    if let mapValue = right.mapValue {
-        let transformedValue = right.transformer(mapValue.originalValue as? R)
-        left = transformedValue
-    }
-}
-
-
-// R -> T?
-func <- <T, R>(inout left: T, right: (mapValue: MapValue?, transformer: R -> T?)) {
-    if let mapValue = right.mapValue {
-        let transformedValue = right.transformer(mapValue.originalValue as! R)!
-        left = transformedValue as T
-    }
-}
-
-func <- <T, R>(inout left: T?, right: (mapValue: MapValue?, transformer: R -> T?)) {
-    if let mapValue = right.mapValue {
-        let transformedValue = right.transformer(mapValue.originalValue as! R)
-        left = transformedValue
-    }
-}
-
-func <- <T, R>(inout left: T!, right: (mapValue: MapValue?, transformer: R -> T?)) {
-    if let mapValue = right.mapValue {
-        let transformedValue = right.transformer(mapValue.originalValue as! R)
-        left = transformedValue
-    }
-}
-
-
-// R? -> T
-func <- <T, R>(inout left: T, right: (mapValue: MapValue?, transformer: R? -> T)) {
-    if let mapValue = right.mapValue {
-        let transformedValue = right.transformer(mapValue.originalValue as? R)
-        left = transformedValue as T
-    }
-}
-
-func <- <T, R>(inout left: T?, right: (mapValue: MapValue?, transformer: R? -> T)) {
-    if let mapValue = right.mapValue {
-        let transformedValue = right.transformer(mapValue.originalValue as? R)
-        left = transformedValue
-    }
-}
-
-func <- <T, R>(inout left: T!, right: (mapValue: MapValue?, transformer: R? -> T)) {
-    if let mapValue = right.mapValue {
-        let transformedValue = right.transformer(mapValue.originalValue as? R)
-        left = transformedValue
-    }
-}
-
-
-// R -> T
 func <- <T, R>(inout left: T, right: (mapValue: MapValue?, transformer: R -> T)) {
-    if let mapValue = right.mapValue {
-        let transformedValue = right.transformer(mapValue.originalValue as! R)
-        left = transformedValue as T
+    
+    guard let mapValue = right.mapValue else {
+        return
     }
+    
+    guard let originalValue = mapValue.originalValue as? R else {
+        return
+    }
+    
+    let transformedValue = right.transformer(originalValue)
+    left = transformedValue as T
 }
 
-func <- <T, R>(inout left: T?, right: (mapValue: MapValue?, transformer: R -> T)) {
-    if let mapValue = right.mapValue {
-        let transformedValue = right.transformer(mapValue.originalValue as! R)
-        left = transformedValue
+func <- <T: NilLiteralConvertible, R>(inout left: T, right: (mapValue: MapValue?, transformer: R -> T)) {
+    
+    guard let mapValue = right.mapValue else {
+        return
     }
-}
-
-func <- <T, R>(inout left: T!, right: (mapValue: MapValue?, transformer: R -> T)) {
-    if let mapValue = right.mapValue {
-        let transformedValue = right.transformer(mapValue.originalValue as! R)
-        left = transformedValue
+    
+    guard let originalValue = mapValue.originalValue else {
+        left = nil
+        return
     }
+    
+    let transformedValue = right.transformer(originalValue as! R)
+    left = transformedValue as T
 }
