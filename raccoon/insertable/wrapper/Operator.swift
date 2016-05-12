@@ -100,15 +100,7 @@ func <- <T: Wrapper>(inout left: [T]!, right: MapValue?) {
 
 // MARK: Generic operator
 func <- <T>(inout left: T, right: MapValue?) {
-    if let mapValue = right {
-        left = mapValue.originalValue as! T
-    }
-}
-
-func <- <T: NilLiteralConvertible>(inout left: T, right: MapValue?) {
-    if let mapValue = right {
-        left = mapValue.originalValue as? T
-    }
+    left <- (right, { $0 })
 }
 
 // MARK: Generic operator with converter
