@@ -56,7 +56,7 @@ public extension Object {
         return nil
     }
     
-    internal static func convertJSON(json: [String: AnyObject]) -> [String: AnyObject] {
+    class func convertJSON(json: [String: AnyObject]) -> [String: AnyObject] {
         
         guard let keyPathsByProperties = keyPathsByProperties else {
             return json
