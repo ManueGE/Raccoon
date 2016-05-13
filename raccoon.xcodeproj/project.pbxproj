@@ -11,6 +11,7 @@
 		3234E5FB1CE5BCD3006DB95E /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3234E5FA1CE5BCD3006DB95E /* Client.swift */; };
 		3255A1CE1CE53D080095E919 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3255A1CD1CE53D080095E919 /* Endpoint.swift */; };
 		3274BA601CE604E90094BA57 /* FailClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3274BA5F1CE604E90094BA57 /* FailClientTest.swift */; };
+		3274BA621CE60D330094BA57 /* RequestClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3274BA611CE60D330094BA57 /* RequestClientTests.swift */; };
 		327A279D1CD00D7300F2A921 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 327A27991CD00D7300F2A921 /* Model.xcdatamodeld */; };
 		327A279E1CD00D7300F2A921 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327A279B1CD00D7300F2A921 /* User+CoreDataProperties.swift */; };
 		327A279F1CD00D7300F2A921 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327A279C1CD00D7300F2A921 /* User.swift */; };
@@ -97,6 +98,7 @@
 		3234E5FA1CE5BCD3006DB95E /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		3255A1CD1CE53D080095E919 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		3274BA5F1CE604E90094BA57 /* FailClientTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FailClientTest.swift; sourceTree = "<group>"; };
+		3274BA611CE60D330094BA57 /* RequestClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestClientTests.swift; sourceTree = "<group>"; };
 		327A279A1CD00D7300F2A921 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		327A279B1CD00D7300F2A921 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		327A279C1CD00D7300F2A921 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -362,6 +364,7 @@
 				329C6DCA1CE514F20020387E /* RaccoonClientTests.swift */,
 				32D36A291CE5E2AB00E73FFB /* EndpointClientTests.swift */,
 				32D36A271CE5E29600E73FFB /* RequestConvertibleClientTests.swift */,
+				3274BA611CE60D330094BA57 /* RequestClientTests.swift */,
 				3274BA5F1CE604E90094BA57 /* FailClientTest.swift */,
 				329C6DCC1CE514F20020387E /* Info.plist */,
 			);
@@ -1192,6 +1195,7 @@
 				32D36A281CE5E29600E73FFB /* RequestConvertibleClientTests.swift in Sources */,
 				3274BA601CE604E90094BA57 /* FailClientTest.swift in Sources */,
 				32D36A2A1CE5E2AB00E73FFB /* EndpointClientTests.swift in Sources */,
+				3274BA621CE60D330094BA57 /* RequestClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
