@@ -4,7 +4,19 @@ PODS:
   - Groot (1.2):
     - Groot/Swift (= 1.2)
   - Groot/Swift (1.2)
+  - OHHTTPStubs (5.0.0):
+    - OHHTTPStubs/Default (= 5.0.0)
   - OHHTTPStubs/Core (5.0.0)
+  - OHHTTPStubs/Default (5.0.0):
+    - OHHTTPStubs/Core
+    - OHHTTPStubs/JSON
+    - OHHTTPStubs/NSURLSession
+    - OHHTTPStubs/OHPathHelpers
+  - OHHTTPStubs/JSON (5.0.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/NSURLSession (5.0.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/OHPathHelpers (5.0.0)
   - OHHTTPStubs/Swift (5.0.0):
     - OHHTTPStubs/Core
   - OMGHTTPURLRQ (3.1.1):
@@ -36,6 +48,7 @@ DEPENDENCIES:
   - Alamofire (~> 3.4)
   - BNRCoreDataStack (~> 1.2)
   - Groot (~> 1.2)
+  - OHHTTPStubs (~> 5.0)
   - OHHTTPStubs/Swift (~> 5.0)
   - PromiseKit (~> 3.1)
   - RealmSwift (~> 0.102)
@@ -50,6 +63,6 @@ SPEC CHECKSUMS:
   Realm: 5d219f9037e3ec2019c599b8227bfc95433cb10e
   RealmSwift: e6f436f9fea1c57b9ad6d1c46d57562c845f3c4c
 
-PODFILE CHECKSUM: f6ed3200994def039e89378e09c7b18f65d60eb4
+PODFILE CHECKSUM: 4ead31d0856b16798b2d920b0275ca28619405d8
 
 COCOAPODS: 1.0.0

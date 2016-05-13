@@ -57,7 +57,9 @@ public extension InsertContext {
 /** 
  Struct that indicates that an object doesn't need a context
  */
-public struct NoContext {}
+public struct NoContext {
+    public init() {}
+}
 
 extension NoContext: InsertContext {
 }

@@ -19,12 +19,18 @@ extension Alamofire.Request {
         
         return ResponseSerializer { request, response, data, error in
             
+            if let data = data {
+                print(String(data: data, encoding: NSUTF8StringEncoding))
+            }
+            else {
+                print("NO DATA?")
+            }
             // Transform to json
             let jsonSerializer = JSONResponseSerializer()
             let jsonResponse = jsonSerializer.serializeResponse(request, response, data, error)
             
             guard let jsonResponseValue = jsonResponse.value else {
-                return .Failure(error!)
+                return .Failure(jsonResponse.error!)
             }
             
             // convert to ReturnType type
@@ -43,13 +49,17 @@ extension Alamofire.Request {
     public static func raccoonResponseSerializer<T: Insertable> (context: InsertContext = NoContext()) -> ResponseSerializer <T, NSError> {
         
         return ResponseSerializer { request, response, data, error in
+            // Check if error in previous step
+            guard error == nil else {
+                return .Failure(error!)
+            }
+            
             // Transform to json
             let baseSerializer = raccoonBaseSerializer() as ResponseSerializer<[String: AnyObject], NSError>
             let baseResponse = baseSerializer.serializeResponse(request, response, data, error)
             
-            // Check if error in previous step
-            guard error == nil else {
-                return .Failure(error!)
+            guard baseResponse.isSuccess else {
+                return .Failure(baseResponse.error!)
             }
             
             // Check if the context is valid
@@ -83,13 +93,17 @@ extension Alamofire.Request {
         
         return ResponseSerializer { request, response, data, error in
             
+            // Check if error in previous step
+            guard error == nil else {
+                return .Failure(error!)
+            }
+            
             // Transform to json
             let baseSerializer = raccoonBaseSerializer() as ResponseSerializer<[AnyObject], NSError>
             let baseResponse = baseSerializer.serializeResponse(request, response, data, error)
             
-            // Check if error in previous step
-            guard error == nil else {
-                return .Failure(error!)
+            guard baseResponse.isSuccess else {
+                return .Failure(baseResponse.error!)
             }
             
             // Check if the context is valid

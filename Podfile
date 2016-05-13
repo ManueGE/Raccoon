@@ -28,9 +28,10 @@ end
 
 target 'RaccoonClient' do
     pod 'PromiseKit', '~> 3.1'
+    pod 'Alamofire', '~> 3.4'
     
     target 'RaccoonClientTests' do
-        pod 'Alamofire', '~> 3.4'
+        pod 'OHHTTPStubs', '~> 5.0'
         pod 'OHHTTPStubs/Swift', '~> 5.0'
     end
 end
