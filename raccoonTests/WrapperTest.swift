@@ -32,7 +32,6 @@ class MyInsertable: NSObject, Insertable {
             return try! MyInsertable.createOne(json, context: context)!
         })
     }
-    
 }
 
 class NestedWrapper: Wrapper {

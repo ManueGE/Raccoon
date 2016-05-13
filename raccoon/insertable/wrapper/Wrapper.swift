@@ -39,7 +39,7 @@ extension Wrapper {
     }
 }
 
-enum MapKeyPath {
+public enum MapKeyPath {
     case Root
     case Path(keyPath: String)
 }
@@ -50,24 +50,24 @@ enum MapKeyPath {
 public struct Map {
     
     /// The original dictionary whose values will be serialized
-    var dictionary: [String: AnyObject]
+    public var dictionary: [String: AnyObject]
     
     /**
      The context that will be used to insert the Insertable objects
      */
-    var context: InsertContext
+    public var context: InsertContext
     
     /**
      - returns: a MapValue with the value at the given keypath. If the receiver doesn't have any value at this keypath it returns nil. If the value at the keypath is `NSNull` it will return a MapValue with a nil value
      */
-    subscript(keyPath: String) -> MapValue? {
+    public subscript(keyPath: String) -> MapValue? {
         return self[.Path(keyPath: keyPath)]
     }
     
     /**
      - returns: a MapValue with the value at the given keypath. If the receiver doesn't have any value at this keypath it returns nil. If the value at the keypath is `NSNull` it will return a MapValue with a nil value
      */
-    subscript(keyPath: MapKeyPath) -> MapValue? {
+    public subscript(keyPath: MapKeyPath) -> MapValue? {
     
         var originalValue: AnyObject?
         
@@ -98,7 +98,7 @@ public struct Map {
 public struct MapValue {
     
     /// The original value to serialize
-    var originalValue: AnyObject?
+    public private(set) var originalValue: AnyObject?
     
     /// The context that will be used to insert the `Insertable` objects
     var context: InsertContext

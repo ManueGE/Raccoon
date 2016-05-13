@@ -11,21 +11,21 @@ import Foundation
 infix operator <- {}
 
 // MARK: Element Operator
-func <- <T: Insertable>(inout left: T, right: MapValue?) {
+public func <- <T: Insertable>(inout left: T, right: MapValue?) {
     if let mapValue = right {
         let value: T? = mapValue.serialize()
         left = value!
     }
 }
 
-func <- <T: Insertable>(inout left: T?, right: MapValue?) {
+public func <- <T: Insertable>(inout left: T?, right: MapValue?) {
     if let mapValue = right {
         let value: T? = mapValue.serialize()
         left = value
     }
 }
 
-func <- <T: Insertable>(inout left: T!, right: MapValue?) {
+public func <- <T: Insertable>(inout left: T!, right: MapValue?) {
     if let mapValue = right {
         let value: T? = mapValue.serialize()
         left = value
@@ -33,21 +33,21 @@ func <- <T: Insertable>(inout left: T!, right: MapValue?) {
 }
 
 // MARK: Array operators
-func <- <T: Insertable>(inout left: [T], right: MapValue?) {
+public func <- <T: Insertable>(inout left: [T], right: MapValue?) {
     if let mapValue = right {
         let value: [T]? = mapValue.serialize()
         left = value!
     }
 }
 
-func <- <T: Insertable>(inout left: [T]?, right: MapValue?) {
+public func <- <T: Insertable>(inout left: [T]?, right: MapValue?) {
     if let mapValue = right {
         let value: [T]? = mapValue.serialize()
         left = value
     }
 }
 
-func <- <T: Insertable>(inout left: [T]!, right: MapValue?) {
+public func <- <T: Insertable>(inout left: [T]!, right: MapValue?) {
     if let mapValue = right {
         let value: [T]? = mapValue.serialize()
         left = value
@@ -55,21 +55,21 @@ func <- <T: Insertable>(inout left: [T]!, right: MapValue?) {
 }
 
 // MARK: Wrapper operator
-func <- <T: Wrapper>(inout left: T, right: MapValue?) {
+public func <- <T: Wrapper>(inout left: T, right: MapValue?) {
     if let mapValue = right {
         let value: T? = mapValue.serialize()
         left = value!
     }
 }
 
-func <- <T: Wrapper>(inout left: T?, right: MapValue?) {
+public func <- <T: Wrapper>(inout left: T?, right: MapValue?) {
     if let mapValue = right {
         let value: T? = mapValue.serialize()
         left = value
     }
 }
 
-func <- <T: Wrapper>(inout left: T!, right: MapValue?) {
+public func <- <T: Wrapper>(inout left: T!, right: MapValue?) {
     if let mapValue = right {
         let value: T? = mapValue.serialize()
         left = value
@@ -77,21 +77,21 @@ func <- <T: Wrapper>(inout left: T!, right: MapValue?) {
 }
 
 // MARK: Wrapper array
-func <- <T: Wrapper>(inout left: [T], right: MapValue?) {
+public func <- <T: Wrapper>(inout left: [T], right: MapValue?) {
     if let mapValue = right {
         let value: [T]? = mapValue.serialize()
         left = value!
     }
 }
 
-func <- <T: Wrapper>(inout left: [T]?, right: MapValue?) {
+public func <- <T: Wrapper>(inout left: [T]?, right: MapValue?) {
     if let mapValue = right {
         let value: [T]? = mapValue.serialize()
         left = value
     }
 }
 
-func <- <T: Wrapper>(inout left: [T]!, right: MapValue?) {
+public func <- <T: Wrapper>(inout left: [T]!, right: MapValue?) {
     if let mapValue = right {
         let value: [T]? = mapValue.serialize()
         left = value
@@ -99,12 +99,12 @@ func <- <T: Wrapper>(inout left: [T]!, right: MapValue?) {
 }
 
 // MARK: Generic operator
-func <- <T>(inout left: T, right: MapValue?) {
+public func <- <T>(inout left: T, right: MapValue?) {
     left <- (right, { $0 })
 }
 
 // MARK: Generic operator with converter
-func <- <T, R>(inout left: T, right: (mapValue: MapValue?, transformer: R -> T)) {
+public func <- <T, R>(inout left: T, right: (mapValue: MapValue?, transformer: R -> T)) {
     
     guard let mapValue = right.mapValue else {
         return
@@ -115,7 +115,7 @@ func <- <T, R>(inout left: T, right: (mapValue: MapValue?, transformer: R -> T))
     left = transformedValue as T
 }
 
-func <- <T: NilLiteralConvertible, R>(inout left: T, right: (mapValue: MapValue?, transformer: R -> T)) {
+public func <- <T: NilLiteralConvertible, R>(inout left: T, right: (mapValue: MapValue?, transformer: R -> T)) {
     
     guard let mapValue = right.mapValue else {
         return

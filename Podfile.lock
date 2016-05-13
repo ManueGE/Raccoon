@@ -1,26 +1,68 @@
 PODS:
-  - Alamofire (3.3.1)
-  - BNRCoreDataStack (1.2.3)
+  - Alamofire (3.4.0)
+  - BNRCoreDataStack (1.2.4)
   - Groot (1.2):
     - Groot/Swift (= 1.2)
   - Groot/Swift (1.2)
-  - Realm (0.99.1):
-    - Realm/Headers (= 0.99.1)
-  - Realm/Headers (0.99.1)
-  - RealmSwift (0.99.1):
-    - Realm (= 0.99.1)
+  - OHHTTPStubs (5.0.0):
+    - OHHTTPStubs/Default (= 5.0.0)
+  - OHHTTPStubs/Core (5.0.0)
+  - OHHTTPStubs/Default (5.0.0):
+    - OHHTTPStubs/Core
+    - OHHTTPStubs/JSON
+    - OHHTTPStubs/NSURLSession
+    - OHHTTPStubs/OHPathHelpers
+  - OHHTTPStubs/JSON (5.0.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/NSURLSession (5.0.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/OHPathHelpers (5.0.0)
+  - OHHTTPStubs/Swift (5.0.0):
+    - OHHTTPStubs/Core
+  - OMGHTTPURLRQ (3.1.1):
+    - OMGHTTPURLRQ/RQ (= 3.1.1)
+  - OMGHTTPURLRQ/FormURLEncode (3.1.1)
+  - OMGHTTPURLRQ/RQ (3.1.1):
+    - OMGHTTPURLRQ/FormURLEncode
+    - OMGHTTPURLRQ/UserAgent
+  - OMGHTTPURLRQ/UserAgent (3.1.1)
+  - PromiseKit (3.1.1):
+    - PromiseKit/Foundation (= 3.1.1)
+    - PromiseKit/QuartzCore (= 3.1.1)
+    - PromiseKit/UIKit (= 3.1.1)
+  - PromiseKit/CorePromise (3.1.1)
+  - PromiseKit/Foundation (3.1.1):
+    - OMGHTTPURLRQ (~> 3.1.0)
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (3.1.1):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (3.1.1):
+    - PromiseKit/CorePromise
+  - Realm (0.102.0):
+    - Realm/Headers (= 0.102.0)
+  - Realm/Headers (0.102.0)
+  - RealmSwift (0.102.0):
+    - Realm (= 0.102.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 3.3)
+  - Alamofire (~> 3.4)
   - BNRCoreDataStack (~> 1.2)
   - Groot (~> 1.2)
-  - RealmSwift (~> 0.99)
+  - OHHTTPStubs (~> 5.0)
+  - OHHTTPStubs/Swift (~> 5.0)
+  - PromiseKit (~> 3.1)
+  - RealmSwift (~> 0.102)
 
 SPEC CHECKSUMS:
-  Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
-  BNRCoreDataStack: 10abcb19d2a3f397950a06e9b0915f4e695a826b
+  Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
+  BNRCoreDataStack: 8b4102fe383c472141ffe5e31cc93e56dd80e1d2
   Groot: 86c2c820d619f18586b2d1dcfd90e908339f00bc
-  Realm: 522a0cc8e1f8755ee56d7dc16ca0fc380d045766
-  RealmSwift: 1d9c4299ef5dbf575c5da09fc706ed726327cfa0
+  OHHTTPStubs: a5d2e9eea07869d42ec03338325f398bc520e159
+  OMGHTTPURLRQ: 633f98ee745aeda02345935a52eec1784cddb589
+  PromiseKit: 4e8127c22a9b29d1b44958ab2ec762ea6115cbfb
+  Realm: 5d219f9037e3ec2019c599b8227bfc95433cb10e
+  RealmSwift: e6f436f9fea1c57b9ad6d1c46d57562c845f3c4c
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 4ead31d0856b16798b2d920b0275ca28619405d8
+
+COCOAPODS: 1.0.0

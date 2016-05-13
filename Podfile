@@ -2,30 +2,37 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'Raccoon' do
-	pod 'Alamofire', '~> 3.3'
+	pod 'Alamofire', '~> 3.4'
+    
+    target 'RaccoonTests'
 end
 
-target 'RaccoonTests' do
-end
 
 target 'RaccoonCoreData' do
-    pod 'Alamofire', '~> 3.3'
     pod 'Groot', '~> 1.2'
+    
+    target 'RaccoonCoreDataTests' do
+        pod 'Alamofire', '~> 3.4'
+        pod 'BNRCoreDataStack', '~> 1.2'
+    end
 end
 
-target 'RaccoonCoreDataTests' do
-    pod 'BNRCoreDataStack', '~> 1.2'
-end
 
 target 'RaccoonRealm' do
-    pod 'RealmSwift', '~> 0.99'
+    pod 'RealmSwift', '~> 0.102'
+    
+    target 'RaccoonRealmTests' do
+        pod 'Alamofire', '~> 3.4'
+    end
 end
 
-target 'RaccoonRealmTests' do
+target 'RaccoonClient' do
+    pod 'PromiseKit', '~> 3.1'
+    pod 'Alamofire', '~> 3.4'
+    
+    target 'RaccoonClientTests' do
+        pod 'OHHTTPStubs', '~> 5.0'
+        pod 'OHHTTPStubs/Swift', '~> 5.0'
+    end
 end
-
-post_install do |installer|
-    `find Pods -regex 'Pods/Groot.*\\.h' -print0 | xargs -0 sed -i '' 's/\\(<\\)Groot\\/\\(.*\\)\\(>\\)/\\"\\2\\"/'`
-end
-
 
