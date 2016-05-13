@@ -10,14 +10,17 @@ import XCTest
 @testable import RaccoonClient
 import Raccoon
 import Alamofire
-import OHHTTPStubs
 import PromiseKit
 
-class RequestClientTests: RaccoonClientTests {
+struct MyRequestConvertible: URLRequestConvertible {
+    let URLRequest: NSMutableURLRequest = NSMutableURLRequest(URL: NSURL(string: apiUrl)!)
+}
+
+class RequestConvertibleClientTests: RaccoonClientTests {
     
-    let theRequest = request(.GET, apiUrl)
+    let theRequest = MyRequestConvertible()
     
-    func testRequestInsertable() {
+    func testRequestConvertibleInsertable() {
         
         let responseArrived = self.expectationWithDescription("response of async request has arrived")
         var receivedObject: MyInsertable?
@@ -43,7 +46,7 @@ class RequestClientTests: RaccoonClientTests {
     }
     
     
-    func testRequestInsertableArray() {
+    func testRequestConvertibleInsertableArray() {
         
         let responseArrived = self.expectationWithDescription("response of async request has arrived")
         var receivedObject: [MyInsertable]?
@@ -72,7 +75,7 @@ class RequestClientTests: RaccoonClientTests {
     }
     
     
-    func testRequestWrapper() {
+    func testRequestConvertibleWrapper() {
         
         let responseArrived = self.expectationWithDescription("response of async request has arrived")
         var receivedObject: MyWrapper?
@@ -101,7 +104,7 @@ class RequestClientTests: RaccoonClientTests {
         }
     }
     
-    func testRequestVoid() {
+    func testRequestConvertibleVoid() {
         
         let responseArrived = self.expectationWithDescription("response of async request has arrived")
         var success = false

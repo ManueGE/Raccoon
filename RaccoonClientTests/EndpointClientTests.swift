@@ -9,7 +9,6 @@
 import XCTest
 @testable import RaccoonClient
 import Raccoon
-import OHHTTPStubs
 import PromiseKit
 
 class EndpointClientTest: RaccoonClientTests {

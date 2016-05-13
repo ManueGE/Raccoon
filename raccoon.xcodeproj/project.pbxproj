@@ -10,6 +10,7 @@
 		2958A98627506E56C3C285D9 /* Pods_Raccoon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB36FA55A96E3071D374E2EF /* Pods_Raccoon.framework */; };
 		3234E5FB1CE5BCD3006DB95E /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3234E5FA1CE5BCD3006DB95E /* Client.swift */; };
 		3255A1CE1CE53D080095E919 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3255A1CD1CE53D080095E919 /* Endpoint.swift */; };
+		3274BA601CE604E90094BA57 /* FailClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3274BA5F1CE604E90094BA57 /* FailClientTest.swift */; };
 		327A279D1CD00D7300F2A921 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 327A27991CD00D7300F2A921 /* Model.xcdatamodeld */; };
 		327A279E1CD00D7300F2A921 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327A279B1CD00D7300F2A921 /* User+CoreDataProperties.swift */; };
 		327A279F1CD00D7300F2A921 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327A279C1CD00D7300F2A921 /* User.swift */; };
@@ -35,7 +36,7 @@
 		329C6DCB1CE514F20020387E /* RaccoonClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329C6DCA1CE514F20020387E /* RaccoonClientTests.swift */; };
 		329C6DD31CE5150C0020387E /* Raccoon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3285AB861CD019FE00350513 /* Raccoon.framework */; };
 		32AE41301CD0BB0B00BFA982 /* RaccoonRealmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AE412F1CD0BB0B00BFA982 /* RaccoonRealmTests.swift */; };
-		32D36A281CE5E29600E73FFB /* RequestClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D36A271CE5E29600E73FFB /* RequestClientTests.swift */; };
+		32D36A281CE5E29600E73FFB /* RequestConvertibleClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D36A271CE5E29600E73FFB /* RequestConvertibleClientTests.swift */; };
 		32D36A2A1CE5E2AB00E73FFB /* EndpointClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D36A291CE5E2AB00E73FFB /* EndpointClientTests.swift */; };
 		32DDC7D61CCFB574008FC6D5 /* RaccoonCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = 32DDC7D51CCFB574008FC6D5 /* RaccoonCoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		32DDC7DD1CCFB574008FC6D5 /* RaccoonCoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DDC7D31CCFB574008FC6D5 /* RaccoonCoreData.framework */; };
@@ -95,6 +96,7 @@
 		2884B0C8BBCB34A2CA301FB5 /* Pods-Raccoon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Raccoon.release.xcconfig"; path = "Pods/Target Support Files/Pods-Raccoon/Pods-Raccoon.release.xcconfig"; sourceTree = "<group>"; };
 		3234E5FA1CE5BCD3006DB95E /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		3255A1CD1CE53D080095E919 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		3274BA5F1CE604E90094BA57 /* FailClientTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FailClientTest.swift; sourceTree = "<group>"; };
 		327A279A1CD00D7300F2A921 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		327A279B1CD00D7300F2A921 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		327A279C1CD00D7300F2A921 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -127,7 +129,7 @@
 		329C6DCC1CE514F20020387E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32AE412F1CD0BB0B00BFA982 /* RaccoonRealmTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaccoonRealmTests.swift; sourceTree = "<group>"; };
 		32B0CBA9F35315134012DDAC /* Pods-RaccoonRealm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaccoonRealm.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RaccoonRealm/Pods-RaccoonRealm.debug.xcconfig"; sourceTree = "<group>"; };
-		32D36A271CE5E29600E73FFB /* RequestClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestClientTests.swift; sourceTree = "<group>"; };
+		32D36A271CE5E29600E73FFB /* RequestConvertibleClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestConvertibleClientTests.swift; sourceTree = "<group>"; };
 		32D36A291CE5E2AB00E73FFB /* EndpointClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointClientTests.swift; sourceTree = "<group>"; };
 		32DDC7D31CCFB574008FC6D5 /* RaccoonCoreData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RaccoonCoreData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32DDC7D51CCFB574008FC6D5 /* RaccoonCoreData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RaccoonCoreData.h; sourceTree = "<group>"; };
@@ -359,7 +361,8 @@
 			children = (
 				329C6DCA1CE514F20020387E /* RaccoonClientTests.swift */,
 				32D36A291CE5E2AB00E73FFB /* EndpointClientTests.swift */,
-				32D36A271CE5E29600E73FFB /* RequestClientTests.swift */,
+				32D36A271CE5E29600E73FFB /* RequestConvertibleClientTests.swift */,
+				3274BA5F1CE604E90094BA57 /* FailClientTest.swift */,
 				329C6DCC1CE514F20020387E /* Info.plist */,
 			);
 			path = RaccoonClientTests;
@@ -1186,7 +1189,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				329C6DCB1CE514F20020387E /* RaccoonClientTests.swift in Sources */,
-				32D36A281CE5E29600E73FFB /* RequestClientTests.swift in Sources */,
+				32D36A281CE5E29600E73FFB /* RequestConvertibleClientTests.swift in Sources */,
+				3274BA601CE604E90094BA57 /* FailClientTest.swift in Sources */,
 				32D36A2A1CE5E2AB00E73FFB /* EndpointClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
