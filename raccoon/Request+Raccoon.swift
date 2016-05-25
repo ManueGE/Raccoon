@@ -19,12 +19,6 @@ extension Alamofire.Request {
         
         return ResponseSerializer { request, response, data, error in
             
-            if let data = data {
-                print(String(data: data, encoding: NSUTF8StringEncoding))
-            }
-            else {
-                print("NO DATA?")
-            }
             // Transform to json
             let jsonSerializer = JSONResponseSerializer()
             let jsonResponse = jsonSerializer.serializeResponse(request, response, data, error)
@@ -81,7 +75,7 @@ extension Alamofire.Request {
         }
     }
     
-    public func raccoonResponse<T: Insertable>(context: InsertContext = NoContext(),
+    public func response<T: Insertable>(context: InsertContext = NoContext(),
         completionHandler: (Response<T, NSError>) -> Void) -> Self {
             
             let serializer = Request.raccoonResponseSerializer(context) as ResponseSerializer <T, NSError>
@@ -126,7 +120,7 @@ extension Alamofire.Request {
     }
 
     
-    public func raccoonResponse<T: Insertable>(context: InsertContext = NoContext(),
+    public func response<T: Insertable>(context: InsertContext = NoContext(),
         completionHandler: (Response<[T], NSError>) -> Void) -> Self {
             
             let serializer = Request.raccoonResponseSerializer(context) as ResponseSerializer<[T], NSError>
@@ -154,7 +148,7 @@ extension Alamofire.Request {
         }
     }
     
-    public func raccoonResponse<T: Wrapper>(context: InsertContext = NoContext(),
+    public func response<T: Wrapper>(context: InsertContext = NoContext(),
         completionHandler: (Response<T, NSError>) -> Void) -> Self {
             
             let serializer = Request.raccoonResponseSerializer(context) as ResponseSerializer<T, NSError>

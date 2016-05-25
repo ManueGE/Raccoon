@@ -43,7 +43,7 @@ class Client {
     
     func enqueue<T: Insertable>(request: Request) -> Promise<T> {
         return Promise<T>(resolvers: { (fulfill, reject) -> Void in
-            request.raccoonResponse(context, completionHandler: { (response: Response<T, NSError>) -> Void in
+            request.response(context, completionHandler: { (response: Response<T, NSError>) -> Void in
                 switch response.result {
                 case .Success(let value):
                     fulfill(value)
@@ -57,7 +57,7 @@ class Client {
     func enqueue<T: Insertable>(request: Request) -> Promise<[T]> {
         
         return Promise<[T]>(resolvers: { (fulfill, reject) -> Void in
-            request.raccoonResponse(context, completionHandler: { (response: Response<[T], NSError>) -> Void in
+            request.response(context, completionHandler: { (response: Response<[T], NSError>) -> Void in
                 
                 switch response.result {
                 case .Success(let value):
@@ -71,7 +71,7 @@ class Client {
     
     func enqueue<T: Wrapper>(request: Request) -> Promise<T> {
         return Promise<T>(resolvers: { (fulfill, reject) -> Void in
-            request.raccoonResponse(context, completionHandler: { (response: Response<T, NSError>) -> Void in
+            request.response(context, completionHandler: { (response: Response<T, NSError>) -> Void in
                 
                 switch response.result {
                 case .Success(let value):
