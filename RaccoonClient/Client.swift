@@ -89,8 +89,9 @@ class Client {
     }
     
     func enqueue(request: Request) -> Promise<Void> {
+        request.response
         return Promise<Void>(resolvers: { (fulfill, reject) -> Void in
-            request.responseData(completionHandler: { (response: Response<NSData, NSError>) in
+            request.emptyResponse(responseConverter, completionHandler: { (response: Response<NSHTTPURLResponse?, NSError>) in
                 switch response.result {
                 case .Success:
                     fulfill()
