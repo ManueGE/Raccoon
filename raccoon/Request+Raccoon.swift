@@ -188,10 +188,37 @@ extension Alamofire.Request {
     
     // MARK: - Empty
     public func emptyResponse(converter: ResponseConverter? = nil,
-                              completionHandler: (Response<NSData?, NSError>) -> Void) -> Self {
+                              completionHandler: (EmptyResponse) -> Void) -> Self {
         
         let serializer = Request.raccoonBaseSerializer(converter) as ResponseSerializer<NSData?, NSError>
-        return response(responseSerializer: serializer, completionHandler: completionHandler)
+        return response(responseSerializer: serializer,
+                        completionHandler: { (response: Response<NSData?, NSError>) in
+                            
+                            if response.result.isSuccess {
+                                completionHandler(.Success)
+                            }
+                            
+                            else {
+                                completionHandler(.Failure(error: response.result.error!))
+                            }
+        })
+    }
+}
 
+public enum EmptyResponse {
+    case Success
+    case Failure(error: NSError)
+    
+    var isSuccess: Bool {
+        switch self {
+        case .Success:
+            return true
+        default:
+            return false
+        }
+    }
+    
+    var isFailure: Bool {
+        return !self.isSuccess
     }
 }

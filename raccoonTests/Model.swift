@@ -66,22 +66,6 @@ class Pagination: Wrapper {
     }
 }
 
-class Response: Wrapper {
-    var string: String!
-    var date: NSDate?
-    var pagination: Pagination?
-    var paginations: [Pagination]?
-    
-    required init() {}
-    
-    func map(map: Map) {
-        string <- map["string"]
-        date <- (map["date"], DateConverter.date)
-        pagination <- map["pagination"]
-        paginations <- map["paginations"]
-    }
-}
-
 class PaginatedResponse<Type: Insertable>: Wrapper {
     
     var data: [Type]!
