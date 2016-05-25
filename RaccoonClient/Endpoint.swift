@@ -12,14 +12,19 @@ import Alamofire
 //MARK: Endpoint
 typealias EndpointSerializer = (Endpoint) -> (Request)
 
-struct Endpoint {
+class Endpoint {
     var method: Alamofire.Method
     var path: String
     var parameters: [String: AnyObject]?
     var encoding: ParameterEncoding
     var headers: [String: String]?
     
-    init(method: Alamofire.Method, path: String, parameters: [String: AnyObject]? = nil, encoding: ParameterEncoding = .URL, headers: [String: String]? = nil) {
+    init(method: Alamofire.Method,
+         path: String,
+         parameters: [String: AnyObject],
+         encoding: ParameterEncoding,
+         headers: [String: String]) {
+        
         self.method = method
         self.path = path
         self.parameters = parameters

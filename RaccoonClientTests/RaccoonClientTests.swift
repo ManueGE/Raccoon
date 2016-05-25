@@ -67,7 +67,7 @@ extension Client {
     }
     
     static func create() -> Client {
-        return Client(endpointSerializer: EndpointSerializer)
+        return Client(context: NoContext(), endpointSerializer: EndpointSerializer)
     }
 }
 

@@ -17,9 +17,28 @@ class Client {
     var context: InsertContext
     var endpointSerializer: EndpointSerializer?
     
-    init(context: InsertContext = NoContext(), endpointSerializer: EndpointSerializer? = nil) {
+    init(context: InsertContext, endpointSerializer: EndpointSerializer?) {
         self.context = context
         self.endpointSerializer = endpointSerializer
+    }
+    
+    convenience init(context: InsertContext, baseURL: String) {
+        self.init(context: context) { (endpoint) -> (Request) in
+            let headers = endpoint.headers
+            
+            var path = endpoint.path
+            if !endpoint.path.hasPrefix("/") {
+                path = "/\(path)"
+            }
+            
+            let request = Alamofire.request(endpoint.method,
+                                            "\(baseURL)\(path)",
+                                            parameters: endpoint.parameters,
+                                            encoding: endpoint.encoding,
+                                            headers: headers)
+            
+            return request.validate()
+        }
     }
     
     func enqueue<T: Insertable>(request: Request) -> Promise<T> {
