@@ -83,7 +83,23 @@ class RaccoonClientTests: XCTestCase {
         super.tearDown()
     }
     
-    //MARK: Helper
+    // MARK: - Test init
+    func testInitWithBaseURL() {
+        
+        let client = Client(context: NoContext(), baseURL: "http://www.sample.com")
+        let endpoint = Endpoint(method: .GET,
+                                path: "my/path",
+                                parameters: [:],
+                                encoding: .URL,
+                                headers: [:])
+        let request = client.endpointSerializer!(endpoint)
+        let url = request.request?.URL?.absoluteString
+        
+        XCTAssertNotNil(url, "shouldn't be nil")
+        XCTAssertEqual(url, "http://www.sample.com/my/path", "vale don't match")
+    }
+    
+    //MARK: - Helper
     func stubWithObject(object: AnyObject) {
         
         OHHTTPStubs.stubRequestsPassingTest({
