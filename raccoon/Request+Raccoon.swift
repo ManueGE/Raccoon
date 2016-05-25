@@ -9,15 +9,24 @@
 import Foundation
 import Alamofire
 
+public typealias ResponseConverter = NSHTTPURLResponse? -> NSHTTPURLResponse?
+
 let RaccoonResponseSerializerDomain = "RaccoonResponseSerializerDomain"
 let UnexpectedTypeErrorCode = -1
 let InvalidContextTypeErrorCode = -2
 
 extension Alamofire.Request {
     
-    private static func raccoonBaseSerializer<ReturnType>() -> ResponseSerializer<ReturnType, NSError> {
+    private static func raccoonBaseSerializer<ReturnType>(converter: ResponseConverter? = nil) -> ResponseSerializer<ReturnType, NSError> {
         
         return ResponseSerializer { request, response, data, error in
+            
+            var response = response
+            
+            // Convert the response
+            if let converter = converter {
+                response = converter(response)
+            }
             
             // Transform to json
             let jsonSerializer = JSONResponseSerializer()
@@ -40,7 +49,7 @@ extension Alamofire.Request {
     }
     
     // MARK: Element
-    public static func raccoonResponseSerializer<T: Insertable> (context: InsertContext = NoContext()) -> ResponseSerializer <T, NSError> {
+    public static func raccoonResponseSerializer<T: Insertable> (context: InsertContext = NoContext(), converter: ResponseConverter? = nil) -> ResponseSerializer <T, NSError> {
         
         return ResponseSerializer { request, response, data, error in
             // Check if error in previous step
@@ -49,7 +58,7 @@ extension Alamofire.Request {
             }
             
             // Transform to json
-            let baseSerializer = raccoonBaseSerializer() as ResponseSerializer<[String: AnyObject], NSError>
+            let baseSerializer = raccoonBaseSerializer(converter) as ResponseSerializer<[String: AnyObject], NSError>
             let baseResponse = baseSerializer.serializeResponse(request, response, data, error)
             
             guard baseResponse.isSuccess else {
@@ -75,15 +84,15 @@ extension Alamofire.Request {
         }
     }
     
-    public func response<T: Insertable>(context: InsertContext = NoContext(),
+    public func response<T: Insertable>(context: InsertContext = NoContext(), converter: ResponseConverter? = nil,
         completionHandler: (Response<T, NSError>) -> Void) -> Self {
             
-            let serializer = Request.raccoonResponseSerializer(context) as ResponseSerializer <T, NSError>
+        let serializer = Request.raccoonResponseSerializer(context, converter: converter) as ResponseSerializer <T, NSError>
             return response(responseSerializer: serializer, completionHandler: completionHandler)
     }
     
     // MARK: Array
-    public static func raccoonResponseSerializer<T: Insertable> (context: InsertContext = NoContext()) -> ResponseSerializer <[T], NSError> {
+    public static func raccoonResponseSerializer<T: Insertable> (context: InsertContext = NoContext(), converter: ResponseConverter? = nil) -> ResponseSerializer <[T], NSError> {
         
         return ResponseSerializer { request, response, data, error in
             
@@ -93,7 +102,7 @@ extension Alamofire.Request {
             }
             
             // Transform to json
-            let baseSerializer = raccoonBaseSerializer() as ResponseSerializer<[AnyObject], NSError>
+            let baseSerializer = raccoonBaseSerializer(converter) as ResponseSerializer<[AnyObject], NSError>
             let baseResponse = baseSerializer.serializeResponse(request, response, data, error)
             
             guard baseResponse.isSuccess else {
@@ -120,19 +129,19 @@ extension Alamofire.Request {
     }
 
     
-    public func response<T: Insertable>(context: InsertContext = NoContext(),
+    public func response<T: Insertable>(context: InsertContext = NoContext(), converter: ResponseConverter? = nil,
         completionHandler: (Response<[T], NSError>) -> Void) -> Self {
             
-            let serializer = Request.raccoonResponseSerializer(context) as ResponseSerializer<[T], NSError>
+        let serializer = Request.raccoonResponseSerializer(context, converter: converter) as ResponseSerializer<[T], NSError>
             return response(responseSerializer: serializer, completionHandler: completionHandler)
     }
     
     // MARK: Wrapper
-    public static func raccoonResponseSerializer<T: Wrapper> (context: InsertContext = NoContext()) -> ResponseSerializer <T, NSError> {
+    public static func raccoonResponseSerializer<T: Wrapper> (context: InsertContext = NoContext(), converter: ResponseConverter? = nil) -> ResponseSerializer <T, NSError> {
         
         return ResponseSerializer { request, response, data, error in
             // Transform to json
-            let baseSerializer = raccoonBaseSerializer() as ResponseSerializer<[String: AnyObject], NSError>
+            let baseSerializer = raccoonBaseSerializer(converter) as ResponseSerializer<[String: AnyObject], NSError>
             let baseResponse = baseSerializer.serializeResponse(request, response, data, error)
             
             guard error == nil else {
@@ -148,10 +157,10 @@ extension Alamofire.Request {
         }
     }
     
-    public func response<T: Wrapper>(context: InsertContext = NoContext(),
+    public func response<T: Wrapper>(context: InsertContext = NoContext(), converter: ResponseConverter? = nil,
         completionHandler: (Response<T, NSError>) -> Void) -> Self {
             
-            let serializer = Request.raccoonResponseSerializer(context) as ResponseSerializer<T, NSError>
+        let serializer = Request.raccoonResponseSerializer(context, converter: converter) as ResponseSerializer<T, NSError>
             return response(responseSerializer: serializer, completionHandler: completionHandler)
     }
 

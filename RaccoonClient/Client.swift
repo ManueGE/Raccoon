@@ -16,14 +16,17 @@ class Client {
     
     var context: InsertContext
     var endpointSerializer: EndpointSerializer?
+    var responseConverter: ResponseConverter?
     
-    init(context: InsertContext, endpointSerializer: EndpointSerializer?) {
+    init(context: InsertContext, endpointSerializer: EndpointSerializer?, responseConverter: ResponseConverter? = nil) {
         self.context = context
         self.endpointSerializer = endpointSerializer
+        self.responseConverter = responseConverter
     }
     
-    convenience init(context: InsertContext, baseURL: String) {
-        self.init(context: context) { (endpoint) -> (Request) in
+    convenience init(context: InsertContext, baseURL: String, responseConverter: ResponseConverter? = nil) {
+        
+        let endpointSerializer: EndpointSerializer = { (endpoint) -> (Request) in
             let headers = endpoint.headers
             
             var path = endpoint.path
@@ -39,11 +42,13 @@ class Client {
             
             return request.validate()
         }
+        
+        self.init(context: context, endpointSerializer: endpointSerializer, responseConverter: responseConverter)
     }
     
     func enqueue<T: Insertable>(request: Request) -> Promise<T> {
         return Promise<T>(resolvers: { (fulfill, reject) -> Void in
-            request.response(context, completionHandler: { (response: Response<T, NSError>) -> Void in
+            request.response(context, converter: responseConverter, completionHandler: { (response: Response<T, NSError>) -> Void in
                 switch response.result {
                 case .Success(let value):
                     fulfill(value)
@@ -57,7 +62,7 @@ class Client {
     func enqueue<T: Insertable>(request: Request) -> Promise<[T]> {
         
         return Promise<[T]>(resolvers: { (fulfill, reject) -> Void in
-            request.response(context, completionHandler: { (response: Response<[T], NSError>) -> Void in
+            request.response(context, converter: responseConverter, completionHandler: { (response: Response<[T], NSError>) -> Void in
                 
                 switch response.result {
                 case .Success(let value):
@@ -71,7 +76,7 @@ class Client {
     
     func enqueue<T: Wrapper>(request: Request) -> Promise<T> {
         return Promise<T>(resolvers: { (fulfill, reject) -> Void in
-            request.response(context, completionHandler: { (response: Response<T, NSError>) -> Void in
+            request.response(context, converter: responseConverter, completionHandler: { (response: Response<T, NSError>) -> Void in
                 
                 switch response.result {
                 case .Success(let value):

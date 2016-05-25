@@ -62,8 +62,7 @@ extension Client {
             parameters: endpoint.parameters,
             encoding: endpoint.encoding,
             headers: endpoint.headers)
-            .validate(statusCode: 200..<300)
-            .validate(contentType: ["application/json"])
+            .validate()
     }
     
     static func create() -> Client {
