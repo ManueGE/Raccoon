@@ -4,7 +4,10 @@ use_frameworks!
 target 'Raccoon' do
 	pod 'Alamofire', '~> 3.4'
     
-    target 'RaccoonTests'
+    target 'RaccoonTests' do
+        pod 'OHHTTPStubs', '~> 5.0'
+        pod 'OHHTTPStubs/Swift', '~> 5.0'
+    end
 end
 
 

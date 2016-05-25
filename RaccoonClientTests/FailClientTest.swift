@@ -139,7 +139,7 @@ class FailClientTest: RaccoonClientTests {
                 error = _error
         }
         
-        self.waitForExpectationsWithTimeout(10) { err in
+        self.waitForExpectationsWithTimeout(3) { err in
             
             XCTAssertNotNil(error, "Error shouldn't be nil")
             

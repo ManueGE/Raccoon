@@ -9,6 +9,7 @@
 import XCTest
 @testable import Raccoon
 import Alamofire
+import OHHTTPStubs
 
 // http://stackoverflow.com/questions/26918593/unit-testing-http-traffic-in-alamofire-app
 class RaccoonResponseTest: XCTestCase {
@@ -25,66 +26,78 @@ class RaccoonResponseTest: XCTestCase {
 
     
     func testObjectSerializer() {
-        // Given
-        let serializer: ResponseSerializer<MyInsertable, NSError> = Request.raccoonResponseSerializer()
         
+        var result: Result<MyInsertable, NSError>!
+        let responseArrived = self.expectationWithDescription("response of async request has arrived")
         let json = ["integer": 1, "string": "one"]
-        let data = try! NSJSONSerialization.dataWithJSONObject(json, options: [])
+        stubWithObject(json)
+    
+        let request = Alamofire.request(NSURLRequest())
+        request.response(NoContext(), converter: nil) { (response: Response<MyInsertable, NSError>) in
+            result = response.result
+            responseArrived.fulfill()
+        }
         
-        // When
-        let result = serializer.serializeResponse(nil, nil, data, nil)
-        
-        // Then
-        XCTAssertTrue(result.isSuccess, "result is success should be true")
-        XCTAssertNotNil(result.value, "result value should not be nil")
-        XCTAssertNil(result.error, "result error should be nil")
-        
-        XCTAssertEqual(result.value?.integer, 1, "property does not match")
-        XCTAssertEqual(result.value?.string, "one", "property does not match")
+        self.waitForExpectationsWithTimeout(10) { err in
+            XCTAssertTrue(result.isSuccess, "result is success should be true")
+            XCTAssertNotNil(result.value, "result value should not be nil")
+            XCTAssertNil(result.error, "result error should be nil")
+            
+            XCTAssertEqual(result.value?.integer, 1, "property does not match")
+            XCTAssertEqual(result.value?.string, "one", "property does not match")
+        }
     }
     
-    
+
     func testArraySerializer() {
-        // Given
-        let serializer: ResponseSerializer<[MyInsertable], NSError> = Request.raccoonResponseSerializer()
         
+        var result: Result<[MyInsertable], NSError>!
+        let responseArrived = self.expectationWithDescription("response of async request has arrived")
         let json = [["integer": 1, "string": "one"], ["integer": 2, "string": "two"]]
-        let data = try! NSJSONSerialization.dataWithJSONObject(json, options: [])
+        stubWithObject(json)
         
-        // When
-        let result = serializer.serializeResponse(nil, nil, data, nil)
+        let request = Alamofire.request(NSURLRequest())
+        request.response(NoContext(), converter: nil) { (response: Response<[MyInsertable], NSError>) in
+            result = response.result
+            responseArrived.fulfill()
+        }
         
-        // Then
-        XCTAssertTrue(result.isSuccess, "result is success should be true")
-        XCTAssertNotNil(result.value, "result value should not be nil")
-        XCTAssertNil(result.error, "result error should be nil")
-        
-        XCTAssertEqual(result.value?.count, 2, "property does not match")
-        
-        XCTAssertEqual(result.value?.first?.integer, 1, "property does not match")
-        XCTAssertEqual(result.value?.first?.string, "one", "property does not match")
-        
-        XCTAssertEqual(result.value?.last?.integer, 2, "property does not match")
-        XCTAssertEqual(result.value?.last?.string, "two", "property does not match")
+        self.waitForExpectationsWithTimeout(10) { err in
+            XCTAssertTrue(result.isSuccess, "result is success should be true")
+            XCTAssertNotNil(result.value, "result value should not be nil")
+            XCTAssertNil(result.error, "result error should be nil")
+            
+            XCTAssertEqual(result.value?.count, 2, "property does not match")
+            
+            XCTAssertEqual(result.value?.first?.integer, 1, "property does not match")
+            XCTAssertEqual(result.value?.first?.string, "one", "property does not match")
+            
+            XCTAssertEqual(result.value?.last?.integer, 2, "property does not match")
+            XCTAssertEqual(result.value?.last?.string, "two", "property does not match")
+        } 
     }
     
 
     func testEmptyArraySerializer() {
-        // Given
-        let serializer: ResponseSerializer<[MyInsertable], NSError> = Request.raccoonResponseSerializer()
         
+        var result: Result<[MyInsertable], NSError>!
+        let responseArrived = self.expectationWithDescription("response of async request has arrived")
         let json = []
-        let data = try! NSJSONSerialization.dataWithJSONObject(json, options: [])
+        stubWithObject(json)
         
-        // When
-        let result = serializer.serializeResponse(nil, nil, data, nil)
+        let request = Alamofire.request(NSURLRequest())
+        request.response(NoContext(), converter: nil) { (response: Response<[MyInsertable], NSError>) in
+            result = response.result
+            responseArrived.fulfill()
+        }
         
-        // Then
-        XCTAssertTrue(result.isSuccess, "result is success should be true")
-        XCTAssertNotNil(result.value, "result value should not be nil")
-        XCTAssertNil(result.error, "result error should be nil")
-        
-        XCTAssertEqual(result.value?.count, 0, "property does not match")
+        self.waitForExpectationsWithTimeout(10) { err in
+            XCTAssertTrue(result.isSuccess, "result is success should be true")
+            XCTAssertNotNil(result.value, "result value should not be nil")
+            XCTAssertNil(result.error, "result error should be nil")
+            
+            XCTAssertEqual(result.value?.count, 0, "property does not match")
+        }
     }
      
     
@@ -104,27 +117,91 @@ class RaccoonResponseTest: XCTestCase {
             }
         }
         
-        // Given
-        let serializer: ResponseSerializer<WrappedResponse, NSError> = Request.raccoonResponseSerializer()
-        
+        var result: Result<WrappedResponse, NSError>!
+        let responseArrived = self.expectationWithDescription("response of async request has arrived")
         let json = [
             "string": "example",
             "tables": [["integer": 1, "string": "one"], ["integer": 2, "string": "two"]],
             "table": ["integer": 3, "string": "three"]
         ]
         
-        let data = try! NSJSONSerialization.dataWithJSONObject(json, options: [])
+        stubWithObject(json)
         
-        // When
-        let result = serializer.serializeResponse(nil, nil, data, nil)
+        let request = Alamofire.request(NSURLRequest())
+        request.response(NoContext(), converter: nil) { (response: Response<WrappedResponse, NSError>) in
+            result = response.result
+            responseArrived.fulfill()
+        }
         
-        // Then
-        XCTAssertTrue(result.isSuccess, "result is success should be true")
-        XCTAssertNotNil(result.value, "result value should not be nil")
-        XCTAssertNil(result.error, "result error should be nil")
+        self.waitForExpectationsWithTimeout(10) { err in
+            XCTAssertTrue(result.isSuccess, "result is success should be true")
+            XCTAssertNotNil(result.value, "result value should not be nil")
+            XCTAssertNil(result.error, "result error should be nil")
+            
+            XCTAssertEqual(result.value?.string, "example", "property does not match")
+            XCTAssertEqual(result.value?.insertables.count, 2, "property does not match")
+            XCTAssertEqual(result.value?.insertable.integer, 3, "property does not match")
+        }
+    }
+    
+    func testEmptySerializer() {
         
-        XCTAssertEqual(result.value?.string, "example", "property does not match")
-        XCTAssertEqual(result.value?.insertables.count, 2, "property does not match")
-        XCTAssertEqual(result.value?.insertable.integer, 3, "property does not match")
+        var result: EmptyResponse!
+        let responseArrived = self.expectationWithDescription("response of async request has arrived")
+        let json = []
+        
+        stubWithObject(json)
+        
+        let request = Alamofire.request(NSURLRequest())
+        request.emptyResponse { (response: EmptyResponse?) in
+            result = response
+            responseArrived.fulfill()
+        }
+        
+        self.waitForExpectationsWithTimeout(10) { err in
+            XCTAssertTrue(result.isSuccess, "result should success")
+            XCTAssertFalse(result.isFailure, "result should not fail")
+        }
+    }
+    
+    func testEmptySerializerFail() {
+        
+        var result: EmptyResponse!
+        let responseArrived = self.expectationWithDescription("response of async request has arrived")
+        
+        stubError()
+        
+        let request = Alamofire.request(NSURLRequest())
+        request.emptyResponse { (response: EmptyResponse?) in
+            result = response
+            responseArrived.fulfill()
+        }
+        
+        self.waitForExpectationsWithTimeout(10) { err in
+            XCTAssertTrue(result.isFailure, "result should fail")
+            XCTAssertFalse(result.isSuccess, "result should not succeed")
+        }
+    }
+    
+    //MARK: Helper
+    func stubWithObject(object: AnyObject) {
+        
+        OHHTTPStubs.stubRequestsPassingTest({
+            (request: NSURLRequest) -> Bool in
+            return true
+            }, withStubResponse: { (request: NSURLRequest) -> OHHTTPStubsResponse in
+                return OHHTTPStubsResponse(JSONObject: object, statusCode:200, headers:nil)
+        })
+    }
+    
+    func stubError() {
+        
+        OHHTTPStubs.stubRequestsPassingTest({
+            (request: NSURLRequest) -> Bool in
+            return true
+            }, withStubResponse: { (request: NSURLRequest) -> OHHTTPStubsResponse in
+                let notConnectedError = NSError(domain:NSURLErrorDomain, code:10, userInfo:nil)
+                return OHHTTPStubsResponse(error:notConnectedError)
+        })
     }
 }

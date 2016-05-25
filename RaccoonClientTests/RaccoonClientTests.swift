@@ -62,8 +62,7 @@ extension Client {
             parameters: endpoint.parameters,
             encoding: endpoint.encoding,
             headers: endpoint.headers)
-            .validate(statusCode: 200..<300)
-            .validate(contentType: ["application/json"])
+            .validate()
     }
     
     static func create() -> Client {
@@ -84,7 +83,23 @@ class RaccoonClientTests: XCTestCase {
         super.tearDown()
     }
     
-    //MARK: Helper
+    // MARK: - Test init
+    func testInitWithBaseURL() {
+        
+        let client = Client(context: NoContext(), baseURL: "http://www.sample.com")
+        let endpoint = Endpoint(method: .GET,
+                                path: "my/path",
+                                parameters: [:],
+                                encoding: .URL,
+                                headers: [:])
+        let request = client.endpointSerializer!(endpoint)
+        let url = request.request?.URL?.absoluteString
+        
+        XCTAssertNotNil(url, "shouldn't be nil")
+        XCTAssertEqual(url, "http://www.sample.com/my/path", "vale don't match")
+    }
+    
+    //MARK: - Helper
     func stubWithObject(object: AnyObject) {
         
         OHHTTPStubs.stubRequestsPassingTest({
