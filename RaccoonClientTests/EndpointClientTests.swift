@@ -119,5 +119,4 @@ class EndpointClientTest: RaccoonClientTests {
             XCTAssert(success, "The request must succeed")
         }
     }
-
 }

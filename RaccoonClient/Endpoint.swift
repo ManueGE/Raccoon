@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 //MARK: Endpoint
-typealias EndpointSerializer = (Endpoint) -> (Request)
+typealias EndpointSerializer = Endpoint -> Request
 
 class Endpoint {
     var method: Alamofire.Method
@@ -21,9 +21,9 @@ class Endpoint {
     
     init(method: Alamofire.Method,
          path: String,
-         parameters: [String: AnyObject],
-         encoding: ParameterEncoding,
-         headers: [String: String]) {
+         parameters: [String: AnyObject] = [:],
+         encoding: ParameterEncoding = .URL,
+         headers: [String: String] = [:]) {
         
         self.method = method
         self.path = path

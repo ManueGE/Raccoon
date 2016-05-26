@@ -18,7 +18,7 @@ class Client {
     var endpointSerializer: EndpointSerializer?
     var responseConverter: ResponseConverter?
     
-    init(context: InsertContext, endpointSerializer: EndpointSerializer?, responseConverter: ResponseConverter? = nil) {
+    init(context: InsertContext, endpointSerializer: EndpointSerializer? = nil, responseConverter: ResponseConverter? = nil) {
         self.context = context
         self.endpointSerializer = endpointSerializer
         self.responseConverter = responseConverter
