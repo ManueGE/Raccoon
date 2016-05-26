@@ -33,7 +33,7 @@ class RaccoonResponseTest: XCTestCase {
         stubWithObject(json)
     
         let request = Alamofire.request(NSURLRequest())
-        request.response(MyInsertable.self) { (response: Response<MyInsertable, NSError>) in
+        request.response(MyInsertable.self) { (response) in
             result = response.result
             responseArrived.fulfill()
         }
@@ -154,7 +154,7 @@ class RaccoonResponseTest: XCTestCase {
         stubWithObject(json)
         
         let request = Alamofire.request(NSURLRequest())
-        request.emptyResponse { (response: EmptyResponse?) in
+        request.emptyResponse { (response) in
             result = response
             responseArrived.fulfill()
         }
@@ -173,7 +173,7 @@ class RaccoonResponseTest: XCTestCase {
         stubError()
         
         let request = Alamofire.request(NSURLRequest())
-        request.emptyResponse { (response: EmptyResponse?) in
+        request.emptyResponse { (response) in
             result = response
             responseArrived.fulfill()
         }

@@ -48,7 +48,7 @@ class Client {
     
     func enqueue<T: Insertable>(request: Request, type: T.Type) -> Promise<T> {
         return Promise<T>(resolvers: { (fulfill, reject) -> Void in
-            request.response(T.self, context: context, converter: responseConverter, completionHandler: { (response: Response<T, NSError>) -> Void in
+            request.response(T.self, context: context, converter: responseConverter, completionHandler: { (response) -> Void in
                 switch response.result {
                 case .Success(let value):
                     fulfill(value)
@@ -62,7 +62,7 @@ class Client {
     func enqueue<T: Insertable>(request: Request, type: [T].Type) -> Promise<[T]> {
         
         return Promise<[T]>(resolvers: { (fulfill, reject) -> Void in
-            request.response([T].self, context: context, converter: responseConverter, completionHandler: { (response: Response<[T], NSError>) -> Void in
+            request.response([T].self, context: context, converter: responseConverter, completionHandler: { (response) -> Void in
                 
                 switch response.result {
                 case .Success(let value):
@@ -76,7 +76,7 @@ class Client {
     
     func enqueue<T: Wrapper>(request: Request,  type: T.Type) -> Promise<T> {
         return Promise<T>(resolvers: { (fulfill, reject) -> Void in
-            request.response(T.self, context: context, converter: responseConverter, completionHandler: { (response: Response<T, NSError>) -> Void in
+            request.response(T.self, context: context, converter: responseConverter, completionHandler: { (response) -> Void in
                 
                 switch response.result {
                 case .Success(let value):
@@ -91,7 +91,7 @@ class Client {
     func enqueue(request: Request) -> Promise<Void> {
         request.response
         return Promise<Void>(resolvers: { (fulfill, reject) -> Void in
-            request.emptyResponse(responseConverter, completionHandler: { (response: EmptyResponse) in
+            request.emptyResponse(responseConverter, completionHandler: { (response) in
                 switch response {
                 case .Success:
                     fulfill()

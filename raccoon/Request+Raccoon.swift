@@ -192,7 +192,7 @@ extension Alamofire.Request {
         
         let serializer = Request.raccoonBaseSerializer(converter) as ResponseSerializer<NSData?, NSError>
         return response(responseSerializer: serializer,
-                        completionHandler: { (response: Response<NSData?, NSError>) in
+                        completionHandler: { (response) in
                             
                             if response.result.isSuccess {
                                 completionHandler(.Success)
