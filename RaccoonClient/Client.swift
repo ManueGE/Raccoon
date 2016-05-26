@@ -46,9 +46,9 @@ class Client {
         self.init(context: context, endpointSerializer: endpointSerializer, responseConverter: responseConverter)
     }
     
-    func enqueue<T: Insertable>(request: Request) -> Promise<T> {
+    func enqueue<T: Insertable>(request: Request, type: T.Type) -> Promise<T> {
         return Promise<T>(resolvers: { (fulfill, reject) -> Void in
-            request.response(context, converter: responseConverter, completionHandler: { (response: Response<T, NSError>) -> Void in
+            request.response(T.self, context: context, converter: responseConverter, completionHandler: { (response: Response<T, NSError>) -> Void in
                 switch response.result {
                 case .Success(let value):
                     fulfill(value)
@@ -59,10 +59,10 @@ class Client {
         })
     }
     
-    func enqueue<T: Insertable>(request: Request) -> Promise<[T]> {
+    func enqueue<T: Insertable>(request: Request, type: [T].Type) -> Promise<[T]> {
         
         return Promise<[T]>(resolvers: { (fulfill, reject) -> Void in
-            request.response(context, converter: responseConverter, completionHandler: { (response: Response<[T], NSError>) -> Void in
+            request.response([T].self, context: context, converter: responseConverter, completionHandler: { (response: Response<[T], NSError>) -> Void in
                 
                 switch response.result {
                 case .Success(let value):
@@ -74,9 +74,9 @@ class Client {
         })
     }
     
-    func enqueue<T: Wrapper>(request: Request) -> Promise<T> {
+    func enqueue<T: Wrapper>(request: Request,  type: T.Type) -> Promise<T> {
         return Promise<T>(resolvers: { (fulfill, reject) -> Void in
-            request.response(context, converter: responseConverter, completionHandler: { (response: Response<T, NSError>) -> Void in
+            request.response(T.self, context: context, converter: responseConverter, completionHandler: { (response: Response<T, NSError>) -> Void in
                 
                 switch response.result {
                 case .Success(let value):
@@ -106,16 +106,16 @@ class Client {
 // MARK: URLRequestConvertible
 extension Client {
     
-    func enqueue<T: Insertable>(requestConvertible: URLRequestConvertible) -> Promise<T> {
-        return enqueue(request(requestConvertible))
+    func enqueue<T: Insertable>(requestConvertible: URLRequestConvertible, type: T.Type) -> Promise<T> {
+        return enqueue(request(requestConvertible), type: T.self)
     }
     
-    func enqueue<T: Insertable>(requestConvertible: URLRequestConvertible) -> Promise<[T]> {
-        return enqueue(request(requestConvertible))
+    func enqueue<T: Insertable>(requestConvertible: URLRequestConvertible, type: [T].Type) -> Promise<[T]> {
+        return enqueue(request(requestConvertible), type: [T].self)
     }
     
-    func enqueue<T: Wrapper>(requestConvertible: URLRequestConvertible) -> Promise<T> {
-        return enqueue(request(requestConvertible))
+    func enqueue<T: Wrapper>(requestConvertible: URLRequestConvertible, type: T.Type) -> Promise<T> {
+        return enqueue(request(requestConvertible), type: T.self)
     }
     
     func enqueue(requestConvertible: URLRequestConvertible) -> Promise<Void> {
@@ -126,16 +126,16 @@ extension Client {
 // MARK: Endpoint
 extension Client {
     
-    func enqueue<T: Insertable>(endpointConvertible: EndpointConvertible) -> Promise<T> {
-        return enqueue(endpointSerializer!(endpointConvertible.endpoint))
+    func enqueue<T: Insertable>(endpointConvertible: EndpointConvertible, type: T.Type) -> Promise<T> {
+        return enqueue(endpointSerializer!(endpointConvertible.endpoint), type: T.self)
     }
     
-    func enqueue<T: Insertable>(endpointConvertible: EndpointConvertible) -> Promise<[T]> {
-        return enqueue(endpointSerializer!(endpointConvertible.endpoint))
+    func enqueue<T: Insertable>(endpointConvertible: EndpointConvertible, type: [T].Type) -> Promise<[T]> {
+        return enqueue(endpointSerializer!(endpointConvertible.endpoint), type: [T].self)
     }
     
-    func enqueue<T: Wrapper>(endpointConvertible: EndpointConvertible) -> Promise<T> {
-        return enqueue(endpointSerializer!(endpointConvertible.endpoint))
+    func enqueue<T: Wrapper>(endpointConvertible: EndpointConvertible, type: T.Type) -> Promise<T> {
+        return enqueue(endpointSerializer!(endpointConvertible.endpoint), type: T.self)
     }
     
     func enqueue(endpointConvertible: EndpointConvertible) -> Promise<Void> {

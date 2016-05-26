@@ -58,7 +58,7 @@ class RaccoonRealmTests: XCTestCase {
     
     func testObjectSerializer() {
         // Given
-        let serializer: ResponseSerializer<User, NSError> = Request.raccoonResponseSerializer(realm)
+        let serializer: ResponseSerializer = Request.raccoonResponseSerializer(User.self, context: realm)
         
         let json = ["id": 1, "Nombre": "one"]
         let data = try! NSJSONSerialization.dataWithJSONObject(json, options: [])

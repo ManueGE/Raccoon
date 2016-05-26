@@ -39,7 +39,7 @@ class RaccoonResponseConverterTest: XCTestCase {
     func testResponseSerializer() {
         
         // Given
-        let serializer: ResponseSerializer<MyInsertable, NSError> = Request.raccoonResponseSerializer(converter: SuccessResponseSerializer)
+        let serializer: ResponseSerializer = Request.raccoonResponseSerializer(MyInsertable.self, converter: SuccessResponseSerializer)
         
         let json = ["": ""] // empty json, it will be converted
         let data = try! NSJSONSerialization.dataWithJSONObject(json, options: [])
@@ -58,7 +58,7 @@ class RaccoonResponseConverterTest: XCTestCase {
     
     func testFailResponseSerializer() {
         // Given
-        let serializer: ResponseSerializer<MyInsertable, NSError> = Request.raccoonResponseSerializer(converter: ErrorResponseSerializer)
+        let serializer = Request.raccoonResponseSerializer(MyInsertable.self, converter: ErrorResponseSerializer)
         
         let json = ["": ""] // empty json, it will be converted
         let data = try! NSJSONSerialization.dataWithJSONObject(json, options: [])

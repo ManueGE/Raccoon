@@ -22,7 +22,7 @@ class RequestClientTests: RaccoonClientTests {
         
         stubWithObject(["integer": 10, "string": "ten"])
         let theRequest = request(.GET, apiUrl)
-        let promise = client.enqueue(theRequest) as Promise<MyInsertable>
+        let promise = client.enqueue(theRequest, type: MyInsertable.self)
         promise.then { (object) -> Void in
             receivedObject = object
             }
@@ -48,7 +48,7 @@ class RequestClientTests: RaccoonClientTests {
         
         stubWithObject([["integer": 10, "string": "ten"], ["integer": 20, "string": "twenty"]])
         let theRequest = request(.GET, apiUrl)
-        let promise = client.enqueue(theRequest) as Promise<[MyInsertable]>
+        let promise = client.enqueue(theRequest, type: [MyInsertable].self)
         promise.then { (object) -> Void in
             receivedObject = object
             }
@@ -77,7 +77,7 @@ class RequestClientTests: RaccoonClientTests {
         
         stubWithObject(["string": "my string", "insertable": ["integer": 10, "string": "ten"]])
         let theRequest = request(.GET, apiUrl)
-        let promise = client.enqueue(theRequest) as Promise<MyWrapper>
+        let promise = client.enqueue(theRequest, type: MyWrapper.self)
         promise.then { (object) -> Void in
             receivedObject = object
             }

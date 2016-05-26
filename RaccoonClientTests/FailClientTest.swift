@@ -35,7 +35,7 @@ class FailClientTest: RaccoonClientTests {
         
         stubError()
         
-        let promise = client.enqueue(endpoint) as Promise<MyInsertable>
+        let promise = client.enqueue(endpoint, type: MyInsertable.self)
         promise.then { (object) -> Void in
             receivedObject = object
             }
@@ -68,7 +68,7 @@ class FailClientTest: RaccoonClientTests {
         
         stubError()
         
-        let promise = client.enqueue(endpoint) as Promise<[MyInsertable]>
+        let promise = client.enqueue(endpoint, type: [MyInsertable].self)
         promise.then { (object) -> Void in
             receivedObject = object
             }
@@ -101,7 +101,7 @@ class FailClientTest: RaccoonClientTests {
         stubError()
         var error: ErrorType?
         
-        let promise = client.enqueue(endpoint) as Promise<MyWrapper>
+        let promise = client.enqueue(endpoint, type: MyWrapper.self)
         promise.then { (object) -> Void in
             receivedObject = object
             }
