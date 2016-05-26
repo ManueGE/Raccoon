@@ -1,28 +1,45 @@
 # Raccoon
 
-A nice **Alamofire** serializer that convert JSON into **CoreData** or **Realm** objects.
+A nice [**Alamofire**](https://github.com/Alamofire/Alamofire) serializer that convert JSON into **CoreData** or [**Realm**](https://github.com/realm/realm-cocoa) objects.
+
+Raccoon is a set of pods that simplifies the connection between **Alamofire**, **CoreData** and **Realm**: 
+
+* **Raccoon/CoreData**: Serialize JSON responses from **Alamofire** into `NSManagedObject` instances. 
+* **Raccoon/Realm**: Serialize JSON responses from **Alamofire** into **Realm** `Object` instances. 
+* **RaccoonClient/CoreData**: Client that put together **Alamofire**, **CoreData** and [**PromiseKit**](https://github.com/mxcl/PromiseKit). 
+* **RaccoonClient/Realm**: Client that put together **Alamofire**, **Realm** and **PromiseKit**. 
 
 ## Installing Raccoon
 
 ##### Using CocoaPods
 
-Add the following to your `Podfile`:
+Add one of more of the following to your `Podfile`:
 
 ````
-pod 'RaccoonCoreData'
+pod 'Raccoon/CoreData'
 
 ````
-
-and/or
 
 ``` 
-pod 'RaccoonRealm'
+pod 'Raccoon/Realm'
+````
+
+``` 
+pod 'RaccoonClient/CoreData'
+````
+
+``` 
+pod 'RaccoonClient/Realm'
 ````
 
 Then run `$ pod install`.
 
+**Note**: If you just write `pod 'Raccoon'` or `pod 'RaccoonClient'` the CoreData version will be used.
+
 If you don’t have CocoaPods installed or integrated into your project, you can learn how to do so [here](http://cocoapods.org).
 
+--------------------
+# Serialization
 ## Usage
 ### Getting started
 Using **Raccoon** is quite simple. Let's suposse you have an `User` model. This is the **CoreData** version:
@@ -89,7 +106,7 @@ Again, all the returned objects are inserted into the given context.
 
 There are some clarification to be done about how the objects are serialized.
 #### CoreData
-`NSManagedObject` instances are serialized using the **wonderful** library **Groot** by [Guillermo González](https://github.com/gonzalezreal). For this reason, **Groot** is a dependency of **Raccoon**. If you are not familiar with it, take a look into the [**Groot** documentation](https://github.com/gonzalezreal/Groot) in order to learn which steps do you need yo make your objects serializable. 
+`NSManagedObject` instances are serialized using the **wonderful** library **Groot**. For this reason, **Groot** is a dependency of **Raccoon**. If you are not familiar with it, take a look into the [**Groot** documentation](https://github.com/gonzalezreal/Groot) in order to learn which steps do you need yo make your objects serializable. 
 
 #### Realm
 **Raccoon** make use of the built-in JSON serialization by **Realm**:
@@ -272,6 +289,132 @@ myRequest.response([User].self, context: context, converter: MyConverterMethod) 
 
 if the `ResponseConverter` throws a `NSError`, it will be propagated in the response, so the request will fail. You can take advantage to perform internal validation to your `request`.
 
+--------
+# RaccoonClient
+
+**Note**: To use this library you should be familiar with **PromiseKit**. If you are not, take a look into the [**PromiseKit** documentation site](http://promisekit.org).
+
+## The Client
+`Client` is the main component of the library. Is the responsible to perform the request and return the response as a `Promise`. 
+
+To create a simple client you can do:
+
+````
+let client = Client(context: context)
+````
+
+where `context` is a `NSManagedObjectContext` if we want to insert objects into CoreData or a `Realm` if we are using **Realm**.
+
+we can add a second parameter:
+
+````
+let client = Client(context: context, responseConverter: converter)
+````
+where `converter` is a `ResponseConverter` as explained before. 
+
+We could add another parameter, but we will talk about it in the `Endpoint` section.
+
+### Enqueue requests
+
+If we have a `Request` that return an object `User`, we can enqueue the request this way:
+
+````
+client.enqueue(myRequest, type: User.self)
+````
+
+This will return a `Promise<User>`.
+
+If our request returns an array of `User` instances:
+
+````
+client.enqueue(myRequest, type: [User].self)
+````
+
+We can enqueue requests that return one of the following types:
+
+* `NSManagedObject`
+* `[NSManagedObject]`
+* `Object`
+* `[Object]`
+* `Wrapper`
+
+we can also enqueue a request that return an empty promise: `Promise<Void>` this way:
+
+````
+client.enqueue(request)
+````
+
+
+## Endpoint
+Raccoon provides the `Endpoint` class and the `EndpointConvertible` protocol to simplify the request creation. 
+
+And endpoint is something quite similar to a request. It could have a method, encoding and some parameters or headers. But instead of having a url it just have a path. 
+
+In order to let the client know how to convert an `Endpoint` into a `Request` we must pass the client a new parameter called `endpointSerializer` whose type is `Endpoint -> Request`.
+
+So, we can create and enqueue and endpoint this way:
+
+````
+func EndpointSerializer(endpoint: Endpoint) -> Request {        
+        return request(endpoint.method,
+            "\(apiUrl)\(endpoint.path)",
+            parameters: endpoint.parameters,
+            encoding: endpoint.encoding,
+            headers: endpoint.headers)
+            .validate(statusCode: 200..<300)
+            .validate(contentType: ["application/json"])
+}
+
+let client = Client(context: context, endpointSerializer: EndpointSerializer)
+
+let loginEndpoint = Endpoint(method: .POST, 
+							  path:"/auth/login",
+							  parameters: ["user": "manue", "pass": "my_pass"],
+							  encoding: .JSON,
+							  headers: [:])
+
+client.enqueue(loginEndpoint, type: LoginResponse.self)
+							  					
+````
+
+The point of having the `Endpoint` class is to allow us to add some things to all the requests handled by the client. Here we are adding just some validations, but we could add authentication headers or all the thing shared by all the requests. 
+
+### EndpointConvertible
+
+Finally we have the `EndpointConvertible` protocol. Every object that conform the `EndpointConvertible` protocol must have the following property:
+
+````
+var endpoint: Endpoint { get }
+````
+
+This allow us to create endpoints using the **Router** approach described in **Alamofire** documentation. The example before can be now written this way:
+
+````
+enum LoginRouter: EndpointConvertible {
+    case Login(user: String, password: String)
+    
+    var endpoint: Endpoint {
+        switch self {
+        case let .Login(user, password):
+            return Endpoint(method: .POST,
+                            path:"/auth/login",
+                            parameters: ["user": user, "pass": password],
+                            encoding: .JSON)
+        }
+    }
+}
+````
+
+and then:
+
+````
+let login = LoginRouter.Login(user: "manue", password: "my_pass")
+client.enqueue(login, type: LoginResponse.self)
+							  					
+````
+
+
+--------
 
 
 ## Contact
