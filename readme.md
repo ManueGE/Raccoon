@@ -17,7 +17,6 @@ Add one of more of the following to your `Podfile`:
 
 ````
 pod 'Raccoon/CoreData'
-
 ````
 
 ``` 
