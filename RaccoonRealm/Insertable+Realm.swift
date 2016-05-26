@@ -17,15 +17,21 @@ extension Object: Insertable {
     
     public typealias ContextType = Realm
     
-    private static func create(inRealm realm: Realm, json: [String: AnyObject], update: Bool = true) -> AnyObject {
+    private static func create(inRealm realm: Realm, json: [String: AnyObject], update: Bool = false) -> AnyObject {
         let convertedJSON = convertJSON(json)
+        
+        var update = update
+        if self.primaryKey() == nil {
+            update = false
+        }
+        
         return realm.dynamicCreate(self.className(), value: convertedJSON, update: update)
     }
     
     public static func createOne(json: [String : AnyObject], context: Realm) throws -> AnyObject? {
         var value: AnyObject? = nil
         try context.write {
-            value = create(inRealm: context, json: json)
+            value = create(inRealm: context, json: json, update: true)
         }
         
         return value
@@ -37,7 +43,7 @@ extension Object: Insertable {
         try context.write({
             for object in array {
                 let json = object as! [String: AnyObject]
-                let value = create(inRealm: context, json: json)
+                let value = create(inRealm: context, json: json, update: true)
                 response.append(value)
             }
         })

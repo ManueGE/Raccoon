@@ -46,6 +46,10 @@ public class KeyPathTransformer<JSONType, PropertyType>: NSObject, KeyPathConver
 public extension Realm {
     public func create<T: Object>(_: T.Type, json: [String: AnyObject], update: Bool = false) -> T {
         let convertedJSON = T.convertJSON(json)
+        var update = update
+        if T.primaryKey() == nil {
+            update = false
+        }
         return create(T.self, value: convertedJSON, update: update)
     }
 }

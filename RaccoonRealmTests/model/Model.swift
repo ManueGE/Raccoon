@@ -65,3 +65,13 @@ class Role: Object {
         return "id"
     }
 }
+
+class Department: Object {
+    dynamic var id: Int = 0
+    dynamic var name: String = ""
+    
+    // Just for test this method
+    override class func convertJSON(json: [String: AnyObject]) -> [String: AnyObject] {
+        return ["id": 1, "name": "Bosses"]
+    }
+}

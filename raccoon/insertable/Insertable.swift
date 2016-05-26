@@ -14,13 +14,13 @@ import Foundation
 public protocol Insertable: NSObjectProtocol {
     
     /**
-     Some objects needs some addtional info to be inserted. This property tell the library the type of this context. If not aditional info is needed, set ti to `NoContext`
+     Some objects needs some addtional info to be inserted. This property tell the library the type of this context. If not aditional info is needed, set it to `NoContext`
      */
     associatedtype ContextType: InsertContext
     
     /**
      Method called when object needs to be inserted as a single object. 
-     - return: The new inserted objects, if any.
+     - return: The new inserted object, if any.
      */
     static func createOne(json: [String: AnyObject], context: ContextType) throws -> AnyObject?
     

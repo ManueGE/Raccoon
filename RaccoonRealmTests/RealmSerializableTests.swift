@@ -21,9 +21,8 @@ class RealmProjectTests: XCTestCase {
     override func tearDown() {
         try! realm.write {
             realm.deleteAll()
+            super.tearDown()
         }
-        
-        super.tearDown()
     }
     
     func testInsertSerializableWithModifiedKeyPaths() {
@@ -104,5 +103,17 @@ class RealmProjectTests: XCTestCase {
             XCTAssertEqual(user.name, "manu", "property does not match")
             XCTAssertNil(user.created, "property should be nil")
         }
+    }
+    
+    func testSerializableWithNotPrimrykey() {
+        let json = [:] as [String: AnyObject]
+        
+        try! realm.write() {
+            let department = realm.create(Department.self, json: json, update: true)
+            XCTAssertNotNil(department, "shouldn't be nil")
+            XCTAssertEqual(department.id, 1, "property does not match")
+            XCTAssertEqual(department.name, "Bosses", "property does not match")
+        }
+        
     }
 }
