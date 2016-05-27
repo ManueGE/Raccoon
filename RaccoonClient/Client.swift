@@ -12,19 +12,20 @@ import Alamofire
 import Raccoon
 
 // MARK: Base
-class Client {
+
+public class Client {
     
-    var context: InsertContext
-    var endpointSerializer: EndpointSerializer?
-    var responseConverter: ResponseConverter?
+    public let context: InsertContext
+    public let endpointSerializer: EndpointSerializer?
+    public let responseConverter: ResponseConverter?
     
-    init(context: InsertContext, endpointSerializer: EndpointSerializer? = nil, responseConverter: ResponseConverter? = nil) {
+    public init(context: InsertContext, endpointSerializer: EndpointSerializer? = nil, responseConverter: ResponseConverter? = nil) {
         self.context = context
         self.endpointSerializer = endpointSerializer
         self.responseConverter = responseConverter
     }
     
-    convenience init(context: InsertContext, baseURL: String, responseConverter: ResponseConverter? = nil) {
+    public convenience init(context: InsertContext, baseURL: String, responseConverter: ResponseConverter? = nil) {
         
         let endpointSerializer: EndpointSerializer = { (endpoint) -> (Request) in
             let headers = endpoint.headers
@@ -46,7 +47,7 @@ class Client {
         self.init(context: context, endpointSerializer: endpointSerializer, responseConverter: responseConverter)
     }
     
-    func enqueue<T: Insertable>(request: Request, type: T.Type) -> Promise<T> {
+    public func enqueue<T: Insertable>(request: Request, type: T.Type) -> Promise<T> {
         return Promise<T>(resolvers: { (fulfill, reject) -> Void in
             request.response(T.self, context: context, converter: responseConverter, completionHandler: { (response) -> Void in
                 switch response.result {
@@ -59,7 +60,7 @@ class Client {
         })
     }
     
-    func enqueue<T: Insertable>(request: Request, type: [T].Type) -> Promise<[T]> {
+    public func enqueue<T: Insertable>(request: Request, type: [T].Type) -> Promise<[T]> {
         
         return Promise<[T]>(resolvers: { (fulfill, reject) -> Void in
             request.response([T].self, context: context, converter: responseConverter, completionHandler: { (response) -> Void in
@@ -74,7 +75,7 @@ class Client {
         })
     }
     
-    func enqueue<T: Wrapper>(request: Request,  type: T.Type) -> Promise<T> {
+    public func enqueue<T: Wrapper>(request: Request,  type: T.Type) -> Promise<T> {
         return Promise<T>(resolvers: { (fulfill, reject) -> Void in
             request.response(T.self, context: context, converter: responseConverter, completionHandler: { (response) -> Void in
                 
@@ -88,7 +89,7 @@ class Client {
         })
     }
     
-    func enqueue(request: Request) -> Promise<Void> {
+    public func enqueue(request: Request) -> Promise<Void> {
         request.response
         return Promise<Void>(resolvers: { (fulfill, reject) -> Void in
             request.emptyResponse(responseConverter, completionHandler: { (response) in
@@ -106,19 +107,19 @@ class Client {
 // MARK: URLRequestConvertible
 extension Client {
     
-    func enqueue<T: Insertable>(requestConvertible: URLRequestConvertible, type: T.Type) -> Promise<T> {
+    public func enqueue<T: Insertable>(requestConvertible: URLRequestConvertible, type: T.Type) -> Promise<T> {
         return enqueue(request(requestConvertible), type: T.self)
     }
     
-    func enqueue<T: Insertable>(requestConvertible: URLRequestConvertible, type: [T].Type) -> Promise<[T]> {
+    public func enqueue<T: Insertable>(requestConvertible: URLRequestConvertible, type: [T].Type) -> Promise<[T]> {
         return enqueue(request(requestConvertible), type: [T].self)
     }
     
-    func enqueue<T: Wrapper>(requestConvertible: URLRequestConvertible, type: T.Type) -> Promise<T> {
+    public func enqueue<T: Wrapper>(requestConvertible: URLRequestConvertible, type: T.Type) -> Promise<T> {
         return enqueue(request(requestConvertible), type: T.self)
     }
     
-    func enqueue(requestConvertible: URLRequestConvertible) -> Promise<Void> {
+    public func enqueue(requestConvertible: URLRequestConvertible) -> Promise<Void> {
         return enqueue(request(requestConvertible))
     }
 }
@@ -126,19 +127,19 @@ extension Client {
 // MARK: Endpoint
 extension Client {
     
-    func enqueue<T: Insertable>(endpointConvertible: EndpointConvertible, type: T.Type) -> Promise<T> {
+    public func enqueue<T: Insertable>(endpointConvertible: EndpointConvertible, type: T.Type) -> Promise<T> {
         return enqueue(endpointSerializer!(endpointConvertible.endpoint), type: T.self)
     }
     
-    func enqueue<T: Insertable>(endpointConvertible: EndpointConvertible, type: [T].Type) -> Promise<[T]> {
+    public func enqueue<T: Insertable>(endpointConvertible: EndpointConvertible, type: [T].Type) -> Promise<[T]> {
         return enqueue(endpointSerializer!(endpointConvertible.endpoint), type: [T].self)
     }
     
-    func enqueue<T: Wrapper>(endpointConvertible: EndpointConvertible, type: T.Type) -> Promise<T> {
+    public func enqueue<T: Wrapper>(endpointConvertible: EndpointConvertible, type: T.Type) -> Promise<T> {
         return enqueue(endpointSerializer!(endpointConvertible.endpoint), type: T.self)
     }
     
-    func enqueue(endpointConvertible: EndpointConvertible) -> Promise<Void> {
+    public func enqueue(endpointConvertible: EndpointConvertible) -> Promise<Void> {
         return enqueue(endpointSerializer!(endpointConvertible.endpoint))
     }
 }
