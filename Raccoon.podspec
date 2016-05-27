@@ -20,7 +20,7 @@ Pod::Spec.new do |spec|
   spec.dependency "Alamofire", "~> 3.4"
 
   # Subspecs
-  spec.default_subspec = 'CoreData'
+  spec.default_subspec = 'CoreData', 'Client'
 
   spec.subspec 'Core' do |core|
     core.source_files = "Raccoon/**/*.{swift}"
