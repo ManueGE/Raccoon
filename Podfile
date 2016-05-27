@@ -22,7 +22,7 @@ end
 
 
 target 'RaccoonRealm' do
-    pod 'RealmSwift', '~> 0.102'
+    pod 'RealmSwift', '~> 1.0'
     
     target 'RaccoonRealmTests' do
         pod 'Alamofire', '~> 3.4'
