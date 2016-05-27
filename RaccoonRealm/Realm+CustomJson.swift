@@ -21,10 +21,10 @@ extension NSString: KeyPathConvertible {
 }
 
 public class KeyPathTransformer<JSONType, PropertyType>: NSObject, KeyPathConvertible {
-    let keyPath: String
-    let transformer: (JSONType -> PropertyType?)
+    public let keyPath: String
+    public let transformer: (JSONType -> PropertyType?)
     
-    init(keyPath: String, transformer: (JSONType -> PropertyType?)) {
+    public init(keyPath: String, transformer: (JSONType -> PropertyType?)) {
         self.keyPath = keyPath
         self.transformer = transformer
     }
