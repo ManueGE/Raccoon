@@ -28,19 +28,7 @@ public class Client {
     public convenience init(context: InsertContext, baseURL: String, responseConverter: ResponseConverter? = nil) {
         
         let endpointSerializer: EndpointSerializer = { (endpoint) -> (Request) in
-            let headers = endpoint.headers
-            
-            var path = endpoint.path
-            if !endpoint.path.hasPrefix("/") {
-                path = "/\(path)"
-            }
-            
-            let request = Alamofire.request(endpoint.method,
-                                            "\(baseURL)\(path)",
-                                            parameters: endpoint.parameters,
-                                            encoding: endpoint.encoding,
-                                            headers: headers)
-            
+            let request = endpoint.request(withBaseURL: baseURL)
             return request.validate()
         }
         

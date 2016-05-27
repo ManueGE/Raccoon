@@ -18,11 +18,11 @@ public typealias EndpointSerializer = Endpoint -> Request
  Class to represent a REST endpoint. It is similar to `Request`, but they don't have a full URL, just a path.
  */
 public class Endpoint {
-    public let method: Alamofire.Method
-    public let path: String
-    public let parameters: [String: AnyObject]?
-    public let encoding: ParameterEncoding
-    public let headers: [String: String]?
+    public var method: Alamofire.Method
+    public var path: String
+    public var parameters: [String: AnyObject]?
+    public var encoding: ParameterEncoding
+    public var headers: [String: String]?
     
     public init(method: Alamofire.Method,
                 path: String,
@@ -35,6 +35,23 @@ public class Endpoint {
         self.parameters = parameters
         self.encoding = encoding
         self.headers = headers
+    }
+    
+    /** 
+     Method to build a `Request` from an endpoint just by appending its path to a base url.
+     */
+    public func request(withBaseURL URL: String) -> Request {
+        
+        var path = endpoint.path
+        if !endpoint.path.hasPrefix("/") {
+            path = "/\(path)"
+        }
+        
+        return Alamofire.request(method,
+                                 "\(URL)\(path)",
+                                 parameters: parameters,
+                                 encoding: encoding,
+                                 headers: headers)
     }
 }
 
