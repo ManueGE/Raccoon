@@ -7,7 +7,7 @@
 //
 
 import Foundation
-@testable import RaccoonRealm
+import RaccoonRealm
 import RealmSwift
 import Raccoon
 

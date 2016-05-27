@@ -8,7 +8,7 @@
 
 import XCTest
 import RealmSwift
-@testable import RaccoonRealm
+import RaccoonRealm
 
 class RealmProjectTests: XCTestCase {
     

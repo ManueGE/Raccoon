@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import RaccoonRealm
+import RaccoonRealm
 import Raccoon
 import RealmSwift
 import Alamofire
