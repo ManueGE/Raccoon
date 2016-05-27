@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-internal enum MGECoreDataKitContextError : ErrorType {
+public enum MGECoreDataKitContextError : ErrorType {
     case EntityNotFound
 }
 

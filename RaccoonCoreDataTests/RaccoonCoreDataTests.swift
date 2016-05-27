@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import RaccoonCoreData
+import RaccoonCoreData
 import Raccoon
 import BNRCoreDataStack
 
