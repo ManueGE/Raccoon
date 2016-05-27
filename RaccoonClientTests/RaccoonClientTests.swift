@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import RaccoonClient
+import RaccoonClient
 import Raccoon
 import Alamofire
 import OHHTTPStubs
