@@ -38,11 +38,11 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (3.1.1):
     - PromiseKit/CorePromise
-  - Realm (0.102.0):
-    - Realm/Headers (= 0.102.0)
-  - Realm/Headers (0.102.0)
-  - RealmSwift (0.102.0):
-    - Realm (= 0.102.0)
+  - Realm (1.0.0):
+    - Realm/Headers (= 1.0.0)
+  - Realm/Headers (1.0.0)
+  - RealmSwift (1.0.0):
+    - Realm (= 1.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 3.4)
@@ -51,7 +51,7 @@ DEPENDENCIES:
   - OHHTTPStubs (~> 5.0)
   - OHHTTPStubs/Swift (~> 5.0)
   - PromiseKit (~> 3.1)
-  - RealmSwift (~> 0.102)
+  - RealmSwift (~> 1.0)
 
 SPEC CHECKSUMS:
   Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
@@ -60,9 +60,9 @@ SPEC CHECKSUMS:
   OHHTTPStubs: a5d2e9eea07869d42ec03338325f398bc520e159
   OMGHTTPURLRQ: 633f98ee745aeda02345935a52eec1784cddb589
   PromiseKit: 4e8127c22a9b29d1b44958ab2ec762ea6115cbfb
-  Realm: 5d219f9037e3ec2019c599b8227bfc95433cb10e
-  RealmSwift: e6f436f9fea1c57b9ad6d1c46d57562c845f3c4c
+  Realm: e15cd8e7c11d3e576f628ba0b7cb855269b4991c
+  RealmSwift: 3229306d020d96f83b335f87a0dcbf2cef0e6a2b
 
-PODFILE CHECKSUM: c1c4e9a082472dd4b4b68effb0a2ac046b74a2db
+PODFILE CHECKSUM: 0fad337a38855a616d930cd674ff0181cbdfc019
 
 COCOAPODS: 1.0.0
