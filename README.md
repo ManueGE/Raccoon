@@ -6,8 +6,7 @@ Raccoon is a set of pods that simplifies the connection between **Alamofire**, *
 
 * **Raccoon/CoreData**: Serialize JSON responses from **Alamofire** into `NSManagedObject` instances. 
 * **Raccoon/Realm**: Serialize JSON responses from **Alamofire** into **Realm** `Object` instances. 
-* **RaccoonClient/CoreData**: Client that put together **Alamofire**, **CoreData** and [**PromiseKit**](https://github.com/mxcl/PromiseKit). 
-* **RaccoonClient/Realm**: Client that put together **Alamofire**, **Realm** and **PromiseKit**. 
+* **Raccoon/Client**: Client that put together **Alamofire**, **Raccoon** and [**PromiseKit**](https://github.com/mxcl/PromiseKit). 
 
 ## Installing Raccoon
 
@@ -24,16 +23,13 @@ pod 'Raccoon/Realm'
 ````
 
 ``` 
-pod 'RaccoonClient/CoreData'
-````
-
-``` 
-pod 'RaccoonClient/Realm'
+# If you add this pod, you'll probably want to add one of the previous pod as well.
+pod 'Raccoon/Client'
 ````
 
 Then run `$ pod install`.
 
-**Note**: If you just write `pod 'Raccoon'` or `pod 'RaccoonClient'` the CoreData version will be used.
+**Note**: If you just write `pod 'Raccoon'` the CoreData version and the Client will be used.
 
 If you don’t have CocoaPods installed or integrated into your project, you can learn how to do so [here](http://cocoapods.org).
 
