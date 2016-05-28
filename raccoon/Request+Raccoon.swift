@@ -80,110 +80,96 @@ extension Alamofire.Request {
     }
     
     // MARK: - Element
-    public static func raccoonResponseSerializer<T: Insertable> (type: T.Type, context: InsertContext = NoContext(), converter: ResponseConverter? = nil) -> ResponseSerializer <T, NSError> {
-        
-        return ResponseSerializer { request, response, data, error in
-            
-            // Transform to json
-            let baseSerializer = raccoonJSONSerializer(converter) as ResponseSerializer<[String: AnyObject], NSError>
-            let baseResponse = baseSerializer.serializeResponse(request, response, data, error)
-            
-            guard baseResponse.isSuccess else {
-                return .Failure(baseResponse.error!)
-            }
-            
-            // Check if the context is valid
-            guard let context = context.context(forType: T.self) as? T.ContextType else {
-                return .Failure(NSError(domain: RaccoonResponseSerializerDomain,
-                    code: InvalidContextTypeErrorCode,
-                    userInfo: nil))
-            }
-            
-            // Serialize
-            do {
-                let convertedObject: T = try T.createOne(baseResponse.value!, context: context) as! T
-                return .Success(convertedObject)
-            }
-            
-            catch let error as NSError {
-                return .Failure(error)
-            }
-        }
-    }
-    
     public func response<T: Insertable>(type: T.Type, context: InsertContext = NoContext(), converter: ResponseConverter? = nil,
         completionHandler: (Response<T, NSError>) -> Void) -> Self {
             
-        let serializer = Request.raccoonResponseSerializer(T.self, context: context, converter: converter) as ResponseSerializer <T, NSError>
-            return response(responseSerializer: serializer, completionHandler: completionHandler)
+        let serializer = Request.raccoonJSONSerializer(converter) as ResponseSerializer<[String: AnyObject], NSError>
+        
+        return response(responseSerializer: serializer,
+                        completionHandler: { (baseResponse) in
+                            
+                            guard baseResponse.result.isSuccess else {
+                                callHandler(completionHandler, response: baseResponse, result: .Failure(baseResponse.result.error!))
+                                return
+                            }
+                            
+                            // Check if the context is valid
+                            guard let context = context.context(forType: T.self) as? T.ContextType else {
+                                let error = NSError(domain: RaccoonResponseSerializerDomain,
+                                    code: InvalidContextTypeErrorCode,
+                                    userInfo: nil)
+                                callHandler(completionHandler, response: baseResponse, result: .Failure(error))
+                                return
+                            }
+                            
+                            // Serialize
+                            do {
+                                let convertedObject: T = try T.createOne(baseResponse.result.value!, context: context) as! T
+                                callHandler(completionHandler, response: baseResponse, result: .Success(convertedObject))
+                            }
+                                
+                            catch let error as NSError {
+                                callHandler(completionHandler, response: baseResponse, result: .Failure(error))
+                            }
+                            
+        })
+
     }
     
     // MARK: - Array
-    public static func raccoonResponseSerializer<T: Insertable> (type: [T].Type, context: InsertContext = NoContext(), converter: ResponseConverter? = nil) -> ResponseSerializer <[T], NSError> {
-        
-        return ResponseSerializer { request, response, data, error in
-
-            // Transform to json
-            let baseSerializer = raccoonJSONSerializer(converter) as ResponseSerializer<[AnyObject], NSError>
-            let baseResponse = baseSerializer.serializeResponse(request, response, data, error)
-            
-            guard baseResponse.isSuccess else {
-                return .Failure(baseResponse.error!)
-            }
-            
-            // Check if the context is valid
-            guard let context = context.context(forType: T.self) as? T.ContextType else {
-                return .Failure(NSError(domain: RaccoonResponseSerializerDomain,
-                    code: InvalidContextTypeErrorCode,
-                    userInfo: nil))
-            }
-            
-            // Serialize
-            do {
-                let convertedObject: [T] = try T.createMany(baseResponse.value!, context: context) as! [T]
-                return .Success(convertedObject)
-            }
-                
-            catch let error as NSError {
-                return .Failure(error)
-            }
-        }
-    }
-
-    
     public func response<T: Insertable>(type: [T].Type, context: InsertContext = NoContext(), converter: ResponseConverter? = nil,
         completionHandler: (Response<[T], NSError>) -> Void) -> Self {
             
-        let serializer = Request.raccoonResponseSerializer([T].self, context: context, converter: converter) as ResponseSerializer<[T], NSError>
-            return response(responseSerializer: serializer, completionHandler: completionHandler)
+        let serializer = Request.raccoonJSONSerializer(converter) as ResponseSerializer<[AnyObject], NSError>
+        
+        return response(responseSerializer: serializer,
+                        completionHandler: { (baseResponse) in
+                            
+                            guard baseResponse.result.isSuccess else {
+                                callHandler(completionHandler, response: baseResponse, result: .Failure(baseResponse.result.error!))
+                                return
+                            }
+                            
+                            // Check if the context is valid
+                            guard let context = context.context(forType: T.self) as? T.ContextType else {
+                                let error = NSError(domain: RaccoonResponseSerializerDomain,
+                                    code: InvalidContextTypeErrorCode,
+                                    userInfo: nil)
+                                callHandler(completionHandler, response: baseResponse, result: .Failure(error))
+                                return
+                            }
+                            
+                            // Serialize
+                            do {
+                                let convertedObject: [T] = try T.createMany(baseResponse.result.value!, context: context) as! [T]
+                                callHandler(completionHandler, response: baseResponse, result: .Success(convertedObject))
+                            }
+                                
+                            catch let error as NSError {
+                                callHandler(completionHandler, response: baseResponse, result: .Failure(error))
+                            }
+
+        })
     }
     
     // MARK: - Wrapper
-    public static func raccoonResponseSerializer<T: Wrapper> (type: T.Type, context: InsertContext = NoContext(), converter: ResponseConverter? = nil) -> ResponseSerializer <T, NSError> {
-        
-        return ResponseSerializer { request, response, data, error in
-            // Transform to json
-            let baseSerializer = raccoonJSONSerializer(converter) as ResponseSerializer<[String: AnyObject], NSError>
-            let baseResponse = baseSerializer.serializeResponse(request, response, data, error)
-            
-            guard error == nil else {
-                return .Failure(error!)
-            }
-            
-            // Convert
-            let json = baseResponse.value!
-            let convertedObject = T(dictionary: json, context: context)!
-            
-            return .Success(convertedObject)
-    
-        }
-    }
-    
     public func response<T: Wrapper>(type: T.Type, context: InsertContext = NoContext(), converter: ResponseConverter? = nil,
         completionHandler: (Response<T, NSError>) -> Void) -> Self {
             
-        let serializer = Request.raccoonResponseSerializer(T.self, context: context, converter: converter) as ResponseSerializer<T, NSError>
-            return response(responseSerializer: serializer, completionHandler: completionHandler)
+        let serializer = Request.raccoonJSONSerializer(converter) as ResponseSerializer<[String: AnyObject], NSError>
+        
+        return response(responseSerializer: serializer,
+            completionHandler: { (response) in
+                
+                guard response.result.isSuccess else {
+                    callHandler(completionHandler, response: response, result: .Failure(response.result.error!))
+                    return
+                }
+                
+                let json = response.result.value!
+                let convertedObject = T(dictionary: json, context: context)!
+                callHandler(completionHandler, response: response, result: .Success(convertedObject))
+        })
     }
     
     // MARK: - Empty
@@ -197,12 +183,19 @@ extension Alamofire.Request {
                             if response.result.isSuccess {
                                 completionHandler(.Success)
                             }
-                            
+                                
                             else {
                                 completionHandler(.Failure(error: response.result.error!))
                             }
         })
     }
+}
+
+private func callHandler<O, R>(handler: (Response<R, NSError>) -> Void, response: Response<O, NSError>, result: Result<R, NSError>) {
+    handler(Response(request: response.request,
+        response: response.response,
+        data: response.data,
+        result: result))
 }
 
 public enum EmptyResponse {
@@ -222,3 +215,5 @@ public enum EmptyResponse {
         return !self.isSuccess
     }
 }
+
+
