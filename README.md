@@ -295,19 +295,18 @@ if the `ResponseConverter` throws a `NSError`, it will be propagated in the resp
 To create a simple client you can do:
 
 ````
-let client = Client(context: context)
+let client = Client(baseURL: "http://host.com/", context: context)
 ````
 
 where `context` is a `NSManagedObjectContext` if we want to insert objects into CoreData or a `Realm` if we are using **Realm**.
 
-we can add a second parameter:
+we can add a third parameter:
 
 ````
-let client = Client(context: context, responseConverter: converter)
+let client = Client(baseURL: "http://host.com/", context: context, responseConverter: converter)
 ````
 where `converter` is a `ResponseConverter` as explained before. 
 
-We could add another parameter, but we will talk about it in the `Endpoint` section.
 
 ### Enqueue requests
 
@@ -343,24 +342,20 @@ client.enqueue(request)
 ## Endpoint
 Raccoon provides the `Endpoint` class and the `EndpointConvertible` protocol to simplify the request creation. 
 
-And endpoint is something quite similar to a request. It could have a method, encoding and some parameters or headers. But instead of having a url it just have a path. 
+And endpoint is something quite similar to a request. It could have a method, encoding and some parameters or headers. But instead of having an url it just have a path. 
 
-In order to let the client know how to convert an `Endpoint` into a `Request` we must pass the client a new parameter called `endpointSerializer` whose type is `Endpoint -> Request`.
+`Endpoint` has the following method:
+
+````
+public func request(withBaseURL URL: String) -> Request
+````
+
+which creates a `Request` with all the parameters of the `Endpoint` and append its path to the given base URL.
 
 So, we can create and enqueue and endpoint this way:
 
 ````
-func EndpointSerializer(endpoint: Endpoint) -> Request {        
-        return request(endpoint.method,
-            "\(apiUrl)\(endpoint.path)",
-            parameters: endpoint.parameters,
-            encoding: endpoint.encoding,
-            headers: endpoint.headers)
-            .validate(statusCode: 200..<300)
-            .validate(contentType: ["application/json"])
-}
-
-let client = Client(context: context, endpointSerializer: EndpointSerializer)
+let client = Client(baseURL: "http://host.com", context: context)
 
 let loginEndpoint = Endpoint(method: .POST, 
 							  path:"/auth/login",
@@ -372,8 +367,36 @@ client.enqueue(loginEndpoint, type: LoginResponse.self)
 							  					
 ````
 
-The point of having the `Endpoint` class is to allow us to add some things to all the requests handled by the client. Here we are adding just some validations, but we could add authentication headers or all the thing shared by all the requests. 
+We can override the `Endpoint` class to add some custom parameters as authentication headers, api keys, or validation to the request generated. For instance:
 
+````
+class MyAppEndpoint: Endpoint {
+    
+    override init(method: Alamofire.Method, path: String, parameters: [String : AnyObject], encoding: Alamofire.ParameterEncoding, headers: [String : String]) {
+        
+        // adds an api key
+        var parameters = parameters
+        parameters["api_key"] = apiKey
+        
+        // add a auth header
+        var headers = headers
+        headers["Authentication"] = "Bearer MY_TOKEN"
+        
+        super.init(method: method, path: path, parameters: parameters, encoding: encoding, headers: headers)
+    }
+    
+    override func request(withBaseURL URL: String) -> Request {
+        
+        // we add aditional validations
+        let request = super.request(withBaseURL: URL)
+        return request
+            .validate(statusCode: 200..<300)
+            .validate(contentType: ["application/json"])
+    }
+}
+````
+
+            
 ### EndpointConvertible
 
 Finally we have the `EndpointConvertible` protocol. Every object that conform the `EndpointConvertible` protocol must have the following property:

@@ -15,25 +15,17 @@ import Raccoon
 
 public class Client {
     
+    public let baseURL: String
     public let context: InsertContext
-    public let endpointSerializer: EndpointSerializer?
     public let responseConverter: ResponseConverter?
     
-    public init(context: InsertContext, endpointSerializer: EndpointSerializer? = nil, responseConverter: ResponseConverter? = nil) {
+    
+    public init(baseURL: String, context: InsertContext, responseConverter: ResponseConverter? = nil) {
+        self.baseURL = baseURL
         self.context = context
-        self.endpointSerializer = endpointSerializer
         self.responseConverter = responseConverter
     }
-    
-    public convenience init(context: InsertContext, baseURL: String, responseConverter: ResponseConverter? = nil) {
-        
-        let endpointSerializer: EndpointSerializer = { (endpoint) -> (Request) in
-            let request = endpoint.request(withBaseURL: baseURL)
-            return request.validate()
-        }
-        
-        self.init(context: context, endpointSerializer: endpointSerializer, responseConverter: responseConverter)
-    }
+
     
     public func enqueue<T: Insertable>(request: Request, type: T.Type) -> Promise<T> {
         return Promise<T>(resolvers: { (fulfill, reject) -> Void in
@@ -116,18 +108,18 @@ extension Client {
 extension Client {
     
     public func enqueue<T: Insertable>(endpointConvertible: EndpointConvertible, type: T.Type) -> Promise<T> {
-        return enqueue(endpointSerializer!(endpointConvertible.endpoint), type: T.self)
+        return enqueue(endpointConvertible.endpoint.request(withBaseURL: baseURL), type: T.self)
     }
     
     public func enqueue<T: Insertable>(endpointConvertible: EndpointConvertible, type: [T].Type) -> Promise<[T]> {
-        return enqueue(endpointSerializer!(endpointConvertible.endpoint), type: [T].self)
+        return enqueue(endpointConvertible.endpoint.request(withBaseURL: baseURL), type: [T].self)
     }
     
     public func enqueue<T: Wrapper>(endpointConvertible: EndpointConvertible, type: T.Type) -> Promise<T> {
-        return enqueue(endpointSerializer!(endpointConvertible.endpoint), type: T.self)
+        return enqueue(endpointConvertible.endpoint.request(withBaseURL: baseURL), type: T.self)
     }
     
     public func enqueue(endpointConvertible: EndpointConvertible) -> Promise<Void> {
-        return enqueue(endpointSerializer!(endpointConvertible.endpoint))
+        return enqueue(endpointConvertible.endpoint.request(withBaseURL: baseURL))
     }
 }
