@@ -54,19 +54,8 @@ class MyWrapper: Wrapper {
 let apiUrl = "http://api.host.com/"
 
 extension Client {
-    
-    private static func EndpointSerializer(endpoint: Endpoint) -> Request {
-        
-        return request(endpoint.method,
-            "\(apiUrl)\(endpoint.path)",
-            parameters: endpoint.parameters,
-            encoding: endpoint.encoding,
-            headers: endpoint.headers)
-            .validate()
-    }
-    
     static func create() -> Client {
-        return Client(context: NoContext(), endpointSerializer: EndpointSerializer)
+        return Client(baseURL: apiUrl, context: NoContext())
     }
 }
 
@@ -81,22 +70,6 @@ class RaccoonClientTests: XCTestCase {
     override func tearDown() {
         OHHTTPStubs.removeAllStubs()
         super.tearDown()
-    }
-    
-    // MARK: - Test init
-    func testInitWithBaseURL() {
-        
-        let client = Client(context: NoContext(), baseURL: "http://www.sample.com")
-        let endpoint = Endpoint(method: .GET,
-                                path: "my/path",
-                                parameters: [:],
-                                encoding: .URL,
-                                headers: [:])
-        let request = client.endpointSerializer!(endpoint)
-        let url = request.request?.URL?.absoluteString
-        
-        XCTAssertNotNil(url, "shouldn't be nil")
-        XCTAssertEqual(url, "http://www.sample.com/my/path", "vale don't match")
     }
     
     //MARK: - Helper
