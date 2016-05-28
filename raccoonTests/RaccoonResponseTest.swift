@@ -9,7 +9,6 @@
 import XCTest
 @testable import Raccoon
 import Alamofire
-import OHHTTPStubs
 
 // http://stackoverflow.com/questions/26918593/unit-testing-http-traffic-in-alamofire-app
 class RaccoonResponseTest: XCTestCase {
@@ -182,27 +181,5 @@ class RaccoonResponseTest: XCTestCase {
             XCTAssertTrue(result.isFailure, "result should fail")
             XCTAssertFalse(result.isSuccess, "result should not succeed")
         }
-    }
-    
-    //MARK: Helper
-    func stubWithObject(object: AnyObject) {
-        
-        OHHTTPStubs.stubRequestsPassingTest({
-            (request: NSURLRequest) -> Bool in
-            return true
-            }, withStubResponse: { (request: NSURLRequest) -> OHHTTPStubsResponse in
-                return OHHTTPStubsResponse(JSONObject: object, statusCode:200, headers:nil)
-        })
-    }
-    
-    func stubError() {
-        
-        OHHTTPStubs.stubRequestsPassingTest({
-            (request: NSURLRequest) -> Bool in
-            return true
-            }, withStubResponse: { (request: NSURLRequest) -> OHHTTPStubsResponse in
-                let notConnectedError = NSError(domain:NSURLErrorDomain, code:10, userInfo:nil)
-                return OHHTTPStubsResponse(error:notConnectedError)
-        })
     }
 }

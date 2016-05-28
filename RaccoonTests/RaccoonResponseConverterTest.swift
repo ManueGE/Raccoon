@@ -38,40 +38,50 @@ class RaccoonResponseConverterTest: XCTestCase {
     
     func testResponseSerializer() {
         
-        // Given
-        let serializer: ResponseSerializer = Request.raccoonResponseSerializer(MyInsertable.self, converter: SuccessResponseSerializer)
-        
+        var result: Result<MyInsertable, NSError>!
+        let responseArrived = self.expectationWithDescription("response of async request has arrived")
         let json = ["": ""] // empty json, it will be converted
-        let data = try! NSJSONSerialization.dataWithJSONObject(json, options: [])
         
-        // When
-        let result = serializer.serializeResponse(nil, nil, data, nil)
+        stubWithObject(json)
         
-        // Then
-        XCTAssertTrue(result.isSuccess, "result is success should be true")
-        XCTAssertNotNil(result.value, "result value should not be nil")
-        XCTAssertNil(result.error, "result error should be nil")
+        let request = Alamofire.request(NSURLRequest())
+        request.response(MyInsertable.self, converter: SuccessResponseSerializer) { (response) in
+            result = response.result
+            responseArrived.fulfill()
+        }
         
-        XCTAssertEqual(result.value?.integer, 1, "property does not match")
-        XCTAssertEqual(result.value?.string, "one", "property does not match")
+        self.waitForExpectationsWithTimeout(10) { err in
+            XCTAssertTrue(result.isSuccess, "result is success should be true")
+            XCTAssertNotNil(result.value, "result value should not be nil")
+            XCTAssertNil(result.error, "result error should be nil")
+            
+            XCTAssertEqual(result.value?.integer, 1, "property does not match")
+            XCTAssertEqual(result.value?.string, "one", "property does not match")
+        }
     }
     
     func testFailResponseSerializer() {
-        // Given
-        let serializer = Request.raccoonResponseSerializer(MyInsertable.self, converter: ErrorResponseSerializer)
         
+        var result: Result<MyInsertable, NSError>!
+        let responseArrived = self.expectationWithDescription("response of async request has arrived")
         let json = ["": ""] // empty json, it will be converted
-        let data = try! NSJSONSerialization.dataWithJSONObject(json, options: [])
         
-        // When
-        let result = serializer.serializeResponse(nil, nil, data, nil)
+        stubWithObject(json)
         
-        // Then
-        XCTAssertTrue(!result.isSuccess, "result is success should be false")
-        XCTAssertNil(result.value, "result value should not be nil")
-        XCTAssertNotNil(result.error, "result error should be nil")
+        let request = Alamofire.request(NSURLRequest())
+        request.response(MyInsertable.self, converter: ErrorResponseSerializer) { (response) in
+            result = response.result
+            responseArrived.fulfill()
+        }
         
-        XCTAssertEqual(result.error?.domain, "ErrorDomain", "property does not match")
-        XCTAssertEqual(result.error?.code, 10, "property does not match")
+        self.waitForExpectationsWithTimeout(10) { err in
+            XCTAssertTrue(!result.isSuccess, "result is success should be false")
+            XCTAssertNil(result.value, "result value should not be nil")
+            XCTAssertNotNil(result.error, "result error should be nil")
+            
+            XCTAssertEqual(result.error?.domain, "ErrorDomain", "property does not match")
+            XCTAssertEqual(result.error?.code, 10, "property does not match")
+        }
+        
     }
 }
