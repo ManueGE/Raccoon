@@ -8,7 +8,7 @@
 
 import XCTest
 import RaccoonRealm
-import Raccoon
+import RaccoonCore
 import RealmSwift
 import Alamofire
 
@@ -57,42 +57,50 @@ class RaccoonRealmTests: XCTestCase {
     }
     
     func testObjectSerializer() {
-        // Given
-        let serializer: ResponseSerializer = Request.raccoonResponseSerializer(User.self, context: realm)
         
+        var result: Alamofire.Result<User, NSError>!
+        let responseArrived = self.expectationWithDescription("response of async request has arrived")
         let json = ["id": 1, "Nombre": "one"]
-        let data = try! NSJSONSerialization.dataWithJSONObject(json, options: [])
         
-        // When
-        let result = serializer.serializeResponse(nil, nil, data, nil)
+        stubWithObject(json)
         
-        // Then
-        XCTAssertTrue(result.isSuccess, "result is success should be true")
-        XCTAssertNotNil(result.value, "result value should not be nil")
-        XCTAssertNil(result.error, "result error should be nil")
+        let request = Alamofire.request(NSURLRequest())
+        request.response(User.self, context: realm) { (response) in
+            result = response.result
+            responseArrived.fulfill()
+        }
         
-        XCTAssertEqual(result.value?.id, 1, "property does not match")
-        XCTAssertEqual(result.value?.name, "one", "property does not match")
+        self.waitForExpectationsWithTimeout(10) { err in
+            XCTAssertTrue(result.isSuccess, "result is success should be true")
+            XCTAssertNotNil(result.value, "result value should not be nil")
+            XCTAssertNil(result.error, "result error should be nil")
+            
+            XCTAssertEqual(result.value?.id, 1, "property does not match")
+            XCTAssertEqual(result.value?.name, "one", "property does not match")
+        }
     }
 
     func testObjectWithNotPrimryKeySerializer() {
         
-        // Given
-        let serializer: ResponseSerializer = Request.raccoonResponseSerializer(Department.self, context: realm)
-
+        var result: Alamofire.Result<Department, NSError>!
+        let responseArrived = self.expectationWithDescription("response of async request has arrived")
         let json = [:]
-        let data = try! NSJSONSerialization.dataWithJSONObject(json, options: [])
         
-        // When
-        let result = serializer.serializeResponse(nil, nil, data, nil)
+        stubWithObject(json)
         
-        // Then
-        XCTAssertTrue(result.isSuccess, "result is success should be true")
-        XCTAssertNotNil(result.value, "result value should not be nil")
-        XCTAssertNil(result.error, "result error should be nil")
+        let request = Alamofire.request(NSURLRequest())
+        request.response(Department.self, context: realm) { (response) in
+            result = response.result
+            responseArrived.fulfill()
+        }
         
-        XCTAssertEqual(result.value?.id, 1, "property does not match")
-        XCTAssertEqual(result.value?.name, "Bosses", "property does not match")
+        self.waitForExpectationsWithTimeout(10) { err in
+            XCTAssertTrue(result.isSuccess, "result is success should be true")
+            XCTAssertNotNil(result.value, "result value should not be nil")
+            XCTAssertNil(result.error, "result error should be nil")
+            
+            XCTAssertEqual(result.value?.id, 1, "property does not match")
+            XCTAssertEqual(result.value?.name, "Bosses", "property does not match")
+        }
     }
-    
 }

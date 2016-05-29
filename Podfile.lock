@@ -19,25 +19,7 @@ PODS:
   - OHHTTPStubs/OHPathHelpers (5.0.0)
   - OHHTTPStubs/Swift (5.0.0):
     - OHHTTPStubs/Core
-  - OMGHTTPURLRQ (3.1.1):
-    - OMGHTTPURLRQ/RQ (= 3.1.1)
-  - OMGHTTPURLRQ/FormURLEncode (3.1.1)
-  - OMGHTTPURLRQ/RQ (3.1.1):
-    - OMGHTTPURLRQ/FormURLEncode
-    - OMGHTTPURLRQ/UserAgent
-  - OMGHTTPURLRQ/UserAgent (3.1.1)
-  - PromiseKit (3.1.1):
-    - PromiseKit/Foundation (= 3.1.1)
-    - PromiseKit/QuartzCore (= 3.1.1)
-    - PromiseKit/UIKit (= 3.1.1)
-  - PromiseKit/CorePromise (3.1.1)
-  - PromiseKit/Foundation (3.1.1):
-    - OMGHTTPURLRQ (~> 3.1.0)
-    - PromiseKit/CorePromise
-  - PromiseKit/QuartzCore (3.1.1):
-    - PromiseKit/CorePromise
-  - PromiseKit/UIKit (3.1.1):
-    - PromiseKit/CorePromise
+  - PromiseKit/CorePromise (3.2.0)
   - Realm (1.0.0):
     - Realm/Headers (= 1.0.0)
   - Realm/Headers (1.0.0)
@@ -50,7 +32,7 @@ DEPENDENCIES:
   - Groot (~> 1.2)
   - OHHTTPStubs (~> 5.0)
   - OHHTTPStubs/Swift (~> 5.0)
-  - PromiseKit (~> 3.1)
+  - PromiseKit/CorePromise (~> 3.1)
   - RealmSwift (~> 1.0)
 
 SPEC CHECKSUMS:
@@ -58,11 +40,10 @@ SPEC CHECKSUMS:
   BNRCoreDataStack: 8b4102fe383c472141ffe5e31cc93e56dd80e1d2
   Groot: 86c2c820d619f18586b2d1dcfd90e908339f00bc
   OHHTTPStubs: a5d2e9eea07869d42ec03338325f398bc520e159
-  OMGHTTPURLRQ: 633f98ee745aeda02345935a52eec1784cddb589
-  PromiseKit: 4e8127c22a9b29d1b44958ab2ec762ea6115cbfb
+  PromiseKit: 1db024241265f428137a9f3c00ff9590740c4be6
   Realm: e15cd8e7c11d3e576f628ba0b7cb855269b4991c
   RealmSwift: 3229306d020d96f83b335f87a0dcbf2cef0e6a2b
 
-PODFILE CHECKSUM: 0fad337a38855a616d930cd674ff0181cbdfc019
+PODFILE CHECKSUM: d61ae8cdb9115d15aa03ea98d128711b98ac4ec7
 
 COCOAPODS: 1.0.0

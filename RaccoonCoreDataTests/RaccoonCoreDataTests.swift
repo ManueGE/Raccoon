@@ -8,7 +8,7 @@
 
 import XCTest
 import RaccoonCoreData
-import Raccoon
+import RaccoonCore
 import BNRCoreDataStack
 
 class RaccoonCoreDataTests: XCTestCase {

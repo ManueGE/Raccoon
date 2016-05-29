@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Raccoon
+@testable import RaccoonCore
 import Alamofire
 
 // http://stackoverflow.com/questions/26918593/unit-testing-http-traffic-in-alamofire-app

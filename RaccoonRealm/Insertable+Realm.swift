@@ -7,7 +7,7 @@
 //
 
 import RealmSwift
-import Raccoon
+import RaccoonCore
 
 // typealias RealmInsertable = protocol<RealmSerializable, Insertable>
 
