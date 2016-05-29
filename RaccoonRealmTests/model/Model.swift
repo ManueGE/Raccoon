@@ -9,7 +9,7 @@
 import Foundation
 import RaccoonRealm
 import RealmSwift
-import Raccoon
+import RaccoonCore
 
 struct DateConverter {
     static let formatter: NSDateFormatter = {

@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Raccoon
+@testable import RaccoonCore
 import Alamofire
 
 func SuccessResponseSerializer(data: NSData?) throws -> NSData? {

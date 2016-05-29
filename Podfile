@@ -1,10 +1,10 @@
 platform :ios, '8.0'
 use_frameworks!
 
-target 'Raccoon' do
+target 'RaccoonCore' do
 	pod 'Alamofire', '~> 3.4'
     
-    target 'RaccoonTests' do
+    target 'RaccoonCoreTests' do
         pod 'OHHTTPStubs', '~> 5.0'
         pod 'OHHTTPStubs/Swift', '~> 5.0'
     end
@@ -26,6 +26,8 @@ target 'RaccoonRealm' do
     
     target 'RaccoonRealmTests' do
         pod 'Alamofire', '~> 3.4'
+        pod 'OHHTTPStubs', '~> 5.0'
+        pod 'OHHTTPStubs/Swift', '~> 5.0'
     end
 end
 

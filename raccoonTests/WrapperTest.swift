@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Raccoon
+@testable import RaccoonCore
 
 class MyInsertable: NSObject, Insertable {
     var integer: Int
