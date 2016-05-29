@@ -7,8 +7,7 @@
 //
 
 import XCTest
-import RaccoonRealm
-import RaccoonCore
+import Raccoon
 import RealmSwift
 import Alamofire
 
@@ -34,11 +33,11 @@ class RaccoonRealmTests: XCTestCase {
         let json = ["id": 1, "Nombre": "manueGE"]
         
         // When
-        let user = try! User.createOne(json, context: realm) as! User
+        let employer = try! Employer.createOne(json, context: realm) as! Employer
         
         // Then
-        XCTAssertEqual(user.id, 1, "property does not match")
-        XCTAssertEqual(user.name, "manueGE", "property does not match")
+        XCTAssertEqual(employer.id, 1, "property does not match")
+        XCTAssertEqual(employer.name, "manueGE", "property does not match")
         
     }
     
@@ -50,22 +49,22 @@ class RaccoonRealmTests: XCTestCase {
         ]
         
         // When
-        let users = try! User.createMany(json, context: realm) as! [User]
+        let employers = try! Employer.createMany(json, context: realm) as! [Employer]
         
         // Then
-        XCTAssertEqual(users.count, 2, "count does not match")
+        XCTAssertEqual(employers.count, 2, "count does not match")
     }
     
     func testObjectSerializer() {
         
-        var result: Alamofire.Result<User, NSError>!
+        var result: Alamofire.Result<Employer, NSError>!
         let responseArrived = self.expectationWithDescription("response of async request has arrived")
         let json = ["id": 1, "Nombre": "one"]
         
         stubWithObject(json)
         
         let request = Alamofire.request(NSURLRequest())
-        request.response(User.self, context: realm) { (response) in
+        request.response(Employer.self, context: realm) { (response) in
             result = response.result
             responseArrived.fulfill()
         }

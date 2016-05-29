@@ -7,7 +7,7 @@
 //
 
 import Foundation
-@testable import RaccoonCore
+@testable import Raccoon
 
 class DateConverter {
     static let formatter: NSDateFormatter = {
@@ -22,6 +22,31 @@ class DateConverter {
     
     class func date(fromString string: String) -> NSDate {
         return formatter.dateFromString(string)!
+    }
+}
+
+class MyInsertable: NSObject, Insertable {
+    var integer: Int
+    var string: String
+    
+    typealias ContextType = NoContext
+    
+    init(integer: Int, string: String) {
+        self.integer = integer
+        self.string = string
+    }
+    
+    static func createOne(json: [String : AnyObject], context: ContextType) throws -> AnyObject? {
+        let integer = json["integer"] as! Int
+        let string = json["string"] as! String
+        return MyInsertable(integer: integer, string: string)
+    }
+    
+    static func createMany(array: [AnyObject], context: ContextType) throws -> [AnyObject]? {
+        return array.map({ (object) -> AnyObject in
+            let json = object as! [String: AnyObject]
+            return try! MyInsertable.createOne(json, context: context)!
+        })
     }
 }
 

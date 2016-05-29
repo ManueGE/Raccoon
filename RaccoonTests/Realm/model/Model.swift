@@ -7,27 +7,10 @@
 //
 
 import Foundation
-import RaccoonRealm
+import Raccoon
 import RealmSwift
-import RaccoonCore
 
-struct DateConverter {
-    static let formatter: NSDateFormatter = {
-        let formatter = NSDateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        return formatter
-    }()
-    
-    static func string(fromDate date: NSDate) -> String {
-        return formatter.stringFromDate(date)
-    }
-    
-    static func date(fromString string: String) -> NSDate {
-        return formatter.dateFromString(string)!
-    }
-}
-
-class User: Object {
+class Employer: Object {
     dynamic var id: Int = 0
     dynamic var name: String = ""
     dynamic var country: String = ""

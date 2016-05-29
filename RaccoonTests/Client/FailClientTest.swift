@@ -7,8 +7,7 @@
 //
 
 import XCTest
-import RaccoonClient
-import RaccoonCore
+import Raccoon
 import Alamofire
 import PromiseKit
 import OHHTTPStubs
