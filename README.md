@@ -29,6 +29,12 @@ pod 'Raccoon/Client'
 
 Then run `$ pod install`.
 
+And finally, in the classes where you need **Raccoon**: 
+
+````
+import Raccoon
+````
+
 **Note**: If you just write `pod 'Raccoon'` the CoreData version and the Client will be used.
 
 If you don’t have CocoaPods installed or integrated into your project, you can learn how to do so [here](http://cocoapods.org).
@@ -308,12 +314,12 @@ let client = Client(baseURL: "http://host.com/", context: context, responseConve
 where `converter` is a `ResponseConverter` as explained before. 
 
 
-### Enqueue requests
+### Sending requests
 
-If we have a `Request` that return an object `User`, we can enqueue the request this way:
+If we have a `Request` that return an object `User`, we can send the request this way:
 
 ````
-client.enqueue(myRequest, type: User.self)
+client.request(myRequest, type: User.self)
 ````
 
 This will return a `Promise<User>`.
@@ -321,10 +327,10 @@ This will return a `Promise<User>`.
 If our request returns an array of `User` instances:
 
 ````
-client.enqueue(myRequest, type: [User].self)
+client.request(myRequest, type: [User].self)
 ````
 
-We can enqueue requests that return one of the following types:
+We can send requests that return one of the following types:
 
 * `NSManagedObject`
 * `[NSManagedObject]`
@@ -332,10 +338,10 @@ We can enqueue requests that return one of the following types:
 * `[Object]`
 * `Wrapper`
 
-we can also enqueue a request that return an empty promise: `Promise<Void>` this way:
+we can also send a request that return an empty promise: `Promise<Void>` this way:
 
 ````
-client.enqueue(request)
+client.request(request)
 ````
 
 
@@ -352,7 +358,7 @@ public func request(withBaseURL URL: String) -> Request
 
 which creates a `Request` with all the parameters of the `Endpoint` and append its path to the given base URL.
 
-So, we can create and enqueue and endpoint this way:
+For example:
 
 ````
 let client = Client(baseURL: "http://host.com", context: context)
@@ -363,7 +369,7 @@ let loginEndpoint = Endpoint(method: .POST,
 							  encoding: .JSON,
 							  headers: [:])
 
-client.enqueue(loginEndpoint, type: LoginResponse.self)
+client.request(loginEndpoint, type: LoginResponse.self)
 							  					
 ````
 
@@ -427,7 +433,7 @@ and then:
 
 ````
 let login = LoginRouter.Login(user: "manue", password: "my_pass")
-client.enqueue(login, type: LoginResponse.self)
+client.request(login, type: LoginResponse.self)
 							  					
 ````
 

@@ -27,7 +27,7 @@ class RequestConvertibleClientTests: RaccoonClientTests {
         
         stubWithObject(["integer": 10, "string": "ten"])
         
-        let promise = client.enqueue(theRequest, type: MyInsertable.self)
+        let promise = client.request(theRequest, type: MyInsertable.self)
         promise.then { (object) -> Void in
             receivedObject = object
             }
@@ -53,7 +53,7 @@ class RequestConvertibleClientTests: RaccoonClientTests {
         
         stubWithObject([["integer": 10, "string": "ten"], ["integer": 20, "string": "twenty"]])
         
-        let promise = client.enqueue(theRequest, type: [MyInsertable].self)
+        let promise = client.request(theRequest, type: [MyInsertable].self)
         promise.then { (object) -> Void in
             receivedObject = object
             }
@@ -82,7 +82,7 @@ class RequestConvertibleClientTests: RaccoonClientTests {
         
         stubWithObject(["string": "my string", "insertable": ["integer": 10, "string": "ten"]])
         
-        let promise = client.enqueue(theRequest, type: MyWrapper.self)
+        let promise = client.request(theRequest, type: MyWrapper.self)
         promise.then { (object) -> Void in
             receivedObject = object
             }
@@ -111,7 +111,7 @@ class RequestConvertibleClientTests: RaccoonClientTests {
         
         stubWithObject(["string": "my string", "insertable": ["integer": 10, "string": "ten"]])
         
-        let promise = client.enqueue(theRequest) as Promise<Void>
+        let promise = client.request(theRequest) as Promise<Void>
         promise.then { () -> Void in
             success = true
             }
