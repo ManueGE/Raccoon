@@ -30,7 +30,7 @@ target 'RaccoonRealm' do
 end
 
 target 'RaccoonClient' do
-    pod 'PromiseKit', '~> 3.1'
+    pod 'PromiseKit/CorePromise', '~> 3.1'
     pod 'Alamofire', '~> 3.4'
     
     target 'RaccoonClientTests' do

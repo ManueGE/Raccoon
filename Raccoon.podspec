@@ -41,7 +41,7 @@ Pod::Spec.new do |spec|
 
   spec.subspec 'Client' do |client|
     client.dependency "Raccoon/Core"
-    client.dependency "PromiseKit", "~> 3.1"
+    client.dependency "PromiseKit/CorePromise", "~> 3.1"
     client.source_files  = "RaccoonClient/**/*.{swift}"
   end
 
