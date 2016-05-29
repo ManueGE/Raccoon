@@ -1,43 +1,17 @@
 platform :ios, '8.0'
 use_frameworks!
 
-target 'RaccoonCore' do
+target 'Raccoon' do
 	pod 'Alamofire', '~> 3.4'
+    pod 'Groot', '~> 1.2'
+    pod 'RealmSwift', '~> 1.0'
+    pod 'PromiseKit/CorePromise', '~> 3.1'
     
-    target 'RaccoonCoreTests' do
+    target 'RaccoonTests' do
         pod 'OHHTTPStubs', '~> 5.0'
         pod 'OHHTTPStubs/Swift', '~> 5.0'
-    end
-end
-
-
-target 'RaccoonCoreData' do
-    pod 'Groot', '~> 1.2'
-    
-    target 'RaccoonCoreDataTests' do
+        
         pod 'Alamofire', '~> 3.4'
         pod 'BNRCoreDataStack', '~> 1.2'
     end
 end
-
-
-target 'RaccoonRealm' do
-    pod 'RealmSwift', '~> 1.0'
-    
-    target 'RaccoonRealmTests' do
-        pod 'Alamofire', '~> 3.4'
-        pod 'OHHTTPStubs', '~> 5.0'
-        pod 'OHHTTPStubs/Swift', '~> 5.0'
-    end
-end
-
-target 'RaccoonClient' do
-    pod 'PromiseKit/CorePromise', '~> 3.1'
-    pod 'Alamofire', '~> 3.4'
-    
-    target 'RaccoonClientTests' do
-        pod 'OHHTTPStubs', '~> 5.0'
-        pod 'OHHTTPStubs/Swift', '~> 5.0'
-    end
-end
-

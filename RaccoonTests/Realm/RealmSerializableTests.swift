@@ -8,7 +8,7 @@
 
 import XCTest
 import RealmSwift
-import RaccoonRealm
+import Raccoon
 
 class RealmProjectTests: XCTestCase {
     
@@ -37,14 +37,14 @@ class RealmProjectTests: XCTestCase {
         
         // When
         try! realm.write() {
-            let user = realm.create(User.self, json: dictionary, update: true)
+            let employer = realm.create(Employer.self, json: dictionary, update: true)
             
             // Then
-            XCTAssertEqual(user.id, 1, "property does not match")
-            XCTAssertEqual(user.name, "Manue", "property does not match")
-            XCTAssertEqual(user.country, "Spain", "property does not match")
-            XCTAssertNotNil(user.birthday, "property does not match")
-            XCTAssertEqual(user.birthday, DateConverter.date(fromString: "1983-11-18"), "property does not match")
+            XCTAssertEqual(employer.id, 1, "property does not match")
+            XCTAssertEqual(employer.name, "Manue", "property does not match")
+            XCTAssertEqual(employer.country, "Spain", "property does not match")
+            XCTAssertNotNil(employer.birthday, "property does not match")
+            XCTAssertEqual(employer.birthday, DateConverter.date(fromString: "1983-11-18"), "property does not match")
         }
     }
     
@@ -58,11 +58,11 @@ class RealmProjectTests: XCTestCase {
         
         // When
         try! realm.write() {
-            let user = realm.create(Role.self, json: dictionary, update: true)
+            let role = realm.create(Role.self, json: dictionary, update: true)
             
             // Then
-            XCTAssertEqual(user.id, 1, "property does not match")
-            XCTAssertEqual(user.name, "Manue", "property does not match")
+            XCTAssertEqual(role.id, 1, "property does not match")
+            XCTAssertEqual(role.name, "Manue", "property does not match")
         }
     }
     
@@ -76,10 +76,10 @@ class RealmProjectTests: XCTestCase {
         
         // When
         try! realm.write() {
-            let user = realm.create(User.self, json: dictionary, update: true)
+            let employer = realm.create(Employer.self, json: dictionary, update: true)
             
             // Then
-            XCTAssertNil(user.birthday, "property should be nil")
+            XCTAssertNil(employer.birthday, "property should be nil")
         }
     }
     
@@ -92,16 +92,16 @@ class RealmProjectTests: XCTestCase {
         
         // When
         try! realm.write() {
-            let previousUser = realm.create(User.self, value: ["id": 1])
-            previousUser.name = "manu"
-            previousUser.created = NSDate()
+            let previousEmployer = realm.create(Employer.self, value: ["id": 1])
+            previousEmployer.name = "manu"
+            previousEmployer.created = NSDate()
             
-            let user = realm.create(User.self, json: dictionary, update: true)
+            let employer = realm.create(Employer.self, json: dictionary, update: true)
             
             // Then
-            XCTAssertEqual(user, previousUser, "property does not match")
-            XCTAssertEqual(user.name, "manu", "property does not match")
-            XCTAssertNil(user.created, "property should be nil")
+            XCTAssertEqual(employer, previousEmployer, "property does not match")
+            XCTAssertEqual(employer.name, "manu", "property does not match")
+            XCTAssertNil(employer.created, "property should be nil")
         }
     }
     

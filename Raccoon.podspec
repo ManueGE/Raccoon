@@ -23,26 +23,26 @@ Pod::Spec.new do |spec|
   spec.default_subspec = 'CoreData', 'Client'
 
   spec.subspec 'Core' do |core|
-    core.source_files = "Raccoon/**/*.{swift}"
+    core.source_files = "Raccoon/Core/**/*.{swift}"
   end
 
   spec.subspec 'CoreData' do |core_data|
     core_data.dependency "Raccoon/Core"
     core_data.framework  = "CoreData"
     core_data.dependency "Groot", "~> 1.2"
-    core_data.source_files = "RaccoonCoreData/**/*.{swift}"
+    core_data.source_files = "Raccoon/CoreData/**/*.{swift}"
   end
 
   spec.subspec 'Realm' do |realm|
     realm.dependency "Raccoon/Core"
     realm.dependency "RealmSwift", "~> 1.0"
-    realm.source_files  = "RaccoonRealm/**/*.{swift}"
+    realm.source_files  = "Raccoon/Realm/**/*.{swift}"
   end
 
   spec.subspec 'Client' do |client|
     client.dependency "Raccoon/Core"
     client.dependency "PromiseKit/CorePromise", "~> 3.1"
-    client.source_files  = "RaccoonClient/**/*.{swift}"
+    client.source_files  = "Raccoon/Client/**/*.{swift}"
   end
 
 end
