@@ -7,7 +7,6 @@
 //
 
 import CoreData
-import RaccoonCore
 import Groot
 
 extension NSManagedObjectContext: InsertContext {

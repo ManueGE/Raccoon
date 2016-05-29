@@ -7,8 +7,7 @@
 //
 
 import XCTest
-import RaccoonClient
-import RaccoonCore
+import Raccoon
 import PromiseKit
 
 class EndpointClientTest: RaccoonClientTests {

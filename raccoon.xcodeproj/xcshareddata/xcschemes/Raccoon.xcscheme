@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3285AB681CD0156B00350513"
-               BuildableName = "RaccoonRealm.framework"
-               BlueprintName = "RaccoonRealm"
+               BlueprintIdentifier = "3285AB851CD019FE00350513"
+               BuildableName = "Raccoon.framework"
+               BlueprintName = "Raccoon"
                ReferencedContainer = "container:raccoon.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,9 +33,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3285AB711CD0156B00350513"
-               BuildableName = "RaccoonRealmTests.xctest"
-               BlueprintName = "RaccoonRealmTests"
+               BlueprintIdentifier = "3285AB8E1CD019FE00350513"
+               BuildableName = "RaccoonTests.xctest"
+               BlueprintName = "RaccoonTests"
                ReferencedContainer = "container:raccoon.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -43,9 +43,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3285AB681CD0156B00350513"
-            BuildableName = "RaccoonRealm.framework"
-            BlueprintName = "RaccoonRealm"
+            BlueprintIdentifier = "3285AB851CD019FE00350513"
+            BuildableName = "Raccoon.framework"
+            BlueprintName = "Raccoon"
             ReferencedContainer = "container:raccoon.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -65,9 +65,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3285AB681CD0156B00350513"
-            BuildableName = "RaccoonRealm.framework"
-            BlueprintName = "RaccoonRealm"
+            BlueprintIdentifier = "3285AB851CD019FE00350513"
+            BuildableName = "Raccoon.framework"
+            BlueprintName = "Raccoon"
             ReferencedContainer = "container:raccoon.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -83,9 +83,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3285AB681CD0156B00350513"
-            BuildableName = "RaccoonRealm.framework"
-            BlueprintName = "RaccoonRealm"
+            BlueprintIdentifier = "3285AB851CD019FE00350513"
+            BuildableName = "Raccoon.framework"
+            BlueprintName = "Raccoon"
             ReferencedContainer = "container:raccoon.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

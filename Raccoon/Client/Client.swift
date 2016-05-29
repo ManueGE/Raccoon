@@ -9,7 +9,6 @@
 import Foundation
 import PromiseKit
 import Alamofire
-import RaccoonCore
 
 // MARK: Base
 
