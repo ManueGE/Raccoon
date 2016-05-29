@@ -7,7 +7,7 @@
 //
 
 import Foundation
-@testable import Raccoon
+@testable import RaccoonCore
 
 class DateConverter {
     static let formatter: NSDateFormatter = {
