@@ -4,7 +4,7 @@ Pod::Spec.new do |spec|
   spec.version      = "0.1.0"
   spec.summary      = "A nice Alamofire serializer that convert JSON into CoreData or Realm objects."
   spec.description  = <<-DESC
-  A nice Alamofire serializer that convert JSON into CoreData or Realm objects.
+  A nice Alamofire serializer that convert JSON into CoreData or Realm objects. Optionally, it provides a Client that puts together Alamofire, PromiseKit and CoreData/Realm
                    DESC
   spec.homepage     = "https://github.com/ManueGE/Raccoon/"
   spec.license      = "MIT"
