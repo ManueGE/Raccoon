@@ -373,7 +373,7 @@ client.request(loginEndpoint, type: LoginResponse.self)
 							  					
 ````
 
-We can override the `Endpoint` class to add some custom parameters as authentication headers, api keys, or validation to the request generated. For instance:
+We can override the `Endpoint` class to add some custom parameters as authentication headers, api keys, perform validations or [log the request](http://github.com/ManueGE/AlamofireActivityLogger). For instance:
 
 ````
 class MyAppEndpoint: Endpoint {
@@ -398,6 +398,7 @@ class MyAppEndpoint: Endpoint {
         return request
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
+            .log()
     }
 }
 ````
