@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "Raccoon"
-  spec.version      = "0.1.0"
+  spec.version      = "0.1.1"
   spec.summary      = "A nice Alamofire serializer that convert JSON into CoreData or Realm objects."
   spec.description  = <<-DESC
   A nice Alamofire serializer that convert JSON into CoreData or Realm objects. Optionally, it provides a Client that puts together Alamofire, PromiseKit and CoreData/Realm
@@ -41,7 +41,7 @@ Pod::Spec.new do |spec|
 
   spec.subspec 'Client' do |client|
     client.dependency "Raccoon/Core"
-    client.dependency "PromiseKit/CorePromise", "~> 3.1"
+    client.dependency "PromiseKit/CorePromise", "~> 3.2"
     client.source_files  = "Raccoon/Client/**/*.{swift}"
   end
 
