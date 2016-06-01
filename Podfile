@@ -5,7 +5,7 @@ target 'Raccoon' do
 	pod 'Alamofire', '~> 3.4'
     pod 'Groot', '~> 1.2'
     pod 'RealmSwift', '~> 1.0'
-    pod 'PromiseKit/CorePromise', '~> 3.1'
+    pod 'PromiseKit/CorePromise', '~> 3.2'
     
     target 'RaccoonTests' do
         pod 'OHHTTPStubs', '~> 5.0'
