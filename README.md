@@ -123,7 +123,7 @@ However, most of times this is not the case so, in addition, **Raccoon** provide
 
 If you just need to rename the keys and/or apply a transformation (as convert a string to a date), you can override this one: `class var keyPathsByProperties: [String: KeyPathConvertible]?`. As an example, in our `User` model, if the JSON we get from the server is this way:
 
-````swift
+````json
 {
     "id": 1,
     "username": "manue",
@@ -232,10 +232,10 @@ class Pagination: Wrapper {
     }
 }
 
-````swift
+````
 And the response that we have is:
 
-````
+````json
 {
 	"total": 100,
 	"current": 3,
