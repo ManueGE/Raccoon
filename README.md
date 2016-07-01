@@ -45,7 +45,7 @@ If you don’t have CocoaPods installed or integrated into your project, you can
 ### Getting started
 Using **Raccoon** is quite simple. Let's suposse you have an `User` model. This is the **CoreData** version:
 
-````
+````swift
 class User: NSManagedObject {
 }
 
@@ -60,7 +60,7 @@ extension User {
 
 and this one the **Realm** one:
 
-````
+````swift
 class User: Object {
     dynamic var id: Int = 0
     dynamic var name: String = ""
@@ -74,7 +74,7 @@ class User: Object {
 
 If we have an **Alamofire** request that returns a single object, we will do:
 
-````
+````swift
 myRequest.response(User.self, context: context) { (response) in
    
     if response.result.isSuccess {
@@ -90,7 +90,7 @@ As you see, we need to pass a `context` to perform the insertion of the data. Th
 
 If we have another request that returns an array of `User` instances, the we will do:
 
-````
+````swift
 myRequest.response([User].self, context: context) { (response) in
    
     if response.result.isSuccess {
@@ -112,7 +112,7 @@ There are some clarification to be done about how the objects are serialized.
 #### Realm
 **Raccoon** make use of the built-in JSON serialization by **Realm**:
 
-````
+````swift
 let json = ["id": 10, "name": "Manue"]
 realm.create(User, value: json, update: true)
 ````
@@ -123,7 +123,7 @@ However, most of times this is not the case so, in addition, **Raccoon** provide
 
 If you just need to rename the keys and/or apply a transformation (as convert a string to a date), you can override this one: `class var keyPathsByProperties: [String: KeyPathConvertible]?`. As an example, in our `User` model, if the JSON we get from the server is this way:
 
-````
+````swift
 {
     "id": 1,
     "username": "manue",
@@ -134,7 +134,7 @@ If you just need to rename the keys and/or apply a transformation (as convert a 
 
 we must override that property this way
 
-````
+````swift
 class User: Object {
     dynamic var id: Int = 0
     dynamic var name: String = ""
@@ -176,7 +176,7 @@ A final note about **Realm**: all the instances used by raccoon that declare a *
 ### Wrapper
 Sometimes, our models are not sent directly by the server responses. Instead they are wrapped into a bigger json. For example, let's suppose that we have a response for our login request where we get the user info, the access token and the validity date for the token:
 
-````
+````swift
 {
     "token": "THIS_IS_MY_TOKEN",
     "validity": "2020-01-01",
@@ -189,7 +189,7 @@ Sometimes, our models are not sent directly by the server responses. Instead the
 
 To handle this, we have to create a new class or structure and adopt the `Wrapper` protocol. For example:
 
-````
+````swift
 class LoginResponse: Wrapper {
     
     var token: String!
@@ -214,7 +214,7 @@ The map function must use the same syntax as the example shows, by using the `<-
 #### Root keypath
 There is a special case when we want to map to an object which is in the root level of the JSON. For example, if we have a `Pagination` object that implements `Wrapper`:
 
-````
+````swift
 class Pagination: Wrapper {
 	var total: Int = 0
 	var current: Int = 0
@@ -232,7 +232,7 @@ class Pagination: Wrapper {
     }
 }
 
-````
+````swift
 And the response that we have is:
 
 ````
@@ -252,7 +252,7 @@ And the response that we have is:
 
 Look that the pagination is not under any key, but it is in the root of the JSON. In this case, we can create the next object:
 
-````
+````swift
 class UserListResponse: Wrapper {
 	var pagination: Pagination!
 	var users: [User]!
@@ -271,13 +271,13 @@ class UserListResponse: Wrapper {
 ### Data Converter
 Sometimes, the data we get from the server is not in the right format. It could happens that we have for instance a XML where one of its fields is the JSON we have to parse (yes, I've found things like these 😅). In order to solve this issues, **Raccoon** provides a way to pre-process the data before being serialized:
 
-````
+````swift
 public typealias ResponseConverter = NSData? throws -> NSData?
 ````
 
 We can pass it as a parameter in the `response()` method: 
 
-````
+````swift
 myRequest.response([User].self, context: context, converter: MyConverterMethod) { (response) in
    
     if response.result.isSuccess {
@@ -300,7 +300,7 @@ if the `ResponseConverter` throws a `NSError`, it will be propagated in the resp
 
 To create a simple client you can do:
 
-````
+````swift
 let client = Client(baseURL: "http://host.com/", context: context)
 ````
 
@@ -308,7 +308,7 @@ where `context` is a `NSManagedObjectContext` if we want to insert objects into 
 
 we can add a third parameter:
 
-````
+````swift
 let client = Client(baseURL: "http://host.com/", context: context, responseConverter: converter)
 ````
 where `converter` is a `ResponseConverter` as explained before. 
@@ -318,7 +318,7 @@ where `converter` is a `ResponseConverter` as explained before.
 
 If we have a `Request` that return an object `User`, we can send the request this way:
 
-````
+````swift
 client.request(myRequest, type: User.self)
 ````
 
@@ -326,7 +326,7 @@ This will return a `Promise<User>`.
 
 If our request returns an array of `User` instances:
 
-````
+````swift
 client.request(myRequest, type: [User].self)
 ````
 
@@ -340,7 +340,7 @@ We can send requests that return one of the following types:
 
 we can also send a request that return an empty promise: `Promise<Void>` this way:
 
-````
+````swift
 client.request(request)
 ````
 
@@ -352,7 +352,7 @@ And endpoint is something quite similar to a request. It could have a method, en
 
 `Endpoint` has the following method:
 
-````
+````swift
 public func request(withBaseURL URL: String) -> Request
 ````
 
@@ -360,7 +360,7 @@ which creates a `Request` with all the parameters of the `Endpoint` and append i
 
 For example:
 
-````
+````swift
 let client = Client(baseURL: "http://host.com", context: context)
 
 let loginEndpoint = Endpoint(method: .POST, 
@@ -375,7 +375,7 @@ client.request(loginEndpoint, type: LoginResponse.self)
 
 We can override the `Endpoint` class to add some custom parameters as authentication headers, api keys, perform validations or [log the request](http://github.com/ManueGE/AlamofireActivityLogger). For instance:
 
-````
+````swift
 class MyAppEndpoint: Endpoint {
     
     override init(method: Alamofire.Method, path: String, parameters: [String : AnyObject], encoding: Alamofire.ParameterEncoding, headers: [String : String]) {
@@ -408,13 +408,13 @@ class MyAppEndpoint: Endpoint {
 
 Finally we have the `EndpointConvertible` protocol. Every object that conform the `EndpointConvertible` protocol must have the following property:
 
-````
+````swift
 var endpoint: Endpoint { get }
 ````
 
 This allow us to create endpoints using the **Router** approach described in **Alamofire** documentation. The example before can be now written this way:
 
-````
+````swift
 enum LoginRouter: EndpointConvertible {
     case Login(user: String, password: String)
     
@@ -432,7 +432,7 @@ enum LoginRouter: EndpointConvertible {
 
 and then:
 
-````
+````swift
 let login = LoginRouter.Login(user: "manue", password: "my_pass")
 client.request(login, type: LoginResponse.self)
 							  					
