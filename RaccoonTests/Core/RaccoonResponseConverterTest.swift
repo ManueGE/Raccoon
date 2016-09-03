@@ -10,20 +10,27 @@ import XCTest
 @testable import Raccoon
 import Alamofire
 
-func SuccessResponseSerializer(request: NSURLRequest?, response: NSHTTPURLResponse?, data: NSData?, error: NSError?) throws -> NSData? {
+func SuccessResponseSerializer(request: NSURLRequest?, response: NSHTTPURLResponse?, data: NSData?, error: NSError?) -> Result<NSData?, NSError> {
    
     guard let _ = data else {
-        return nil
+        return .Success(data)
     }
     
     let dictionary = ["integer": 1, "string": "one"]
     
-    return try? NSJSONSerialization.dataWithJSONObject(dictionary, options: [])
+    do {
+        let jsonData = try NSJSONSerialization.dataWithJSONObject(dictionary, options: [])
+        return .Success(jsonData)
+    }
+    
+    catch let e as NSError {
+        return .Failure(e)
+    }
     
 }
 
-func ErrorResponseSerializer(request: NSURLRequest?, response: NSHTTPURLResponse?, data: NSData?, error: NSError?) throws -> NSData? {
-    throw NSError(domain: "ErrorDomain", code: 10, userInfo: nil)
+func ErrorResponseSerializer(request: NSURLRequest?, response: NSHTTPURLResponse?, data: NSData?, error: NSError?) -> Result<NSData?, NSError> {
+    return .Failure(NSError(domain: "ErrorDomain", code: 10, userInfo: nil))
 }
 
 class RaccoonResponseConverterTest: XCTestCase {
