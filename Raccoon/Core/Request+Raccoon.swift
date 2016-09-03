@@ -172,6 +172,25 @@ extension Alamofire.Request {
         })
     }
     
+    public func response<T: Wrapper>(type: [T].Type, context: InsertContext = NoContext(), converter: ResponseConverter? = nil,
+                         completionHandler: (Response<[T], NSError>) -> Void) -> Self {
+        
+        let serializer = Request.raccoonJSONSerializer(converter) as ResponseSerializer<[[String: AnyObject]], NSError>
+        
+        return response(responseSerializer: serializer,
+                        completionHandler: { (response) in
+                            
+                            guard response.result.isSuccess else {
+                                callHandler(completionHandler, response: response, result: .Failure(response.result.error!))
+                                return
+                            }
+                            
+                            let json = response.result.value!
+                            let array = T.fromArray(json, context: context)
+                            callHandler(completionHandler, response: response, result: .Success(array))
+        })
+    }
+    
     // MARK: - Empty
     public func emptyResponse(converter: ResponseConverter? = nil,
                               completionHandler: (EmptyResponse) -> Void) -> Self {

@@ -37,6 +37,10 @@ extension Wrapper {
         let map = Map(dictionary: dictionary, context: context)
         self.map(map)
     }
+    
+    static func fromArray(array: [[String: AnyObject]], context: InsertContext = NoContext()) -> [Self] {
+        return array.flatMap { Self.init(dictionary: $0, context: context) }
+    }
 }
 
 public enum MapKeyPath {
@@ -145,11 +149,8 @@ public struct MapValue {
      - returns: The serialized objects, nil if there is any error
      */
     internal func serialize<T: Wrapper>() -> [T]? {
-        
         let array = originalValue as! [[String: AnyObject]]
-        
-        let convertedArray = array.map({ T(dictionary: $0, context: context)! })
-        return convertedArray
+        return T.fromArray(array)
     }
     
     /*
