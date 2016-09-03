@@ -51,7 +51,7 @@ class MainWrapper: Wrapper {
     var optInteger: Int?
     var forceInteger: Int!
     
-    // This won't be on the json, so its value shouldn't change
+    // This won't be on the json, so its value shouldn't change after the serializng process
     var notOverridenInteger = 20
     var optNotOverridenInteger: Int? = 30
     
@@ -218,7 +218,48 @@ class WrapperTest: XCTestCase {
         XCTAssertEqual(object.notOverridenInteger, 20, "property does not match")
         XCTAssertEqual(object.optNotOverridenInteger, 30, "property does not match")
     }
-
+    
+    
+    func testArrayWrapperSerialization() {
+        
+        let originalArray: [[String: AnyObject]] = [
+            [
+                "insertable": ["integer": 1, "string": "one"],
+                "optInsertable": ["integer": 2, "string": "two"]
+            ],
+            
+            [
+                "insertable": ["integer": 3, "string": "three"],
+                "optInsertable": ["integer": 4, "string": "four"]
+            ]
+        ]
+        
+        let array = MainWrapper.fromArray(originalArray, context: NoContext())
+        
+        // first
+        let first = array.first!
+        XCTAssertNotNil(first.insertable, "can not be nil")
+        XCTAssertEqual(first.insertable.integer, 1, "property does not match")
+        XCTAssertEqual(first.insertable.string, "one", "property does not match")
+        
+        XCTAssertNotNil(first.optInsertable, "can not be nil")
+        XCTAssertEqual(first.optInsertable!.integer, 2, "property does not match")
+        XCTAssertEqual(first.optInsertable!.string, "two", "property does not match")
+        
+        // first
+        let second = array.last!
+        XCTAssertNotNil(second.insertable, "can not be nil")
+        XCTAssertEqual(second.insertable.integer, 3, "property does not match")
+        XCTAssertEqual(second.insertable.string, "three", "property does not match")
+        
+        XCTAssertNotNil(second.optInsertable, "can not be nil")
+        XCTAssertEqual(second.optInsertable!.integer, 4, "property does not match")
+        XCTAssertEqual(second.optInsertable!.string, "four", "property does not match")
+        
+        XCTAssertEqual(array.count, 2)
+        
+    }
+    
     
     func testRootSerialization()  {
         let json = ["integer": 1, "string": "one"]

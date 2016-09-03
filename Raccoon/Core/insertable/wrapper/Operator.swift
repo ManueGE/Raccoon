@@ -54,6 +54,7 @@ public func <- <T: Insertable>(inout left: [T]!, right: MapValue?) {
     }
 }
 
+
 // MARK: Wrapper operator
 public func <- <T: Wrapper>(inout left: T, right: MapValue?) {
     if let mapValue = right {

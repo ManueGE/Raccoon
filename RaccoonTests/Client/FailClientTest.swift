@@ -133,7 +133,12 @@ class FailClientTest: RaccoonClientTests {
         var error: ErrorType?
         
         let promise = client.request(endpoint) as Promise<Void>
-        promise.error { (_error) in
+        promise
+            .then { () -> Void in
+                responseArrived.fulfill()
+                XCTAssertTrue(false, "Shouldn't be here, the request should fail")
+            }
+            .error { (_error) in
                 responseArrived.fulfill()
                 error = _error
         }
