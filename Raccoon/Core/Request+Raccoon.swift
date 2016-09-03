@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-public typealias ResponseConverter = NSData? throws -> NSData?
+public typealias ResponseConverter = (NSURLRequest?, NSHTTPURLResponse?, NSData?, NSError?) -> Result<NSData?, NSError>
 
 let RaccoonResponseSerializerDomain = "RaccoonResponseSerializerDomain"
 let UnexpectedTypeErrorCode = -1
@@ -22,26 +22,31 @@ extension Alamofire.Request {
         
         return ResponseSerializer { request, response, data, error in
             
-            // Check if error in previous step
-            guard error == nil else {
-                return .Failure(error!)
-            }
+            var newError: NSError? = nil
+            var newData: NSData? = nil
             
-            // Convert the data
-            var data = data
             if let converter = converter {
-                
-                do {
-                    data = try converter(data)
-                }
-                    
-                catch let error as NSError {
-                    return .Failure(error)
+                let result = converter(request, response, data, error)
+                switch result {
+                case let .Success(data):
+                    newData = data
+                case let .Failure(error):
+                    newError = error
                 }
             }
             
-            // return
-            return .Success(data)
+            else {
+                newData = data
+                newError = error
+            }
+            
+            if let error = newError {
+                return .Failure(error)
+            }
+            
+            else {
+                return .Success(newData)
+            }
         }
     }
     
