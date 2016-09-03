@@ -272,7 +272,7 @@ class UserListResponse: Wrapper {
 Sometimes, the data we get from the server is not in the right format. It could happens that we have for instance a XML where one of its fields is the JSON we have to parse (yes, I've found things like these 😅). In order to solve this issues, **Raccoon** provides a way to pre-process the data before being serialized:
 
 ````
-public typealias ResponseConverter = NSData? throws -> NSData?
+public typealias ResponseConverter = (NSURLRequest?, NSHTTPURLResponse?, NSData?, NSError?) -> Result<NSData?, NSError>
 ````
 
 We can pass it as a parameter in the `response()` method: 
@@ -288,7 +288,7 @@ myRequest.response([User].self, context: context, converter: MyConverterMethod) 
 
 ````
 
-if the `ResponseConverter` throws a `NSError`, it will be propagated in the response, so the request will fail. You can take advantage to perform internal validation to your `request`.
+if the `ResponseConverter` return `.Failure` with a `NSError`, it will be propagated in the response, so the request will fail. You can take advantage to perform internal validation to your `request`.
 
 --------
 # RaccoonClient
