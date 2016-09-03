@@ -68,6 +68,20 @@ public class Client {
         })
     }
     
+    public func request<T: Wrapper>(request: Request,  type: [T].Type) -> Promise<[T]> {
+        return Promise<[T]>(resolvers: { (fulfill, reject) -> Void in
+            request.response([T].self, context: context, converter: responseConverter, completionHandler: { (response) -> Void in
+                
+                switch response.result {
+                case .Success(let value):
+                    fulfill(value)
+                case .Failure(let error):
+                    reject(error)
+                }
+            })
+        })
+    }
+    
     public func request(request: Request) -> Promise<Void> {
         request.response
         return Promise<Void>(resolvers: { (fulfill, reject) -> Void in
@@ -98,6 +112,10 @@ extension Client {
         return request(Alamofire.request(requestConvertible), type: T.self)
     }
     
+    public func request<T: Wrapper>(requestConvertible: URLRequestConvertible, type: [T].Type) -> Promise<[T]> {
+        return request(Alamofire.request(requestConvertible), type: [T].self)
+    }
+    
     public func request(requestConvertible: URLRequestConvertible) -> Promise<Void> {
         return request(Alamofire.request(requestConvertible))
     }
@@ -116,6 +134,10 @@ extension Client {
     
     public func request<T: Wrapper>(endpointConvertible: EndpointConvertible, type: T.Type) -> Promise<T> {
         return request(endpointConvertible.endpoint.request(withBaseURL: baseURL), type: T.self)
+    }
+    
+    public func request<T: Wrapper>(endpointConvertible: EndpointConvertible, type: [T].Type) -> Promise<[T]> {
+        return request(endpointConvertible.endpoint.request(withBaseURL: baseURL), type: [T].self)
     }
     
     public func request(endpointConvertible: EndpointConvertible) -> Promise<Void> {

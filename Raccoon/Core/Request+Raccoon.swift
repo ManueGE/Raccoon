@@ -172,7 +172,7 @@ extension Alamofire.Request {
         })
     }
     
-    public func responses<T: Wrapper>(type: [T].Type, context: InsertContext = NoContext(), converter: ResponseConverter? = nil,
+    public func response<T: Wrapper>(type: [T].Type, context: InsertContext = NoContext(), converter: ResponseConverter? = nil,
                          completionHandler: (Response<[T], NSError>) -> Void) -> Self {
         
         let serializer = Request.raccoonJSONSerializer(converter) as ResponseSerializer<[[String: AnyObject]], NSError>

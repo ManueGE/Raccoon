@@ -153,7 +153,7 @@ class RaccoonResponseTest: XCTestCase {
         
         let request = Alamofire.request(NSURLRequest())
         
-        request.responses([WrappedResponse].self, context: NoContext(), converter: nil) { (response) in
+        request.response([WrappedResponse].self, context: NoContext(), converter: nil) { (response) in
             result = response.result
             responseArrived.fulfill()
         }

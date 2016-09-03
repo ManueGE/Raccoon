@@ -96,6 +96,38 @@ class EndpointClientTest: RaccoonClientTests {
         }
     }
     
+    func testEndpointWrapperArray() {
+        
+        let responseArrived = self.expectationWithDescription("response of async request has arrived")
+        var receivedObject: [MyWrapper]?
+        
+        let jsonResponse = [
+            ["string": "one"],
+            ["string": "two"]
+        ]
+        
+        stubWithObject(jsonResponse)
+        
+        let promise = client.request(endpoint, type: [MyWrapper].self)
+        promise.then { (object) -> Void in
+            receivedObject = object
+            }
+            .always {
+                responseArrived.fulfill()
+            }
+            .error { (error) in
+                print(error)
+        }
+        
+        self.waitForExpectationsWithTimeout(10) { err in
+            XCTAssertNotNil(receivedObject, "Received data should not be nil")
+            
+            XCTAssertEqual(receivedObject?.count, 2, "property does not match")
+            XCTAssertEqual(receivedObject?.first?.string, "one", "property does not match")
+            XCTAssertEqual(receivedObject?.last?.string, "two", "property does not match")
+        }
+    }
+    
     func testEndpointVoid() {
         
         let responseArrived = self.expectationWithDescription("response of async request has arrived")
