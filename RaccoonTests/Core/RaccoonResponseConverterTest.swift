@@ -10,7 +10,7 @@ import XCTest
 @testable import Raccoon
 import Alamofire
 
-func SuccessResponseSerializer(data: NSData?) throws -> NSData? {
+func SuccessResponseSerializer(request: NSURLRequest?, response: NSHTTPURLResponse?, data: NSData?, error: NSError?) throws -> NSData? {
    
     guard let _ = data else {
         return nil
@@ -22,7 +22,7 @@ func SuccessResponseSerializer(data: NSData?) throws -> NSData? {
     
 }
 
-func ErrorResponseSerializer(data: NSData?) throws -> NSData? {
+func ErrorResponseSerializer(request: NSURLRequest?, response: NSHTTPURLResponse?, data: NSData?, error: NSError?) throws -> NSData? {
     throw NSError(domain: "ErrorDomain", code: 10, userInfo: nil)
 }
 
