@@ -8,6 +8,8 @@ Raccoon is a set of pods that simplifies the connection between **Alamofire**, *
 * **Raccoon/Realm**: Serialize JSON responses from **Alamofire** into **Realm** `Object` instances. 
 * **Raccoon/Client**: Client that put together **Alamofire**, **Raccoon** and [**PromiseKit**](https://github.com/mxcl/PromiseKit). 
 
+> *Note*: Raccoon is in beta stage. 
+
 ## Installing Raccoon
 
 ##### Using CocoaPods
