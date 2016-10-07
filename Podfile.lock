@@ -1,49 +1,45 @@
 PODS:
-  - Alamofire (3.4.0)
-  - BNRCoreDataStack (1.2.5)
-  - Groot (1.2):
-    - Groot/Swift (= 1.2)
-  - Groot/Swift (1.2)
-  - OHHTTPStubs (5.0.0):
-    - OHHTTPStubs/Default (= 5.0.0)
-  - OHHTTPStubs/Core (5.0.0)
-  - OHHTTPStubs/Default (5.0.0):
+  - Alamofire (4.0.1)
+  - AlamofireCoreData (0.0.1):
+    - Alamofire (~> 4.0)
+    - Groot (~> 2.0)
+  - Groot (2.0):
+    - Groot/Swift (= 2.0)
+  - Groot/Swift (2.0)
+  - OHHTTPStubs (5.2.1):
+    - OHHTTPStubs/Default (= 5.2.1)
+  - OHHTTPStubs/Core (5.2.1)
+  - OHHTTPStubs/Default (5.2.1):
     - OHHTTPStubs/Core
     - OHHTTPStubs/JSON
     - OHHTTPStubs/NSURLSession
     - OHHTTPStubs/OHPathHelpers
-  - OHHTTPStubs/JSON (5.0.0):
+  - OHHTTPStubs/JSON (5.2.1):
     - OHHTTPStubs/Core
-  - OHHTTPStubs/NSURLSession (5.0.0):
+  - OHHTTPStubs/NSURLSession (5.2.1):
     - OHHTTPStubs/Core
-  - OHHTTPStubs/OHPathHelpers (5.0.0)
-  - OHHTTPStubs/Swift (5.0.0):
+  - OHHTTPStubs/OHPathHelpers (5.2.1)
+  - OHHTTPStubs/Swift (5.2.1):
     - OHHTTPStubs/Core
-  - PromiseKit/CorePromise (3.2.0)
-  - Realm (1.0.0):
-    - Realm/Headers (= 1.0.0)
-  - Realm/Headers (1.0.0)
-  - RealmSwift (1.0.0):
-    - Realm (= 1.0.0)
+  - PromiseKit/CorePromise (4.0.3)
 
 DEPENDENCIES:
-  - Alamofire (~> 3.4)
-  - BNRCoreDataStack (~> 1.2)
-  - Groot (~> 1.2)
-  - OHHTTPStubs (~> 5.0)
-  - OHHTTPStubs/Swift (~> 5.0)
-  - PromiseKit/CorePromise (~> 3.2)
-  - RealmSwift (~> 1.0)
+  - AlamofireCoreData (from `../../AlamofireCoreData/`)
+  - OHHTTPStubs (~> 5.2)
+  - OHHTTPStubs/Swift (~> 5.2)
+  - PromiseKit/CorePromise (~> 4.0)
+
+EXTERNAL SOURCES:
+  AlamofireCoreData:
+    :path: ../../AlamofireCoreData/
 
 SPEC CHECKSUMS:
-  Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
-  BNRCoreDataStack: 968926d1cef9d6eee5e7c18b57762aa270f9b96c
-  Groot: 86c2c820d619f18586b2d1dcfd90e908339f00bc
-  OHHTTPStubs: a5d2e9eea07869d42ec03338325f398bc520e159
-  PromiseKit: 1db024241265f428137a9f3c00ff9590740c4be6
-  Realm: e15cd8e7c11d3e576f628ba0b7cb855269b4991c
-  RealmSwift: 3229306d020d96f83b335f87a0dcbf2cef0e6a2b
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  AlamofireCoreData: 8d7f21f1ecb1b0391faa702199f4d5e9a0981cbf
+  Groot: 7543f84980bfb1613750818029d9b927d4378211
+  OHHTTPStubs: 3a42f25c00563b71355ac73112ba2324e9e6cef4
+  PromiseKit: dfe8fcc6445674fb23378d89990838c1cbdbf05a
 
-PODFILE CHECKSUM: b59b150b5b1e2ed6f8b5b9090d5a285581e65d06
+PODFILE CHECKSUM: 14016e072c8d1eb6d0c1e332360667b84d5b1206
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.1.0.rc.2
