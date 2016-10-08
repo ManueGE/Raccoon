@@ -13,7 +13,7 @@ Pod::Spec.new do |spec|
   spec.author    = "Manuel García-Estañ"
   spec.social_media_url   = "http://twitter.com/ManueGE"
 
-  spec.platform     = :ios, "8.0"
+  spec.platform     = :ios, "9.0"
   spec.source       = { :git => "https://github.com/ManueGE/Raccoon.git", :tag => "#{spec.version}" }
 
   spec.requires_arc = true
