@@ -26,8 +26,7 @@ public extension URL {
 /// Use it to enqueue request in a client
 public protocol Endpoint {
     
-    
-    /// Returns an array built with the given base url
+    /// Returns a request built with the given base url
     ///
     /// - parameter baseURL: The base url to build the request
     ///
