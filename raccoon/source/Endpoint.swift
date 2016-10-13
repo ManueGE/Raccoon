@@ -9,10 +9,15 @@
 import Foundation
 import Alamofire
 
+/**
+ Helper extension to build URLS from base URL string and path
+ */
 public extension URL {
     
-    /// Creates a new URL with the given base and path. 
-    /// Internally it make use of `init(string: String, relativeTo: URL)` so same rules applies here. 
+    /**
+     Creates a new URL with the given base and path.
+     Internally it make use of `init(string: String, relativeTo: URL)` so same rules applies here.
+     */
     init?(base: String, path: String) {
         guard let baseURL = URL(string: base) else {
             return nil
@@ -22,14 +27,17 @@ public extension URL {
     }
 }
 
-/// An Endpoint is just an instance that can build a `DataRequest` from a base url.
-/// Use it to enqueue request in a client
+/* An Endpoint is just an instance that can build a `DataRequest` from a base url.
+ Use it to enqueue request in a client
+ */
 public protocol Endpoint {
     
-    /// Returns a request built with the given base url
-    ///
-    /// - parameter baseURL: The base url to build the request
-    ///
-    /// - returns: the request.
+    /**
+     Returns a request built with the given base url
+    
+    - parameter baseURL: The base url to build the request
+    
+    - returns: The request ready to be sent.
+     */
     func request(withBaseURL baseURL: String) -> DataRequest
 }
