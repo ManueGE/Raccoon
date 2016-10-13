@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.0.0 (13 October 2016)
+- First stable version
+- Remove Realm support
+- Remove all serliaziation code. It is now in a separate pod ([AlamofireCoreData](http://github.com/manueGE/AlamofireCoreData))
+- Swift 3, Alamofire 4.0, PromiseKit 4.0, Groot 2.0.
+
 ## Betas 0.1.x
 
 ### 0.2.0
