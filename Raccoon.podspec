@@ -1,10 +1,10 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "Raccoon"
-  spec.version      = "0.2.0"
-  spec.summary      = "A nice Alamofire serializer that convert JSON into CoreData or Realm objects."
+  spec.version      = "1.0.0"
+  spec.summary      = "Puts together Alamofire, CoreData and PromiseKit"
   spec.description  = <<-DESC
-  A nice set of protocols and tools that puts together Alamofire, PromiseKit and CoreData
+  A nice set of protocols and tools that puts together Alamofire, PromiseKit and CoreData. 
                    DESC
   spec.homepage     = "https://github.com/ManueGE/Raccoon/"
   spec.license      = "MIT"
@@ -19,7 +19,7 @@ Pod::Spec.new do |spec|
   spec.requires_arc = true
   spec.dependency "Alamofire", "~> 4.0"
   spec.dependency "PromiseKit/CorePromise", "~> 4.0"
-  spec.dependency "AlamofireCoreData"
+  spec.dependency "AlamofireCoreData", "~> 1.0"
 
   spec.source_files = "Raccoon/source/**/*.{swift}"
 
