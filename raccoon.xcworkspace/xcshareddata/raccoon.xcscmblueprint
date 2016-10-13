@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "281CF20BD3701CFD2C39EA9F59F9FFC7E4BC3EFD",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "281CF20BD3701CFD2C39EA9F59F9FFC7E4BC3EFD" : 9223372036854775807,
+    "619A3FBBE13EC7937545FB26C1C97E17658B1AE8" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "877C6854-1300-4599-8397-824BA41E7380",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "281CF20BD3701CFD2C39EA9F59F9FFC7E4BC3EFD" : "raccoon\/",
+    "619A3FBBE13EC7937545FB26C1C97E17658B1AE8" : "..\/AlamofireCoreData"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "raccoon",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "raccoon.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ManueGE\/Raccoon.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "281CF20BD3701CFD2C39EA9F59F9FFC7E4BC3EFD"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ManueGE\/AlamofireCoreData.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "619A3FBBE13EC7937545FB26C1C97E17658B1AE8"
+    }
+  ]
+}

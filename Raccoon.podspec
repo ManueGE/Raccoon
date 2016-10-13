@@ -1,10 +1,10 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "Raccoon"
-  spec.version      = "0.1.1"
-  spec.summary      = "A nice Alamofire serializer that convert JSON into CoreData or Realm objects."
+  spec.version      = "1.0.0"
+  spec.summary      = "Puts together Alamofire, CoreData and PromiseKit"
   spec.description  = <<-DESC
-  A nice Alamofire serializer that convert JSON into CoreData or Realm objects. Optionally, it provides a Client that puts together Alamofire, PromiseKit and CoreData/Realm
+  A nice set of protocols and tools that puts together Alamofire, PromiseKit and CoreData. 
                    DESC
   spec.homepage     = "https://github.com/ManueGE/Raccoon/"
   spec.license      = "MIT"
@@ -13,36 +13,16 @@ Pod::Spec.new do |spec|
   spec.author    = "Manuel García-Estañ"
   spec.social_media_url   = "http://twitter.com/ManueGE"
 
-  spec.platform     = :ios, "8.0"
+  spec.platform     = :ios, "9.0"
   spec.source       = { :git => "https://github.com/ManueGE/Raccoon.git", :tag => "#{spec.version}" }
 
   spec.requires_arc = true
-  spec.dependency "Alamofire", "~> 3.4"
+  spec.dependency "Alamofire", "~> 4.0"
+  spec.dependency "PromiseKit/CorePromise", "~> 4.0"
+  spec.dependency "AlamofireCoreData", "~> 1.0"
 
-  # Subspecs
-  spec.default_subspec = 'CoreData', 'Client'
+  spec.source_files = "Raccoon/source/**/*.{swift}"
 
-  spec.subspec 'Core' do |core|
-    core.source_files = "Raccoon/Core/**/*.{swift}"
-  end
-
-  spec.subspec 'CoreData' do |core_data|
-    core_data.dependency "Raccoon/Core"
-    core_data.framework  = "CoreData"
-    core_data.dependency "Groot", "~> 1.2"
-    core_data.source_files = "Raccoon/CoreData/**/*.{swift}"
-  end
-
-  spec.subspec 'Realm' do |realm|
-    realm.dependency "Raccoon/Core"
-    realm.dependency "RealmSwift", "~> 1.0"
-    realm.source_files  = "Raccoon/Realm/**/*.{swift}"
-  end
-
-  spec.subspec 'Client' do |client|
-    client.dependency "Raccoon/Core"
-    client.dependency "PromiseKit/CorePromise", "~> 3.2"
-    client.source_files  = "Raccoon/Client/**/*.{swift}"
-  end
+  spec.framework  = "CoreData"
 
 end
