@@ -7,37 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		323820B01CFB9C970019DC20 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323820A11CFB9C970019DC20 /* Client.swift */; };
-		323820B11CFB9C970019DC20 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323820A21CFB9C970019DC20 /* Endpoint.swift */; };
-		323820B21CFB9C970019DC20 /* Insertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323820A51CFB9C970019DC20 /* Insertable.swift */; };
-		323820B31CFB9C970019DC20 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323820A71CFB9C970019DC20 /* Operator.swift */; };
-		323820B41CFB9C970019DC20 /* Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323820A81CFB9C970019DC20 /* Wrapper.swift */; };
-		323820B51CFB9C970019DC20 /* Request+Raccoon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323820A91CFB9C970019DC20 /* Request+Raccoon.swift */; };
-		323820B61CFB9C970019DC20 /* Insertable+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323820AB1CFB9C970019DC20 /* Insertable+CoreData.swift */; };
-		323820B71CFB9C970019DC20 /* NSManagedObjectContext+RaccoonCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323820AC1CFB9C970019DC20 /* NSManagedObjectContext+RaccoonCoreData.swift */; };
-		323820B81CFB9C970019DC20 /* Insertable+Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323820AE1CFB9C970019DC20 /* Insertable+Realm.swift */; };
-		323820B91CFB9C970019DC20 /* Realm+CustomJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323820AF1CFB9C970019DC20 /* Realm+CustomJson.swift */; };
+		321A2D621DA868550085E399 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A2D611DA868550085E399 /* Endpoint.swift */; };
+		321A2D641DA8689E0085E399 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A2D631DA8689E0085E399 /* Client.swift */; };
 		3285AB891CD019FE00350513 /* Raccoon.h in Headers */ = {isa = PBXBuildFile; fileRef = 3285AB881CD019FE00350513 /* Raccoon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3285AB901CD019FE00350513 /* Raccoon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3285AB861CD019FE00350513 /* Raccoon.framework */; };
-		32C670251CF98F9300455737 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C670241CF98F9300455737 /* Helpers.swift */; };
-		32EE828F1CFBA04600897E9D /* CoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323820C11CFB9D2E0019DC20 /* CoreModel.swift */; };
-		32EE82901CFBA04600897E9D /* RaccoonResponseConverterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323820C21CFB9D2E0019DC20 /* RaccoonResponseConverterTest.swift */; };
-		32EE82911CFBA04600897E9D /* RaccoonResponseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323820C31CFB9D2E0019DC20 /* RaccoonResponseTest.swift */; };
-		32EE82921CFBA04600897E9D /* WrapperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323820C41CFB9D2E0019DC20 /* WrapperTest.swift */; };
-		32EE82931CFBA05800897E9D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 323820C71CFB9D2E0019DC20 /* Model.xcdatamodeld */; };
-		32EE82941CFBA05B00897E9D /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323820C91CFB9D2E0019DC20 /* User+CoreDataProperties.swift */; };
-		32EE82951CFBA05B00897E9D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323820CA1CFB9D2E0019DC20 /* User.swift */; };
-		32EE82961CFBA05E00897E9D /* RaccoonCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323820CB1CFB9D2E0019DC20 /* RaccoonCoreDataTests.swift */; };
-		32EE82971CFBA06400897E9D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323820CE1CFB9D2E0019DC20 /* Model.swift */; };
-		32EE82981CFBA06700897E9D /* RaccoonRealmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323820CF1CFB9D2E0019DC20 /* RaccoonRealmTests.swift */; };
-		32EE82991CFBA06700897E9D /* RealmSerializableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323820D01CFB9D2E0019DC20 /* RealmSerializableTests.swift */; };
-		32EE829A1CFBA06D00897E9D /* EndpointClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323820BB1CFB9D2E0019DC20 /* EndpointClientTests.swift */; };
-		32EE829B1CFBA06D00897E9D /* FailClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323820BC1CFB9D2E0019DC20 /* FailClientTest.swift */; };
-		32EE829C1CFBA06D00897E9D /* RaccoonClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323820BD1CFB9D2E0019DC20 /* RaccoonClientTests.swift */; };
-		32EE829D1CFBA06D00897E9D /* RequestClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323820BE1CFB9D2E0019DC20 /* RequestClientTests.swift */; };
-		32EE829E1CFBA06D00897E9D /* RequestConvertibleClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323820BF1CFB9D2E0019DC20 /* RequestConvertibleClientTests.swift */; };
-		A53E0A838E7D1A65AA7F9433 /* Pods_Raccoon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB36FA55A96E3071D374E2EF /* Pods_Raccoon.framework */; };
-		AD0B7924280AA105F8EFC89E /* Pods_Raccoon_RaccoonTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7DA12A6F8282381BD0E1601 /* Pods_Raccoon_RaccoonTests.framework */; };
+		78B30346D0D4AD1764E3D12B /* Pods_abstract_target_Raccoon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C46CCED049B6F1029FB6131 /* Pods_abstract_target_Raccoon.framework */; };
+		E1E8473EF5F1DC4C4E3C1D23 /* Pods_abstract_target_RaccoonTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711C0ADF627C4B11CBD0EDE4 /* Pods_abstract_target_RaccoonTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,80 +26,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		11358F0E57B1715F9D44B47F /* Pods-RaccoonCore-RaccoonCoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaccoonCore-RaccoonCoreTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RaccoonCore-RaccoonCoreTests/Pods-RaccoonCore-RaccoonCoreTests.release.xcconfig"; sourceTree = "<group>"; };
-		1E5EF4E74E5A361430DA56AE /* Pods-Raccoon-RaccoonTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Raccoon-RaccoonTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Raccoon-RaccoonTests/Pods-Raccoon-RaccoonTests.release.xcconfig"; sourceTree = "<group>"; };
-		1F55F07D6C8F12C3AD9AE011 /* Pods-RaccoonClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaccoonClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-RaccoonClient/Pods-RaccoonClient.release.xcconfig"; sourceTree = "<group>"; };
-		1FF9EF533ABDF949E83455D2 /* Pods-RaccoonClient-RaccoonClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaccoonClient-RaccoonClientTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RaccoonClient-RaccoonClientTests/Pods-RaccoonClient-RaccoonClientTests.release.xcconfig"; sourceTree = "<group>"; };
-		25876F3A70CD9F6A5E11E5F1 /* Pods_RaccoonRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RaccoonRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2884B0C8BBCB34A2CA301FB5 /* Pods-Raccoon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Raccoon.release.xcconfig"; path = "Pods/Target Support Files/Pods-Raccoon/Pods-Raccoon.release.xcconfig"; sourceTree = "<group>"; };
-		323820A11CFB9C970019DC20 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
-		323820A21CFB9C970019DC20 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
-		323820A51CFB9C970019DC20 /* Insertable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Insertable.swift; sourceTree = "<group>"; };
-		323820A71CFB9C970019DC20 /* Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
-		323820A81CFB9C970019DC20 /* Wrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wrapper.swift; sourceTree = "<group>"; };
-		323820A91CFB9C970019DC20 /* Request+Raccoon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Request+Raccoon.swift"; sourceTree = "<group>"; };
-		323820AB1CFB9C970019DC20 /* Insertable+CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Insertable+CoreData.swift"; sourceTree = "<group>"; };
-		323820AC1CFB9C970019DC20 /* NSManagedObjectContext+RaccoonCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+RaccoonCoreData.swift"; sourceTree = "<group>"; };
-		323820AE1CFB9C970019DC20 /* Insertable+Realm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Insertable+Realm.swift"; sourceTree = "<group>"; };
-		323820AF1CFB9C970019DC20 /* Realm+CustomJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Realm+CustomJson.swift"; sourceTree = "<group>"; };
-		323820BB1CFB9D2E0019DC20 /* EndpointClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointClientTests.swift; sourceTree = "<group>"; };
-		323820BC1CFB9D2E0019DC20 /* FailClientTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FailClientTest.swift; sourceTree = "<group>"; };
-		323820BD1CFB9D2E0019DC20 /* RaccoonClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaccoonClientTests.swift; sourceTree = "<group>"; };
-		323820BE1CFB9D2E0019DC20 /* RequestClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestClientTests.swift; sourceTree = "<group>"; };
-		323820BF1CFB9D2E0019DC20 /* RequestConvertibleClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestConvertibleClientTests.swift; sourceTree = "<group>"; };
-		323820C11CFB9D2E0019DC20 /* CoreModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreModel.swift; sourceTree = "<group>"; };
-		323820C21CFB9D2E0019DC20 /* RaccoonResponseConverterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaccoonResponseConverterTest.swift; sourceTree = "<group>"; };
-		323820C31CFB9D2E0019DC20 /* RaccoonResponseTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaccoonResponseTest.swift; sourceTree = "<group>"; };
-		323820C41CFB9D2E0019DC20 /* WrapperTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrapperTest.swift; sourceTree = "<group>"; };
-		323820C81CFB9D2E0019DC20 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		323820C91CFB9D2E0019DC20 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		323820CA1CFB9D2E0019DC20 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		323820CB1CFB9D2E0019DC20 /* RaccoonCoreDataTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaccoonCoreDataTests.swift; sourceTree = "<group>"; };
-		323820CE1CFB9D2E0019DC20 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		323820CF1CFB9D2E0019DC20 /* RaccoonRealmTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaccoonRealmTests.swift; sourceTree = "<group>"; };
-		323820D01CFB9D2E0019DC20 /* RealmSerializableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmSerializableTests.swift; sourceTree = "<group>"; };
+		2C46CCED049B6F1029FB6131 /* Pods_abstract_target_Raccoon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_abstract_target_Raccoon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		321A2D611DA868550085E399 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		321A2D631DA8689E0085E399 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		3285AB861CD019FE00350513 /* Raccoon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Raccoon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3285AB881CD019FE00350513 /* Raccoon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Raccoon.h; sourceTree = "<group>"; };
 		3285AB8A1CD019FE00350513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3285AB8F1CD019FE00350513 /* RaccoonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaccoonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3285AB961CD019FE00350513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		32B0CBA9F35315134012DDAC /* Pods-RaccoonRealm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaccoonRealm.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RaccoonRealm/Pods-RaccoonRealm.debug.xcconfig"; sourceTree = "<group>"; };
-		32C670241CF98F9300455737 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
-		35E9D91C612EC81DC1F3E075 /* Pods-RaccoonRealm-RaccoonRealmTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaccoonRealm-RaccoonRealmTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RaccoonRealm-RaccoonRealmTests/Pods-RaccoonRealm-RaccoonRealmTests.release.xcconfig"; sourceTree = "<group>"; };
-		38AC9B9AFF707F2738D15A93 /* Pods_RaccoonTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RaccoonTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3AD0E84F5202C350DA9DB80F /* Pods_Client_RaccoonClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Client_RaccoonClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3DE7CE74B6202CF2EEEE813D /* Pods_RaccoonCoreDataTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RaccoonCoreDataTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		41236983EBB6E9C99B5B70CD /* Pods_RaccoonCore_RaccoonCoreTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RaccoonCore_RaccoonCoreTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		456279D5F072BF6D6C915EDD /* Pods-RaccoonClient-RaccoonClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaccoonClient-RaccoonClientTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RaccoonClient-RaccoonClientTests/Pods-RaccoonClient-RaccoonClientTests.debug.xcconfig"; sourceTree = "<group>"; };
-		46A008F6AEEACCA0CBFEDBA9 /* Pods_RaccoonCoreData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RaccoonCoreData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4A1F905405B7CBF4A4E8AEEE /* Pods-RaccoonCoreData.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaccoonCoreData.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RaccoonCoreData/Pods-RaccoonCoreData.debug.xcconfig"; sourceTree = "<group>"; };
-		61AEB02C976B2299FAD2F651 /* Pods_CoreData_RaccoonCoreDataTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoreData_RaccoonCoreDataTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6436E1D8C5E05A0C47B5D91B /* Pods_Base_Raccoon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Base_Raccoon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		78144CEF024AA5EC47F2B374 /* Pods_RaccoonClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RaccoonClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		838B798A4B5D300504359A57 /* Pods_RaccoonCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RaccoonCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8A2B0DE9625446769DBC914C /* Pods-RaccoonRealm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaccoonRealm.release.xcconfig"; path = "Pods/Target Support Files/Pods-RaccoonRealm/Pods-RaccoonRealm.release.xcconfig"; sourceTree = "<group>"; };
-		8A64E8D189121BB1ECE55283 /* Pods_Base_RaccoonTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Base_RaccoonTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8E447557DBF57A853CDF2FB5 /* Pods_RaccoonCoreData_RaccoonCoreDataTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RaccoonCoreData_RaccoonCoreDataTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8E68950E8558B26309633E63 /* Pods_Client_RaccoonClientTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Client_RaccoonClientTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8F105D8B78B64F62A0AC01AA /* Pods-RaccoonCoreData.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaccoonCoreData.release.xcconfig"; path = "Pods/Target Support Files/Pods-RaccoonCoreData/Pods-RaccoonCoreData.release.xcconfig"; sourceTree = "<group>"; };
-		9A972DC6388CCAD5D3001EE1 /* Pods_Realm_RaccoonRealmTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Realm_RaccoonRealmTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C0924425681947FDCBB69C0 /* Pods_RaccoonRealmTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RaccoonRealmTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A8CEE43BCFCB35EA27127175 /* Pods-Raccoon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Raccoon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Raccoon/Pods-Raccoon.debug.xcconfig"; sourceTree = "<group>"; };
-		AB8B991C02327D81EFE06EC1 /* Pods_CoreData_RaccoonCoreData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoreData_RaccoonCoreData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B10950C647520F3A697F83F8 /* Pods_Realm_RaccoonRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Realm_RaccoonRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B2EB44A55ACF2F3F69EE3FE1 /* Pods-Raccoon-RaccoonTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Raccoon-RaccoonTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Raccoon-RaccoonTests/Pods-Raccoon-RaccoonTests.debug.xcconfig"; sourceTree = "<group>"; };
-		B38034B47B8D5C261E037EDE /* Pods-RaccoonClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaccoonClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RaccoonClient/Pods-RaccoonClient.debug.xcconfig"; sourceTree = "<group>"; };
-		BB36FA55A96E3071D374E2EF /* Pods_Raccoon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Raccoon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BCB17C941FED1AAE8852DFCC /* Pods_RaccoonClientTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RaccoonClientTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF7790CF92D39AD058CD260B /* Pods-RaccoonCore-RaccoonCoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaccoonCore-RaccoonCoreTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RaccoonCore-RaccoonCoreTests/Pods-RaccoonCore-RaccoonCoreTests.debug.xcconfig"; sourceTree = "<group>"; };
-		D6BFEDC6F75FC625EFDEE892 /* Pods-RaccoonRealm-RaccoonRealmTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaccoonRealm-RaccoonRealmTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RaccoonRealm-RaccoonRealmTests/Pods-RaccoonRealm-RaccoonRealmTests.debug.xcconfig"; sourceTree = "<group>"; };
-		D8541CE26BF11944DCA4E883 /* Pods-RaccoonCoreData-RaccoonCoreDataTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaccoonCoreData-RaccoonCoreDataTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RaccoonCoreData-RaccoonCoreDataTests/Pods-RaccoonCoreData-RaccoonCoreDataTests.debug.xcconfig"; sourceTree = "<group>"; };
-		DADEDBFA959C2C81397D1C3B /* Pods-RaccoonCoreData-RaccoonCoreDataTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaccoonCoreData-RaccoonCoreDataTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RaccoonCoreData-RaccoonCoreDataTests/Pods-RaccoonCoreData-RaccoonCoreDataTests.release.xcconfig"; sourceTree = "<group>"; };
-		E157B995256222FD3BCBA87D /* Pods_RaccoonRealm_RaccoonRealmTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RaccoonRealm_RaccoonRealmTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F0F23EE5897C753F4E80754E /* Pods-RaccoonCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaccoonCore.release.xcconfig"; path = "Pods/Target Support Files/Pods-RaccoonCore/Pods-RaccoonCore.release.xcconfig"; sourceTree = "<group>"; };
-		F45D879B53253AD2FF703BFE /* Pods-RaccoonCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaccoonCore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RaccoonCore/Pods-RaccoonCore.debug.xcconfig"; sourceTree = "<group>"; };
-		F7DA12A6F8282381BD0E1601 /* Pods_Raccoon_RaccoonTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Raccoon_RaccoonTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FF191878F9543A4CAFBBBB6B /* Pods_RaccoonClient_RaccoonClientTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RaccoonClient_RaccoonClientTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DEA79D492FB382729AC1680 /* Pods-abstract_target-RaccoonTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-abstract_target-RaccoonTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-abstract_target-RaccoonTests/Pods-abstract_target-RaccoonTests.debug.xcconfig"; sourceTree = "<group>"; };
+		711C0ADF627C4B11CBD0EDE4 /* Pods_abstract_target_RaccoonTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_abstract_target_RaccoonTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F1EB9E06C42FB77CF4402CA /* Pods-abstract_target-Raccoon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-abstract_target-Raccoon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-abstract_target-Raccoon/Pods-abstract_target-Raccoon.debug.xcconfig"; sourceTree = "<group>"; };
+		91B7B199F6351D14F5DBF877 /* Pods-abstract_target-RaccoonTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-abstract_target-RaccoonTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-abstract_target-RaccoonTests/Pods-abstract_target-RaccoonTests.release.xcconfig"; sourceTree = "<group>"; };
+		B6EECBC99055AAC5595AD492 /* Pods-abstract_target-Raccoon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-abstract_target-Raccoon.release.xcconfig"; path = "Pods/Target Support Files/Pods-abstract_target-Raccoon/Pods-abstract_target-Raccoon.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A53E0A838E7D1A65AA7F9433 /* Pods_Raccoon.framework in Frameworks */,
+				78B30346D0D4AD1764E3D12B /* Pods_abstract_target_Raccoon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,125 +55,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				3285AB901CD019FE00350513 /* Raccoon.framework in Frameworks */,
-				AD0B7924280AA105F8EFC89E /* Pods_Raccoon_RaccoonTests.framework in Frameworks */,
+				E1E8473EF5F1DC4C4E3C1D23 /* Pods_abstract_target_RaccoonTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		323820A01CFB9C970019DC20 /* Client */ = {
+		321A2D601DA8635F0085E399 /* source */ = {
 			isa = PBXGroup;
 			children = (
-				323820A11CFB9C970019DC20 /* Client.swift */,
-				323820A21CFB9C970019DC20 /* Endpoint.swift */,
+				321A2D611DA868550085E399 /* Endpoint.swift */,
+				321A2D631DA8689E0085E399 /* Client.swift */,
 			);
-			path = Client;
-			sourceTree = "<group>";
-		};
-		323820A31CFB9C970019DC20 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				323820A41CFB9C970019DC20 /* insertable */,
-				323820A91CFB9C970019DC20 /* Request+Raccoon.swift */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		323820A41CFB9C970019DC20 /* insertable */ = {
-			isa = PBXGroup;
-			children = (
-				323820A51CFB9C970019DC20 /* Insertable.swift */,
-				323820A61CFB9C970019DC20 /* wrapper */,
-			);
-			path = insertable;
-			sourceTree = "<group>";
-		};
-		323820A61CFB9C970019DC20 /* wrapper */ = {
-			isa = PBXGroup;
-			children = (
-				323820A71CFB9C970019DC20 /* Operator.swift */,
-				323820A81CFB9C970019DC20 /* Wrapper.swift */,
-			);
-			path = wrapper;
-			sourceTree = "<group>";
-		};
-		323820AA1CFB9C970019DC20 /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				323820AB1CFB9C970019DC20 /* Insertable+CoreData.swift */,
-				323820AC1CFB9C970019DC20 /* NSManagedObjectContext+RaccoonCoreData.swift */,
-			);
-			path = CoreData;
-			sourceTree = "<group>";
-		};
-		323820AD1CFB9C970019DC20 /* Realm */ = {
-			isa = PBXGroup;
-			children = (
-				323820AE1CFB9C970019DC20 /* Insertable+Realm.swift */,
-				323820AF1CFB9C970019DC20 /* Realm+CustomJson.swift */,
-			);
-			path = Realm;
-			sourceTree = "<group>";
-		};
-		323820BA1CFB9D2E0019DC20 /* Client */ = {
-			isa = PBXGroup;
-			children = (
-				323820BB1CFB9D2E0019DC20 /* EndpointClientTests.swift */,
-				323820BC1CFB9D2E0019DC20 /* FailClientTest.swift */,
-				323820BD1CFB9D2E0019DC20 /* RaccoonClientTests.swift */,
-				323820BE1CFB9D2E0019DC20 /* RequestClientTests.swift */,
-				323820BF1CFB9D2E0019DC20 /* RequestConvertibleClientTests.swift */,
-			);
-			path = Client;
-			sourceTree = "<group>";
-		};
-		323820C01CFB9D2E0019DC20 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				323820C11CFB9D2E0019DC20 /* CoreModel.swift */,
-				323820C21CFB9D2E0019DC20 /* RaccoonResponseConverterTest.swift */,
-				323820C31CFB9D2E0019DC20 /* RaccoonResponseTest.swift */,
-				323820C41CFB9D2E0019DC20 /* WrapperTest.swift */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		323820C51CFB9D2E0019DC20 /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				323820C61CFB9D2E0019DC20 /* model */,
-				323820CB1CFB9D2E0019DC20 /* RaccoonCoreDataTests.swift */,
-			);
-			path = CoreData;
-			sourceTree = "<group>";
-		};
-		323820C61CFB9D2E0019DC20 /* model */ = {
-			isa = PBXGroup;
-			children = (
-				323820C71CFB9D2E0019DC20 /* Model.xcdatamodeld */,
-				323820C91CFB9D2E0019DC20 /* User+CoreDataProperties.swift */,
-				323820CA1CFB9D2E0019DC20 /* User.swift */,
-			);
-			path = model;
-			sourceTree = "<group>";
-		};
-		323820CC1CFB9D2E0019DC20 /* Realm */ = {
-			isa = PBXGroup;
-			children = (
-				323820CD1CFB9D2E0019DC20 /* model */,
-				323820CF1CFB9D2E0019DC20 /* RaccoonRealmTests.swift */,
-				323820D01CFB9D2E0019DC20 /* RealmSerializableTests.swift */,
-			);
-			path = Realm;
-			sourceTree = "<group>";
-		};
-		323820CD1CFB9D2E0019DC20 /* model */ = {
-			isa = PBXGroup;
-			children = (
-				323820CE1CFB9D2E0019DC20 /* Model.swift */,
-			);
-			path = model;
+			path = source;
 			sourceTree = "<group>";
 		};
 		3285AB871CD019FE00350513 /* Raccoon */ = {
@@ -267,10 +76,7 @@
 			children = (
 				3285AB881CD019FE00350513 /* Raccoon.h */,
 				3285AB8A1CD019FE00350513 /* Info.plist */,
-				323820A31CFB9C970019DC20 /* Core */,
-				323820AA1CFB9C970019DC20 /* CoreData */,
-				323820AD1CFB9C970019DC20 /* Realm */,
-				323820A01CFB9C970019DC20 /* Client */,
+				321A2D601DA8635F0085E399 /* source */,
 			);
 			path = Raccoon;
 			sourceTree = "<group>";
@@ -278,11 +84,6 @@
 		3285AB931CD019FE00350513 /* RaccoonTests */ = {
 			isa = PBXGroup;
 			children = (
-				32C670241CF98F9300455737 /* Helpers.swift */,
-				323820C01CFB9D2E0019DC20 /* Core */,
-				323820C51CFB9D2E0019DC20 /* CoreData */,
-				323820CC1CFB9D2E0019DC20 /* Realm */,
-				323820BA1CFB9D2E0019DC20 /* Client */,
 				3285AB961CD019FE00350513 /* Info.plist */,
 			);
 			path = RaccoonTests;
@@ -294,8 +95,8 @@
 				3285AB871CD019FE00350513 /* Raccoon */,
 				3285AB931CD019FE00350513 /* RaccoonTests */,
 				32DDC7801CCFA95A008FC6D5 /* Products */,
-				32E4F622183A1C9977015535 /* Pods */,
-				B3587442CF73AC020B090FFB /* Frameworks */,
+				3B580E11B197CBE7BBDA8343 /* Pods */,
+				C6FB965A3F157980BE818A12 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -308,58 +109,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		32E4F622183A1C9977015535 /* Pods */ = {
+		3B580E11B197CBE7BBDA8343 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A8CEE43BCFCB35EA27127175 /* Pods-Raccoon.debug.xcconfig */,
-				2884B0C8BBCB34A2CA301FB5 /* Pods-Raccoon.release.xcconfig */,
-				B38034B47B8D5C261E037EDE /* Pods-RaccoonClient.debug.xcconfig */,
-				1F55F07D6C8F12C3AD9AE011 /* Pods-RaccoonClient.release.xcconfig */,
-				4A1F905405B7CBF4A4E8AEEE /* Pods-RaccoonCoreData.debug.xcconfig */,
-				8F105D8B78B64F62A0AC01AA /* Pods-RaccoonCoreData.release.xcconfig */,
-				32B0CBA9F35315134012DDAC /* Pods-RaccoonRealm.debug.xcconfig */,
-				8A2B0DE9625446769DBC914C /* Pods-RaccoonRealm.release.xcconfig */,
-				B2EB44A55ACF2F3F69EE3FE1 /* Pods-Raccoon-RaccoonTests.debug.xcconfig */,
-				1E5EF4E74E5A361430DA56AE /* Pods-Raccoon-RaccoonTests.release.xcconfig */,
-				456279D5F072BF6D6C915EDD /* Pods-RaccoonClient-RaccoonClientTests.debug.xcconfig */,
-				1FF9EF533ABDF949E83455D2 /* Pods-RaccoonClient-RaccoonClientTests.release.xcconfig */,
-				D8541CE26BF11944DCA4E883 /* Pods-RaccoonCoreData-RaccoonCoreDataTests.debug.xcconfig */,
-				DADEDBFA959C2C81397D1C3B /* Pods-RaccoonCoreData-RaccoonCoreDataTests.release.xcconfig */,
-				D6BFEDC6F75FC625EFDEE892 /* Pods-RaccoonRealm-RaccoonRealmTests.debug.xcconfig */,
-				35E9D91C612EC81DC1F3E075 /* Pods-RaccoonRealm-RaccoonRealmTests.release.xcconfig */,
-				F45D879B53253AD2FF703BFE /* Pods-RaccoonCore.debug.xcconfig */,
-				F0F23EE5897C753F4E80754E /* Pods-RaccoonCore.release.xcconfig */,
-				BF7790CF92D39AD058CD260B /* Pods-RaccoonCore-RaccoonCoreTests.debug.xcconfig */,
-				11358F0E57B1715F9D44B47F /* Pods-RaccoonCore-RaccoonCoreTests.release.xcconfig */,
+				7F1EB9E06C42FB77CF4402CA /* Pods-abstract_target-Raccoon.debug.xcconfig */,
+				B6EECBC99055AAC5595AD492 /* Pods-abstract_target-Raccoon.release.xcconfig */,
+				6DEA79D492FB382729AC1680 /* Pods-abstract_target-RaccoonTests.debug.xcconfig */,
+				91B7B199F6351D14F5DBF877 /* Pods-abstract_target-RaccoonTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		B3587442CF73AC020B090FFB /* Frameworks */ = {
+		C6FB965A3F157980BE818A12 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BB36FA55A96E3071D374E2EF /* Pods_Raccoon.framework */,
-				78144CEF024AA5EC47F2B374 /* Pods_RaccoonClient.framework */,
-				BCB17C941FED1AAE8852DFCC /* Pods_RaccoonClientTests.framework */,
-				46A008F6AEEACCA0CBFEDBA9 /* Pods_RaccoonCoreData.framework */,
-				3DE7CE74B6202CF2EEEE813D /* Pods_RaccoonCoreDataTests.framework */,
-				25876F3A70CD9F6A5E11E5F1 /* Pods_RaccoonRealm.framework */,
-				9C0924425681947FDCBB69C0 /* Pods_RaccoonRealmTests.framework */,
-				38AC9B9AFF707F2738D15A93 /* Pods_RaccoonTests.framework */,
-				AB8B991C02327D81EFE06EC1 /* Pods_CoreData_RaccoonCoreData.framework */,
-				61AEB02C976B2299FAD2F651 /* Pods_CoreData_RaccoonCoreDataTests.framework */,
-				6436E1D8C5E05A0C47B5D91B /* Pods_Base_Raccoon.framework */,
-				8A64E8D189121BB1ECE55283 /* Pods_Base_RaccoonTests.framework */,
-				B10950C647520F3A697F83F8 /* Pods_Realm_RaccoonRealm.framework */,
-				9A972DC6388CCAD5D3001EE1 /* Pods_Realm_RaccoonRealmTests.framework */,
-				3AD0E84F5202C350DA9DB80F /* Pods_Client_RaccoonClient.framework */,
-				8E68950E8558B26309633E63 /* Pods_Client_RaccoonClientTests.framework */,
-				F7DA12A6F8282381BD0E1601 /* Pods_Raccoon_RaccoonTests.framework */,
-				FF191878F9543A4CAFBBBB6B /* Pods_RaccoonClient_RaccoonClientTests.framework */,
-				8E447557DBF57A853CDF2FB5 /* Pods_RaccoonCoreData_RaccoonCoreDataTests.framework */,
-				E157B995256222FD3BCBA87D /* Pods_RaccoonRealm_RaccoonRealmTests.framework */,
-				838B798A4B5D300504359A57 /* Pods_RaccoonCore.framework */,
-				41236983EBB6E9C99B5B70CD /* Pods_RaccoonCore_RaccoonCoreTests.framework */,
+				2C46CCED049B6F1029FB6131 /* Pods_abstract_target_Raccoon.framework */,
+				711C0ADF627C4B11CBD0EDE4 /* Pods_abstract_target_RaccoonTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -382,12 +147,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3285AB971CD019FE00350513 /* Build configuration list for PBXNativeTarget "Raccoon" */;
 			buildPhases = (
-				3AC09510CA8DA23ECBFE0214 /* 📦 Check Pods Manifest.lock */,
+				594AFE7DC578B0F927399F1F /* [CP] Check Pods Manifest.lock */,
 				3285AB811CD019FE00350513 /* Sources */,
 				3285AB821CD019FE00350513 /* Frameworks */,
 				3285AB831CD019FE00350513 /* Headers */,
 				3285AB841CD019FE00350513 /* Resources */,
-				468FB273B3D496EA7F91F555 /* 📦 Copy Pods Resources */,
+				D1B58CBC272847DE23CBCF56 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -402,12 +167,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3285AB9A1CD019FE00350513 /* Build configuration list for PBXNativeTarget "RaccoonTests" */;
 			buildPhases = (
-				6AEC0D96214C9B34226D7C9B /* 📦 Check Pods Manifest.lock */,
+				7D7CDA0AF0199FA86C8CF6A2 /* [CP] Check Pods Manifest.lock */,
 				3285AB8B1CD019FE00350513 /* Sources */,
 				3285AB8C1CD019FE00350513 /* Frameworks */,
 				3285AB8D1CD019FE00350513 /* Resources */,
-				12CCC03D8C07BA02932C3AB4 /* 📦 Embed Pods Frameworks */,
-				C6D5C3C748D2EF4540CE4D4E /* 📦 Copy Pods Resources */,
+				2FECD4CAB4CA3B34F3F5375C /* [CP] Embed Pods Frameworks */,
+				880A89E5F276843CD9CEC6D9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -426,14 +191,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = manuege;
 				TargetAttributes = {
 					3285AB851CD019FE00350513 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0800;
 					};
 					3285AB8E1CD019FE00350513 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -473,79 +240,79 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		12CCC03D8C07BA02932C3AB4 /* 📦 Embed Pods Frameworks */ = {
+		2FECD4CAB4CA3B34F3F5375C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Raccoon-RaccoonTests/Pods-Raccoon-RaccoonTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-abstract_target-RaccoonTests/Pods-abstract_target-RaccoonTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3AC09510CA8DA23ECBFE0214 /* 📦 Check Pods Manifest.lock */ = {
+		594AFE7DC578B0F927399F1F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		468FB273B3D496EA7F91F555 /* 📦 Copy Pods Resources */ = {
+		7D7CDA0AF0199FA86C8CF6A2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Raccoon/Pods-Raccoon-resources.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		6AEC0D96214C9B34226D7C9B /* 📦 Check Pods Manifest.lock */ = {
+		880A89E5F276843CD9CEC6D9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-abstract_target-RaccoonTests/Pods-abstract_target-RaccoonTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C6D5C3C748D2EF4540CE4D4E /* 📦 Copy Pods Resources */ = {
+		D1B58CBC272847DE23CBCF56 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Raccoon-RaccoonTests/Pods-Raccoon-RaccoonTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-abstract_target-Raccoon/Pods-abstract_target-Raccoon-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -555,16 +322,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				323820B11CFB9C970019DC20 /* Endpoint.swift in Sources */,
-				323820B61CFB9C970019DC20 /* Insertable+CoreData.swift in Sources */,
-				323820B41CFB9C970019DC20 /* Wrapper.swift in Sources */,
-				323820B31CFB9C970019DC20 /* Operator.swift in Sources */,
-				323820B71CFB9C970019DC20 /* NSManagedObjectContext+RaccoonCoreData.swift in Sources */,
-				323820B51CFB9C970019DC20 /* Request+Raccoon.swift in Sources */,
-				323820B91CFB9C970019DC20 /* Realm+CustomJson.swift in Sources */,
-				323820B81CFB9C970019DC20 /* Insertable+Realm.swift in Sources */,
-				323820B21CFB9C970019DC20 /* Insertable.swift in Sources */,
-				323820B01CFB9C970019DC20 /* Client.swift in Sources */,
+				321A2D641DA8689E0085E399 /* Client.swift in Sources */,
+				321A2D621DA868550085E399 /* Endpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,23 +331,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32EE82911CFBA04600897E9D /* RaccoonResponseTest.swift in Sources */,
-				32EE82921CFBA04600897E9D /* WrapperTest.swift in Sources */,
-				32EE828F1CFBA04600897E9D /* CoreModel.swift in Sources */,
-				32EE82941CFBA05B00897E9D /* User+CoreDataProperties.swift in Sources */,
-				32EE82961CFBA05E00897E9D /* RaccoonCoreDataTests.swift in Sources */,
-				32EE82971CFBA06400897E9D /* Model.swift in Sources */,
-				32EE829E1CFBA06D00897E9D /* RequestConvertibleClientTests.swift in Sources */,
-				32EE829B1CFBA06D00897E9D /* FailClientTest.swift in Sources */,
-				32EE82951CFBA05B00897E9D /* User.swift in Sources */,
-				32C670251CF98F9300455737 /* Helpers.swift in Sources */,
-				32EE82901CFBA04600897E9D /* RaccoonResponseConverterTest.swift in Sources */,
-				32EE829A1CFBA06D00897E9D /* EndpointClientTests.swift in Sources */,
-				32EE82931CFBA05800897E9D /* Model.xcdatamodeld in Sources */,
-				32EE82991CFBA06700897E9D /* RealmSerializableTests.swift in Sources */,
-				32EE82981CFBA06700897E9D /* RaccoonRealmTests.swift in Sources */,
-				32EE829D1CFBA06D00897E9D /* RequestClientTests.swift in Sources */,
-				32EE829C1CFBA06D00897E9D /* RaccoonClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,8 +347,10 @@
 /* Begin XCBuildConfiguration section */
 		3285AB981CD019FE00350513 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8CEE43BCFCB35EA27127175 /* Pods-Raccoon.debug.xcconfig */;
+			baseConfigurationReference = 7F1EB9E06C42FB77CF4402CA /* Pods-abstract_target-Raccoon.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -617,13 +361,17 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.manuege.Raccoon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		3285AB991CD019FE00350513 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2884B0C8BBCB34A2CA301FB5 /* Pods-Raccoon.release.xcconfig */;
+			baseConfigurationReference = B6EECBC99055AAC5595AD492 /* Pods-abstract_target-Raccoon.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -634,31 +382,36 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.manuege.Raccoon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		3285AB9B1CD019FE00350513 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2EB44A55ACF2F3F69EE3FE1 /* Pods-Raccoon-RaccoonTests.debug.xcconfig */;
+			baseConfigurationReference = 6DEA79D492FB382729AC1680 /* Pods-abstract_target-RaccoonTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = RaccoonTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.manuege.RaccoonTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		3285AB9C1CD019FE00350513 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1E5EF4E74E5A361430DA56AE /* Pods-Raccoon-RaccoonTests.release.xcconfig */;
+			baseConfigurationReference = 91B7B199F6351D14F5DBF877 /* Pods-abstract_target-RaccoonTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = RaccoonTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.manuege.RaccoonTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -676,8 +429,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -725,8 +480,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -784,19 +541,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		323820C71CFB9D2E0019DC20 /* Model.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				323820C81CFB9D2E0019DC20 /* Model.xcdatamodel */,
-			);
-			currentVersion = 323820C81CFB9D2E0019DC20 /* Model.xcdatamodel */;
-			path = Model.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 32DDC7761CCFA95A008FC6D5 /* Project object */;
 }

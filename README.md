@@ -1,454 +1,345 @@
 # Raccoon
 
-A nice [**Alamofire**](https://github.com/Alamofire/Alamofire) serializer that convert JSON into **CoreData** or [**Realm**](https://github.com/realm/realm-cocoa) objects.
+**Raccoon** is a set of protocols and tools that puts together [**Alamofire**](https://github.com/Alamofire/Alamofire), [**PromiseKit**](https://github.com/mxcl/PromiseKit) and **CoreData**.
 
-Raccoon is a set of pods that simplifies the connection between **Alamofire**, **CoreData** and **Realm**: 
+Internally, Raccoon uses [**Groot**](https://github.com/gonzalezreal/Groot) and [**AlamofireCoreData**](https://github.com/ManueGE/AlamofireCoreData) to serialize JSON into the CoreData objects, so you will need to be familiar with these libraries.
 
-* **Raccoon/CoreData**: Serialize JSON responses from **Alamofire** into `NSManagedObject` instances. 
-* **Raccoon/Realm**: Serialize JSON responses from **Alamofire** into **Realm** `Object` instances. 
-* **Raccoon/Client**: Client that put together **Alamofire**, **Raccoon** and [**PromiseKit**](https://github.com/mxcl/PromiseKit). 
+Raccoon is built around:
 
-> *Note*: Raccoon is in beta stage. 
+- **Alamofire 4.0.x** 
+- **PromiseKit 4.0.x** 
+- **Groot 2.0.x** 
+- **AlamofireCoreData 1.0.x** 
+
+With Raccoon you'll be able to perform HTTP request as easy as this:
+
+````swift
+let client = Client(context: context)
+client.enqueue(userEndpoint)
+    .then { (user: User) in
+        print(user) // At this point, your user is already inserted in your context
+    }
+    .catch { error in
+        print(error)
+}
+````
 
 ## Installing Raccoon
 
-##### Using CocoaPods
+### Using CocoaPods
 
-Add one of more of the following to your `Podfile`:
+Add the following line to your `Podfile`:
 
 ````ruby
-pod 'Raccoon/CoreData'
-````
-
-``` ruby
-pod 'Raccoon/Realm'
-````
-
-``` 
-# If you add this pod, you'll probably want to add one of the previous pod as well.
-pod 'Raccoon/Client'
+pod 'Raccoon'
 ````
 
 Then run `$ pod install`.
 
-And finally, in the classes where you need **Raccoon**: 
+And finally, in the files where you need **Raccoon**: 
 
 ````swift
 import Raccoon
 ````
 
-**Note**: If you just write `pod 'Raccoon'` the CoreData version and the Client will be used.
-
 If you don’t have CocoaPods installed or integrated into your project, you can learn how to do so [here](http://cocoapods.org).
 
---------------------
-# Serialization
-## Usage
-### Getting started
-Using **Raccoon** is quite simple. Let's suposse you have an `User` model. This is the **CoreData** version:
+-
+
+# Usage
+
+## Intro
+
+Raccoon basically consist in two protocols, `Client` and `Endpoint`. 
+
+- `Client` instances are responsible to enqueue http request and return them in the shape of promises. Clients need, at least, a base url (to build the requests) and a `NSManagedObjectContext` where the responses will be inserted.
+- `Endpoint` instances are objects that provides information to build the request that will be sent by the clients. Endpoints just must implement one method, `request(withBaseURL:)` which will return the full request built with the given base url. 
+
+Before being ready to work with Raccoon, you should be familiar with:
+
+- [**PromiseKit**](https://github.com/mxcl/PromiseKit): At least, you should be familiar with basic `Promise` handling: `then`, `catch`, `recover`
+- [**Groot**](https://github.com/gonzalezreal/Groot): It is used to serialize JSON into CoreData, so your entities must fullfill its requirements.  
+- [**AlamofireCoreData**](https://github.com/ManueGE/AlamofireCoreData): At least, you should read about `Wrapper` (to serialize `NSManagedObject` instances from bigger JSONs) and `Many` (to serialize an array of objects). 
+
+
+
+## Getting started
+
+To explain how use Raccoon, we are going to build a simple example.
+
+Let's suppose we have an API with 2 methods:
+
+- `GET http://sampleapi.com/users/`: Get a list of users.
+- `GET http://sampleapi.com/users/<id>/`: Get the detail of the given user. 
+
+We also have to add an api key as a header in the requests. 
+
+To modelize the response, we have our `NSManagedObject` subclass called `User` which has been prepared to being serialized using [**Groot**](https://github.com/gonzalezreal/Groot).
+
+### Creating the client
+
+The `Client` protocol has two required fields:
+
+- `context: NSManagedObjectContext`: The context used to insert the responses. 
+- `baseURL: String`: The base url of the api. 
+
+So, we will create our own `Client` class conforming this protocol: 
 
 ````swift
-class User: NSManagedObject {
-}
 
-extension User {
+import Raccoon
 
-    @NSManaged var id: NSNumber?
-    @NSManaged var name: String?
-    @NSManaged var birthday: NSDate?
-}
+final class Client: Raccoon.Client {
 
-````
-
-and this one the **Realm** one:
-
-````swift
-class User: Object {
-    dynamic var id: Int = 0
-    dynamic var name: String = ""
-    dynamic var birthday: NSDate! = nil
+    let baseURL: String = "http://sampleapi.com/"
+    let context: NSManagedObjectContext
     
-    override static func primaryKey() -> String? {
-        return "id"
+    init(context: NSManagedObjectContext) {
+        self.context = context
     }
 }
 ````
 
-If we have an **Alamofire** request that returns a single object, we will do:
+That's all, now we can create a client by doing: 
 
 ````swift
-myRequest.response(User.self, context: context) { (response) in
-   
-    if response.result.isSuccess {
-        let user = response.result.value! // this is an User instance
-        print("\(user)")
-    }
-    
+let client = Client(context: aContext)
+````
+
+### Creating the endpoint
+
+The `Endpoint` protocol just have one method: 
+
+````swift
+func request(withBaseURL baseURL: String) -> DataRequest
+````
+
+which is called from the client to build the request. 
+
+In our example, we will create a `Endpoint` subprotocol to helping us to build the actual endpoints: 
+
+````swift
+protocol AppEndpoint: Endpoint {
+    var path: String { get }
+    var method: Alamofire.HTTPMethod { get }
+    var params: Parameters? { get }
+    var encoding: Alamofire.ParameterEncoding { get }
 }
 
-````
-
-As you see, we need to pass a `context` to perform the insertion of the data. The context will be a `NSManagedObjectContext` for the **CoreData** version and a `Realm` in the **Realm** version. The object is nicely inserted into the given context. 
-
-If we have another request that returns an array of `User` instances, the we will do:
-
-````swift
-myRequest.response([User].self, context: context) { (response) in
-   
-    if response.result.isSuccess {
-        let users = response.result.value! // this is an Array of User instances
-        print("\(users)")
-    }
-}
-
-````
-Again, all the returned objects are inserted into the given context.
-
-
-### Serializing notes
-
-There are some clarification to be done about how the objects are serialized.
-#### CoreData
-`NSManagedObject` instances are serialized using the **wonderful** library **Groot**. For this reason, **Groot** is a dependency of **Raccoon**. If you are not familiar with it, take a look into the [**Groot** documentation](https://github.com/gonzalezreal/Groot) in order to learn which steps do you need yo make your objects serializable. 
-
-#### Realm
-**Raccoon** make use of the built-in JSON serialization by **Realm**:
-
-````swift
-let json = ["id": 10, "name": "Manue"]
-realm.create(User, value: json, update: true)
-````
-
-So, if all the keys and types of your json match the names of your properties, you are done and you don't have to provide any additional configuration. 
-
-However, most of times this is not the case so, in addition, **Raccoon** provides a set of methods to achieve the serialization. 
-
-If you just need to rename the keys and/or apply a transformation (as convert a string to a date), you can override this one: `class var keyPathsByProperties: [String: KeyPathConvertible]?`. As an example, in our `User` model, if the JSON we get from the server is this way:
-
-````json
-{
-    "id": 1,
-    "username": "manue",
-    "birthday_date": "1983-18-11"
-}
-
-````
-
-we must override that property this way
-
-````swift
-class User: Object {
-    dynamic var id: Int = 0
-    dynamic var name: String = ""
-    dynamic var birthday: NSDate! = nil
-    
-    override static func primaryKey() -> String? {
-        return "id"
-    }
+extension AppEndpoint {
+    func request(withBaseURL baseURL: String) -> DataRequest {
+        let url = URL(base: baseURL, path: path)!
         
-    override class var keyPathsByProperties: [String: KeyPathConvertible]? {
-        return [
-            "id": "id",
-            "name": "username",
-            "birthday": KeyPathTransformer(keyPath: "birthday_date", transformer:DateConverter.date)
-        ]
-    }
-}
-
-struct DateConverter {
-    static let formatter: NSDateFormatter = {
-        let formatter = NSDateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        return formatter
-    }()
-   
-    static func dateFromString(string: String) -> NSDate {
-        return formatter.dateFromString(string)!
-    }
-}
-````
-
-As you can see, the keys of the dictionary are the name of the properties of the model. The values are the keypath of the JSON where the right value is. They can be `String` (if not any transformation is required) or a `KeyPathTransformer` (where you must set the keypath and the transformer). 
-
-This should be enough in most of the cases, but if you need more customization, just override `class func convertJSON(json: [String: AnyObject]) -> [String: AnyObject]` where you get the JSON received from the server and you must return the JSON expected by **Realm**.
-
-A final note about **Realm**: all the instances used by raccoon that declare a **PrimaryKey** will be updated. The ones that do not declare it will be just inserted.
-
-
-### Wrapper
-Sometimes, our models are not sent directly by the server responses. Instead they are wrapped into a bigger json. For example, let's suppose that we have a response for our login request where we get the user info, the access token and the validity date for the token:
-
-````swift
-{
-    "token": "THIS_IS_MY_TOKEN",
-    "validity": "2020-01-01",
-    "user": {
-    	"id": "1",
-    	"name": "manue",
-    }
-}
-```` 
-
-To handle this, we have to create a new class or structure and adopt the `Wrapper` protocol. For example:
-
-````swift
-class LoginResponse: Wrapper {
-    
-    var token: String!
-    var validityDate: NSDate!
-    var user: User!
-    
-    // MARK: Wrapper protocol methods
-    required init() {}
-    
-    func map(map: Map) {
-        token <- map["token"]
-        validityDate <- (map["validity"], DateConverter.dateFromString)
-        user <- map["user"]
-    }
-}
-````
-
-The `Wrapper` protocol includes a required init without parameters and the `map()` function. 
-
-The map function must use the same syntax as the example shows, by using the `<-` operator. The right term of the operator might include a transformer if the data needs to be transformed. If the var at the left of the operator is a `NSManagedObject`, `[NSManagedObject]`, a `Object`, a `[Object]` or a `Wrapper` it is serialized. If is other kind of object, it is returned in the same format that it comes from the json (or its transformed value). The string inside the brackets is the keypath where we will find the object inside the JSON.
-
-#### Root keypath
-There is a special case when we want to map to an object which is in the root level of the JSON. For example, if we have a `Pagination` object that implements `Wrapper`:
-
-````swift
-class Pagination: Wrapper {
-	var total: Int = 0
-	var current: Int = 0
-	var previous: Int?
-	var next: Int?	
-	
-	// MARK: Wrapper protocol methods
-    required init() {}
-    
-    func map(map: Map) {
-        total <- map["total"]
-        current <- map["current"]
-        previous <- map["previous"]
-        next <- map["next"]
-    }
-}
-
-````
-And the response that we have is:
-
-````json
-{
-	"total": 100,
-	"current": 3,
-	"previous": 2,
-	"next": 4,
-	
-	"users": [
-		{"id": "1", "name": "manue"},
-		{"id": "2", "name": "ana"},
-		{"id": "3", "name": "lola"}
-	]
-}
-````
-
-Look that the pagination is not under any key, but it is in the root of the JSON. In this case, we can create the next object:
-
-````swift
-class UserListResponse: Wrapper {
-	var pagination: Pagination!
-	var users: [User]!
-	
-	// MARK: Wrapper protocol methods
-    required init() {}
-    
-    func map(map: Map) {
-        pagination <- map[.Root]
-        users <- map["users"]
-    }
-}
-
-````
-
-### Response Converter
-Sometimes, the data we get from the server is not in the right format. It could happens that we have for instance a XML where one of its fields is the JSON we have to parse (yes, I've found things like these 😅). In order to solve this issues, **Raccoon** provides a way to pre-process the data before being serialized:
-
-````swift
-public typealias ResponseConverter = (NSURLRequest?, NSHTTPURLResponse?, NSData?, NSError?) -> Result<NSData?, NSError>
-````
-
-We can pass it as a parameter in the `response()` method: 
-
-````swift
-myRequest.response([User].self, context: context, converter: MyConverterMethod) { (response) in
-   
-    if response.result.isSuccess {
-        let users = response.result.value! // this is an Array of User instances
-        print("\(users)")
-    }
-}
-
-````
-
-if the `ResponseConverter` return `.Failure` with a `NSError`, it will be propagated in the response, so the request will fail. You can take advantage to perform internal validation to your `request`.
-
---------
-# RaccoonClient
-
-**Note**: To use this library you should be familiar with **PromiseKit**. If you are not, take a look into the [**PromiseKit** documentation site](http://promisekit.org).
-
-## The Client
-`Client` is the main component of the library. Is the responsible to perform the request and return the response as a `Promise`. 
-
-To create a simple client you can do:
-
-````swift
-let client = Client(baseURL: "http://host.com/", context: context)
-````
-
-where `context` is a `NSManagedObjectContext` if we want to insert objects into CoreData or a `Realm` if we are using **Realm**.
-
-we can add a third parameter:
-
-````swift
-let client = Client(baseURL: "http://host.com/", context: context, responseConverter: converter)
-````
-where `converter` is a `ResponseConverter` as explained before. 
-
-
-### Sending requests
-
-If we have a `Request` that return an object `User`, we can send the request this way:
-
-````swift
-client.request(myRequest, type: User.self)
-````
-
-This will return a `Promise<User>`.
-
-If our request returns an array of `User` instances:
-
-````swift
-client.request(myRequest, type: [User].self)
-````
-
-We can send requests that return one of the following types:
-
-* `NSManagedObject`
-* `[NSManagedObject]`
-* `Object`
-* `[Object]`
-* `Wrapper`
-
-we can also send a request that return an empty promise: `Promise<Void>` this way:
-
-````swift
-client.request(request)
-````
-
-
-## Endpoint
-Raccoon provides the `Endpoint` class and the `EndpointConvertible` protocol to simplify the request creation. 
-
-And endpoint is something quite similar to a request. It could have a method, encoding and some parameters or headers. But instead of having an url it just have a path. 
-
-`Endpoint` has the following method:
-
-````swift
-public func request(withBaseURL URL: String) -> Request
-````
-
-which creates a `Request` with all the parameters of the `Endpoint` and append its path to the given base URL.
-
-For example:
-
-````swift
-let client = Client(baseURL: "http://host.com", context: context)
-
-let loginEndpoint = Endpoint(method: .POST, 
-							  path:"/auth/login",
-							  parameters: ["user": "manue", "pass": "my_pass"],
-							  encoding: .JSON,
-							  headers: [:])
-
-client.request(loginEndpoint, type: LoginResponse.self)
-							  					
-````
-
-We can override the `Endpoint` class to add some custom parameters as authentication headers, api keys, perform validations or [log the request](http://github.com/ManueGE/AlamofireActivityLogger). For instance:
-
-````swift
-class MyAppEndpoint: Endpoint {
-    
-    override init(method: Alamofire.Method, path: String, parameters: [String : AnyObject], encoding: Alamofire.ParameterEncoding, headers: [String : String]) {
+        let headers: HTTPHeaders = ["APIKEY": "MY API KEY"]
         
-        // adds an api key
-        var parameters = parameters
-        parameters["api_key"] = apiKey
-        
-        // add a auth header
-        var headers = headers
-        headers["Authentication"] = "Bearer MY_TOKEN"
-        
-        super.init(method: method, path: path, parameters: parameters, encoding: encoding, headers: headers)
-    }
-    
-    override func request(withBaseURL URL: String) -> Request {
-        
-        // we add aditional validations
-        let request = super.request(withBaseURL: URL)
-        return request
-            .validate(statusCode: 200..<300)
-            .validate(contentType: ["application/json"])
-            .log()
+        return Alamofire.request(url,
+                                 method: method,
+                                 parameters: params,
+                                 encoding: encoding,
+                                 headers: headers)
     }
 }
 ````
 
-            
-### EndpointConvertible
+Some notes: 
 
-Finally we have the `EndpointConvertible` protocol. Every object that conform the `EndpointConvertible` protocol must have the following property:
+- First we build the URL from the baseURL and the endpoint path. To build the URL we use a Raccoon extension for `URL`.
+- Next we add the api key to the headers. 
+- We build the request using the info provided by the endpoint and return it. 
 
-````swift
-var endpoint: Endpoint { get }
-````
-
-This allow us to create endpoints using the **Router** approach described in **Alamofire** documentation. The example before can be now written this way:
+After we have our protocol, we can create the endpoints.
 
 ````swift
-enum LoginRouter: EndpointConvertible {
-    case Login(user: String, password: String)
+enum UserEndpoint: AppEndpoint {
+    case list
+    case detail(id: Int)
     
-    var endpoint: Endpoint {
+    // MARK: AppEndpoint
+    var method: Alamofire.HTTPMethod { return .get }
+    var encoding: Alamofire.ParameterEncoding { return JSONEncoding() }
+    var params: Parameters? { return nil }
+    
+    var path: String {
         switch self {
-        case let .Login(user, password):
-            return Endpoint(method: .POST,
-                            path:"/auth/login",
-                            parameters: ["user": user, "pass": password],
-                            encoding: .JSON)
+        case .list:
+            return "users"
+        case let .detail(id):
+            return "users/\(id)/"
         }
     }
 }
 ````
 
-and then:
+Now, we are ready to send the requests.
+
+### Enqueueing requests
+
+Once we have the `Client` and the `Endpoint`, enqueue the request is very easy: 
+
 
 ````swift
-let login = LoginRouter.Login(user: "manue", password: "my_pass")
-client.request(login, type: LoginResponse.self)
-							  					
+let client = Client(context: context)
+
+client.enqueue(UserEndpoint.list)
+.then { (users: Many<User>) in
+    print(users)
+}
+.catch { error in
+    print(error)
+}
+
+client.enqueue(UserEndpoint.list)
+.then { (user: User) in
+    print(user)
+}
+.catch { error in
+    print(error)
+}
 ````
 
+## Advanced usage
 
---------
+In the previous example, we used Raccoon in its simplest stage. It allows some additional configuration to adapt itself to your REST API design. 
 
+### Wrapper responses
+Let's think we have another call to our api where we perform a login:
 
-## Contact
+````
+POST http://sampleapi.com/login/ 
+````
 
-[Manuel García-Estañ Martínez](http://github.com/ManueGE)  
-[@manueGE](https://twitter.com/ManueGE)
+The response of this requests is this json:
+
+````json
+{
+    "token": "authtoken",
+    "user": {"id": 1, "name": "manue"}
+}
+````
+
+In this response, we have two parts, one object to be stored "as is" (the token) and a object to be inserted in the context (the user). 
+
+To handle with this, we create a new object that conforms with [AlamofireCoreData Wrapper protocol](https://github.com/ManueGE/AlamofireCoreData#using-wrapper):
+
+````swift
+struct LoginResponse: Wrapper { 
+    var token: String!
+    var user: User!
+    
+    init() {}
+    
+    mutating func map(_ map: Map) {
+        token <- map["token"]
+        user <- map["user"]
+    }
+}
+````
+
+Now, we can create a new endpoint: 
+
+````swift
+struct LoginEndpoint: RestEndpoint {
+    let username: String
+    let password: String
+    
+    init(username: String, password: String) {
+        self.username = username
+        self.password = password
+    }
+    
+    // MARK: AppEndpoint
+    var path = "login/"
+    var method: Alamofire.HTTPMethod = .post
+    var encoding: Alamofire.ParameterEncoding = JSONEncoding()
+    var params: Parameters? { 
+        return ["username": username, "password": password] 
+    }
+}    
+````
+
+And then enqueueing it: 
+
+````swift
+let client = Client(context: context)
+
+client.enqueue(LoginEndpoint(username: "username", password: "password")
+.then { (response: LoginResponse) in
+    print(response.token)
+    print(response.user) // User already inserted in the context
+}
+.catch { error in
+    print(error)
+}
+````
+
+### Custom json serialization
+In some cases, the data we get from the server is not in the right format. It could even happens that we have a XML where one of its fields is the JSON we have to parse (yes, I've found things like those 😅). In order to solve this issues, the `Client` protocol has an additional optional var that you can use to transform the response into the JSON you need: 
+
+````swift
+var jsonSerializer: DataResponseSerializer<Any>
+````
+
+`jsonSerializer ` is just a `Alamofire.DataResponseSerializer<Any>`. You can build your serializer as you want; the only condition is that it must return the JSON which you expect and which can be serialized by **Groot**.
+
+For getting more info about how to build this serializer, please read this section of the [AlamofireCoreData documentation](https://github.com/ManueGE/AlamofireCoreData#transforming-your-json)
+
+### Customising the requests
+
+The `Request` provided by the `Endpoint` can be improved in the client side by using the following `Client` optional method:
+
+````swift
+func prepare(_ request: DataRequest, for endpoint: Endpoint) -> DataRequest
+````
+
+For example, we can add a validator and [a logger for your requests](http://github.com/ManueGE/AlamofireActivityLogger):
+
+````swift
+func prepare(_ request: DataRequest, for endpoint: Endpoint) -> DataRequest {
+    return request
+        .validate()
+        .log()
+}
+````
+ 
+
+### Processing the promise
+
+Let's suppose we want to save the managed object context every time a request finish successfully. We could add this to every request:
+
+````swift
+client.enqueue(endpoint)
+  .then { object: User in
+     try client.context.save()
+  }
+````
+
+This is not great, you would have to add it to every request. Instead, you can make use of one of the optional methods of the `Client` protocol: 
+
+````swift
+func process<T>(_ promise: Promise<T>, for endpoint: Endpoint) -> Promise<T>
+````
+
+This method is called by the client before return the `Promise`. By default it returns the promise itself. 
+
+In our example, you just have to add these lines to your `Client`:
+
+````swift
+func process<T>(_ promise: Promise<T>, for endpoint: Endpoint) -> Promise<T> {
+    return promise.then { response -> T in
+        try self.context.save()
+        return response
+    }
+}
+````
+
+You can do whatever you need with your promise on this method, for example `recover` from some errors or show/hide the network indicator of the status bar.
+
+-
 
 ## License
 
 Raccoon is available under the [MIT license](LICENSE.md).
+
+## Contact
+[Manuel García-Estañ Martínez](http://github.com/ManueGE)  
+[@manueGE](https://twitter.com/ManueGE)
