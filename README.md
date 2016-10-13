@@ -188,9 +188,9 @@ client.enqueue(UserEndpoint.list)
     print(error)
 }
 
-client.enqueue(UserEndpoint.list)
-.then { (user: User) in
-    print(user)
+client.enqueue(UserEndpoint.detail(id: 1))
+.then { (users: Many<User>) in
+    print(users)
 }
 .catch { error in
     print(error)
