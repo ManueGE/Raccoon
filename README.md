@@ -2,7 +2,7 @@
 
 **Raccoon** is a set of protocols and tools that puts together [**Alamofire**](https://github.com/Alamofire/Alamofire), [**PromiseKit**](https://github.com/mxcl/PromiseKit) and **CoreData**.
 
-Internally, Raccoon uses [**Groot**](https://github.com/gonzalezreal/Groot) and [**AlamofireCoreData**](https://github.com/ManueGE/AlamofireCoreData) to serialize JSON into the CoreData objects, so you will need to be familiar with it to use these libraries.
+Internally, Raccoon uses [**Groot**](https://github.com/gonzalezreal/Groot) and [**AlamofireCoreData**](https://github.com/ManueGE/AlamofireCoreData) to serialize JSON into the CoreData objects, so you will need to be familiar with these libraries.
 
 Raccoon is built around:
 
@@ -11,7 +11,7 @@ Raccoon is built around:
 - **Groot 2.0.x** 
 - **AlamofireCoreData 1.0.x** 
 
-With Raccoon you'll be able to perform 
+With Raccoon you'll be able to perform HTTP request as easy as this:
 
 ````swift
 let client = Client(context: context)
@@ -36,7 +36,7 @@ pod 'Raccoon'
 
 Then run `$ pod install`.
 
-And finally, in the classes where you need **Raccoon**: 
+And finally, in the files where you need **Raccoon**: 
 
 ````swift
 import Raccoon
@@ -52,7 +52,7 @@ If you don’t have CocoaPods installed or integrated into your project, you can
 
 Raccoon basically consist in two protocols, `Client` and `Endpoint`. 
 
-- `Client` instances are responsible to enqueue http request and return them in the shape of a promises. Clients need, at least, a base url (to build the requests) and a `NSManagedObjectContext` where the responses will be inserted.
+- `Client` instances are responsible to enqueue http request and return them in the shape of promises. Clients need, at least, a base url (to build the requests) and a `NSManagedObjectContext` where the responses will be inserted.
 - `Endpoint` instances are objects that provides information to build the request that will be sent by the clients. Endpoints just must implement one method, `request(withBaseURL:)` which will return the full request built with the given base url. 
 
 Before being ready to work with Raccoon, you should be familiar with:
@@ -67,12 +67,12 @@ Before being ready to work with Raccoon, you should be familiar with:
 
 To explain how use Raccoon, we are going to build a simple example.
 
-Let's suppose we have an API with 3 methods:
+Let's suppose we have an API with 2 methods:
 
 - `GET http://sampleapi.com/users/`: Get a list of users.
 - `GET http://sampleapi.com/users/<id>/`: Get the detail of the given user. 
 
-We also have to add an api key as a header in the request. 
+We also have to add an api key as a header in the requests. 
 
 To modelize the response, we have our `NSManagedObject` subclass called `User` which has been prepared to being serialized using [**Groot**](https://github.com/gonzalezreal/Groot).
 
@@ -144,10 +144,10 @@ extension AppEndpoint {
 Some notes: 
 
 - First we build the URL from the baseURL and the endpoint path. To build the URL we use a Raccoon extension for `URL`.
-- Next we check if the endpoint requires auth. If it does, we add the token as header. 
+- Next we add the api key to the headers. 
 - We build the request using the info provided by the endpoint and return it. 
 
-Now we have our protocol, we can create the endpoints.
+After we have our protocol, we can create the endpoints.
 
 ````swift
 enum UserEndpoint: AppEndpoint {
@@ -156,7 +156,6 @@ enum UserEndpoint: AppEndpoint {
     
     // MARK: AppEndpoint
     var method: Alamofire.HTTPMethod { return .get }
-    var requiresAuth: Bool { return true }
     var encoding: Alamofire.ParameterEncoding { return JSONEncoding() }
     var params: Parameters? { return nil }
     
@@ -202,6 +201,77 @@ client.enqueue(UserEndpoint.list)
 
 In the previous example, we used Raccoon in its simplest stage. It allows some additional configuration to adapt itself to your REST API design. 
 
+### Wrapper responses
+Let's think we have another call to our api where we perform a login:
+
+````
+POST http://sampleapi.com/login/ 
+````
+
+The response of this requests is this json:
+
+````json
+{
+    "token": "authtoken",
+    "user": {"id": 1, "name": "manue"}
+}
+````
+
+In this response, we have two parts, one object to be stored "as is" (the token) and a object to be inserted in the context (the user). 
+
+To handle with this, we create a new object that conforms with [AlamofireCoreData Wrapper protocol](https://github.com/ManueGE/AlamofireCoreData#using-wrapper):
+
+````swift
+struct LoginResponse: Wrapper { 
+    var token: String!
+    var user: User!
+    
+    init() {}
+    
+    mutating func map(_ map: Map) {
+        token <- map["token"]
+        user <- map["user"]
+    }
+}
+````
+
+Now, we can create a new endpoint: 
+
+````swift
+struct LoginEndpoint: RestEndpoint {
+    let username: String
+    let password: String
+    
+    init(username: String, password: String) {
+        self.username = username
+        self.password = password
+    }
+    
+    // MARK: AppEndpoint
+    var path = "login/"
+    var method: Alamofire.HTTPMethod = .post
+    var encoding: Alamofire.ParameterEncoding = JSONEncoding()
+    var params: Parameters? { 
+        return ["username": username, "password": password] 
+    }
+}    
+````
+
+And then enqueueing it: 
+
+````swift
+let client = Client(context: context)
+
+client.enqueue(LoginEndpoint(username: "username", password: "password")
+.then { (response: LoginResponse) in
+    print(response.token)
+    print(response.user) // User already inserted in the context
+}
+.catch { error in
+    print(error)
+}
+````
+
 ### Custom json serialization
 In some cases, the data we get from the server is not in the right format. It could even happens that we have a XML where one of its fields is the JSON we have to parse (yes, I've found things like those 😅). In order to solve this issues, the `Client` protocol has an additional optional var that you can use to transform the response into the JSON you need: 
 
@@ -243,7 +313,7 @@ client.enqueue(endpoint)
   }
 ````
 
-It is not great, you would have to add it to every request. Instead, you can make use of one of the optional methods of the `Client` protocol: 
+This is not great, you would have to add it to every request. Instead, you can make use of one of the optional methods of the `Client` protocol: 
 
 ````swift
 func process<T>(_ promise: Promise<T>, for endpoint: Endpoint) -> Promise<T>
