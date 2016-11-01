@@ -189,8 +189,8 @@ client.enqueue(UserEndpoint.list)
 }
 
 client.enqueue(UserEndpoint.detail(id: 1))
-.then { (users: Many<User>) in
-    print(users)
+.then { (user: User) in
+    print(user)
 }
 .catch { error in
     print(error)
@@ -264,7 +264,7 @@ let client = Client(context: context)
 
 client.enqueue(LoginEndpoint(username: "username", password: "password")
 .then { (response: LoginResponse) in
-    print(response.token)
+    print(response.token) // Here you can save your token in the defaults if needed
     print(response.user) // User already inserted in the context
 }
 .catch { error in
