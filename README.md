@@ -197,6 +197,30 @@ client.enqueue(UserEndpoint.detail(id: 1))
 }
 ````
 
+#### Cancellable enqueue. 
+
+If you want to cancel a request manually, you can use the `cancellableEnqueue` methods. They return an instance of `Cancellable`, which contains a `Promise` and a `cancel()` method:
+
+````swift
+let client = Client(context: context)
+
+let cancellable: Cancellable<Many<User>> = client.cancellableEnqueue(UserEndpoint.list)
+
+cancellable.promise
+.then { (users: Many<User>) in
+    print(users)
+}
+.catch { error in
+    print(error)
+}
+
+
+// ... later on
+
+cancellable.cancel()
+
+````
+
 ## Advanced usage
 
 In the previous example, we used Raccoon in its simplest stage. It allows some additional configuration to adapt itself to your REST API design. 
