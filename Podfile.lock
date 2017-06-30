@@ -1,6 +1,6 @@
 PODS:
-  - Alamofire (4.0.1)
-  - AlamofireCoreData (0.0.1):
+  - Alamofire (4.5.0)
+  - AlamofireCoreData (1.0.0):
     - Alamofire (~> 4.0)
     - Groot (~> 2.0)
   - Groot (2.0):
@@ -24,22 +24,18 @@ PODS:
   - PromiseKit/CorePromise (4.0.3)
 
 DEPENDENCIES:
-  - AlamofireCoreData (from `../../AlamofireCoreData/`)
+  - AlamofireCoreData (~> 1.0)
   - OHHTTPStubs (~> 5.2)
   - OHHTTPStubs/Swift (~> 5.2)
   - PromiseKit/CorePromise (~> 4.0)
 
-EXTERNAL SOURCES:
-  AlamofireCoreData:
-    :path: ../../AlamofireCoreData/
-
 SPEC CHECKSUMS:
-  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
-  AlamofireCoreData: b89166ed7626cb46c224e7914dbe4b65ad83ad29
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  AlamofireCoreData: 20618959493cf6bc804c39b538da21806365209b
   Groot: 7543f84980bfb1613750818029d9b927d4378211
   OHHTTPStubs: 3a42f25c00563b71355ac73112ba2324e9e6cef4
   PromiseKit: dfe8fcc6445674fb23378d89990838c1cbdbf05a
 
-PODFILE CHECKSUM: 14016e072c8d1eb6d0c1e332360667b84d5b1206
+PODFILE CHECKSUM: edba1cf2a62cefb66dfb537e3640f919c2b564d5
 
-COCOAPODS: 1.1.0.rc.2
+COCOAPODS: 1.2.1
