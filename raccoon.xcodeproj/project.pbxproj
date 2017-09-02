@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		321A2D621DA868550085E399 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A2D611DA868550085E399 /* Endpoint.swift */; };
 		321A2D641DA8689E0085E399 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A2D631DA8689E0085E399 /* Client.swift */; };
-		323D6E591F064904009F9337 /* CancellablePromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323D6E581F064904009F9337 /* CancellablePromise.swift */; };
 		3285AB891CD019FE00350513 /* Raccoon.h in Headers */ = {isa = PBXBuildFile; fileRef = 3285AB881CD019FE00350513 /* Raccoon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3285AB901CD019FE00350513 /* Raccoon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3285AB861CD019FE00350513 /* Raccoon.framework */; };
 		78B30346D0D4AD1764E3D12B /* Pods_abstract_target_Raccoon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C46CCED049B6F1029FB6131 /* Pods_abstract_target_Raccoon.framework */; };
@@ -30,7 +29,6 @@
 		2C46CCED049B6F1029FB6131 /* Pods_abstract_target_Raccoon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_abstract_target_Raccoon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		321A2D611DA868550085E399 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		321A2D631DA8689E0085E399 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
-		323D6E581F064904009F9337 /* CancellablePromise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancellablePromise.swift; sourceTree = "<group>"; };
 		3285AB861CD019FE00350513 /* Raccoon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Raccoon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3285AB881CD019FE00350513 /* Raccoon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Raccoon.h; sourceTree = "<group>"; };
 		3285AB8A1CD019FE00350513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -69,7 +67,6 @@
 			children = (
 				321A2D611DA868550085E399 /* Endpoint.swift */,
 				321A2D631DA8689E0085E399 /* Client.swift */,
-				323D6E581F064904009F9337 /* CancellablePromise.swift */,
 			);
 			path = source;
 			sourceTree = "<group>";
@@ -325,7 +322,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				323D6E591F064904009F9337 /* CancellablePromise.swift in Sources */,
 				321A2D641DA8689E0085E399 /* Client.swift in Sources */,
 				321A2D621DA868550085E399 /* Endpoint.swift in Sources */,
 			);

@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "Raccoon"
-  spec.version      = "1.1.0"
+  spec.version      = "1.1.1"
   spec.summary      = "Puts together Alamofire, CoreData and PromiseKit"
   spec.description  = <<-DESC
   A nice set of protocols and tools that puts together Alamofire, PromiseKit and CoreData. 

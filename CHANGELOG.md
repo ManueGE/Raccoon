@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.1.1 (30 June 2017)
+- Fix build problem with `void` promises in swift 4.
+
 ## 1.1.0 (30 June 2017)
 - Add `cancellableEnqueue` methods to allow cancel requests manually.
 - Swift 3, Alamofire 4.5, PromiseKit 4.2, Groot 2.0.
