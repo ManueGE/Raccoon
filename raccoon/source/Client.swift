@@ -154,7 +154,7 @@ public extension Client {
                         
                         switch response.result {
                         case .success:
-                            fulfill()
+                            fulfill(())
                         case let .failure(error):
                             reject(error)
                         }
