@@ -1,5 +1,8 @@
 # Change Log
 
+### 1.2.0 (10 October 2017)
+- Swift 4, Alamofire 4.5, PromiseKit 4.4
+
 ## 1.1.1 (30 June 2017)
 - Fix build problem with `void` promises in swift 4.
 
