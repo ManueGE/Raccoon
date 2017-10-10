@@ -8,9 +8,9 @@
 
 import Foundation
 import CoreData
-import Alamofire
 import AlamofireCoreData
 import PromiseKit
+import Alamofire
 
 /**
  An object which encapsulate a promise that can be cancelled at any time.

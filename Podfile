@@ -3,8 +3,8 @@ use_frameworks!
 
 abstract_target 'abstract_target' do
     
-    pod 'AlamofireCoreData', '~> 1.0'
-    pod 'PromiseKit/CorePromise', '~> 4.0'
+    pod 'AlamofireCoreData', '~> 1.1'
+    pod 'PromiseKit/CorePromise', '~> 4.4'
     
     target 'Raccoon'
     
