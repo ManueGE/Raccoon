@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "Raccoon"
-  spec.version      = "1.2.0"
+  spec.version      = "1.3.0"
   spec.summary      = "Puts together Alamofire, CoreData and PromiseKit"
   spec.description  = <<-DESC
   A nice set of protocols and tools that puts together Alamofire, PromiseKit and CoreData. 
@@ -17,9 +17,9 @@ Pod::Spec.new do |spec|
   spec.source       = { :git => "https://github.com/ManueGE/Raccoon.git", :tag => "#{spec.version}" }
 
   spec.requires_arc = true
-  spec.dependency "Alamofire", "~> 4.5"
+  spec.dependency "Alamofire", "~> 4.7"
   spec.dependency "PromiseKit/CorePromise", "~> 4.4"
-  spec.dependency "AlamofireCoreData", "~> 1.1"
+  spec.dependency "AlamofireCoreData", "~> 2.0"
 
   spec.source_files = "Raccoon/source/**/*.{swift}"
 

@@ -1,5 +1,8 @@
 # Change Log
 
+### 1.3.0 (25 September 2018)
+- Swift 4.2, Alamofire 4.7
+
 ### 1.2.0 (10 October 2017)
 - Swift 4, Alamofire 4.5, PromiseKit 4.4
 
